@@ -13,6 +13,10 @@ export class RealSwiggyMcpClient implements SwiggyMcpClient {
   constructor(private sessions: McpSessionFactory, private store: OAuthStateStore) {}
 
   private unwrap(result: any): any {
+    // MCP-standard tool-level failure signal — distinct from Swiggy's own envelope below.
+    if (result?.isError === true) {
+      throw new Error(result.content?.[0]?.text ?? 'Swiggy tool returned isError');
+    }
     // Swiggy tools return { success, data, message } | { success:false, error }
     const raw =
       result?.structuredContent ??
@@ -33,7 +37,9 @@ export class RealSwiggyMcpClient implements SwiggyMcpClient {
     try {
       return this.unwrap(await run());
     } catch (e: any) {
-      const unauthorized = e instanceof UnauthorizedError || e?.status === 401 || e?.code === -32001;
+      // NOTE: SDK -32001 = RequestTimeout, not auth — do not clear the session on it.
+      // Task 3.7 to verify Swiggy's live auth-error surface.
+      const unauthorized = e instanceof UnauthorizedError || e?.status === 401;
       if (unauthorized) {
         this.store.clear();
         this.sessions.reset();

@@ -29,4 +29,20 @@ describe('SwiggyOAuthProvider', () => {
     await p.saveTokens({ access_token: 't', token_type: 'Bearer' } as any);
     expect((await p.tokens())?.access_token).toBe('t');
   });
+
+  it('invalidateCredentials is scope-aware', async () => {
+    const store = new OAuthStateStore();
+    const p = new SwiggyOAuthProvider(config, store);
+    store.clientInfo = { client_id: 'c1', redirect_uris: ['http://localhost:3000/oauth/callback'] } as any;
+    store.tokens = { access_token: 't', token_type: 'Bearer' } as any;
+
+    await p.invalidateCredentials('tokens');
+    expect(store.tokens).toBeUndefined();
+    expect(store.clientInfo).toBeDefined(); // DCR client info survives a token-only invalidation
+
+    store.tokens = { access_token: 't2', token_type: 'Bearer' } as any;
+    await p.invalidateCredentials('all');
+    expect(store.tokens).toBeUndefined();
+    expect(store.clientInfo).toBeUndefined();
+  });
 });

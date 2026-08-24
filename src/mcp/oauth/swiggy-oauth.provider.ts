@@ -61,7 +61,23 @@ export class SwiggyOAuthProvider implements OAuthClientProvider {
     this.store.pendingAuthUrl = authorizationUrl;
   }
 
-  invalidateCredentials(): void {
-    this.store.clear();
+  invalidateCredentials(scope: 'all' | 'client' | 'tokens' | 'verifier' | 'discovery'): void {
+    switch (scope) {
+      case 'all':
+        this.store.clear();
+        break;
+      case 'client':
+        this.store.clientInfo = undefined;
+        break;
+      case 'tokens':
+        this.store.tokens = undefined;
+        break;
+      case 'verifier':
+        this.store.codeVerifier = undefined;
+        break;
+      case 'discovery':
+        // The store holds no discovery state.
+        break;
+    }
   }
 }

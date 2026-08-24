@@ -7,6 +7,9 @@ export class OAuthStateStore {
   tokens: OAuthTokens | undefined;
   codeVerifier: string | undefined;
   pendingAuthUrl: URL | undefined;
+  /** CSRF state token generated for the in-flight authorization request; validated
+   * against the `state` query param on `/oauth/callback` (single-use — cleared on match). */
+  state: string | undefined;
 
   isAuthenticated(): boolean {
     return !!this.tokens?.access_token;
@@ -17,5 +20,6 @@ export class OAuthStateStore {
     this.tokens = undefined;
     this.codeVerifier = undefined;
     this.pendingAuthUrl = undefined;
+    this.state = undefined;
   }
 }

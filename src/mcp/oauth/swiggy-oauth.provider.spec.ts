@@ -30,6 +30,19 @@ describe('SwiggyOAuthProvider', () => {
     expect((await p.tokens())?.access_token).toBe('t');
   });
 
+  it('state() persists the generated value to the store for CSRF validation on callback', () => {
+    const store = new OAuthStateStore();
+    const p = new SwiggyOAuthProvider(config, store);
+    const value = p.state();
+    expect(value).toBeTruthy();
+    expect(store.state).toBe(value);
+
+    // Each call generates (and persists) a fresh, distinct token.
+    const value2 = p.state();
+    expect(value2).not.toBe(value);
+    expect(store.state).toBe(value2);
+  });
+
   it('invalidateCredentials is scope-aware', async () => {
     const store = new OAuthStateStore();
     const p = new SwiggyOAuthProvider(config, store);

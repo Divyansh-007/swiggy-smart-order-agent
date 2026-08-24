@@ -21,8 +21,14 @@ export class OAuthController {
   }
 
   @Get('callback')
-  async callback(@Query('code') code: string, @Res() res: Response) {
+  async callback(@Query('code') code: string, @Query('state') state: string, @Res() res: Response) {
     if (!code) return res.status(400).send('Missing authorization code');
+    // CSRF check: the state we handed Swiggy in /oauth/login must come back unchanged.
+    // Single-use — cleared as soon as it's matched so it can't be replayed.
+    if (!state || state !== this.store.state) {
+      return res.status(400).send('Invalid or missing state parameter');
+    }
+    this.store.state = undefined;
     await this.sessions.completeAuth(code);
     return res.send('Swiggy MCP connected. Close this tab and hit /suggestions.');
   }

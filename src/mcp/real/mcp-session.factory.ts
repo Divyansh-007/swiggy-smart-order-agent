@@ -36,6 +36,26 @@ import { OAuthStateStore } from '../oauth/oauth-state.store';
  * The brief also suggested checking `(client as any)._connected` in `getClient()` to avoid
  * a double-connect; no such field exists anywhere in the installed SDK. We track our own
  * `connected` boolean instead.
+ *
+ * FIX ROUND 1 addendum: reusing `this.client` across logins is only safe when the
+ * previous `connect()` attempt actually failed (see above — that path resets
+ * `client._transport` to `undefined`). If a *previous* login already completed
+ * successfully (`client._transport` still set, pointing at a live transport), calling
+ * `client.connect()` again hits `Protocol.connect()`'s very first guard:
+ * `if (this._transport) throw new Error('Already connected to a transport. Call close()
+ * before connecting to a new transport...')` — a PLAIN `Error`, not `UnauthorizedError`,
+ * thrown before `Client.connect()`'s own try/catch even runs (that guard lives in
+ * `Protocol.connect()`, which `Client.connect()` calls via `await super.connect(transport)`
+ * as its very first line — so `Client.connect()`'s catch block, which only wraps the
+ * `initialize` request, never sees it). `beginAuth()`'s catch only swallows
+ * `UnauthorizedError`, so this would propagate as an unhandled 500 on a second
+ * `/oauth/login` — which v1.0 requires periodically, since Swiggy issues no refresh
+ * tokens and access tokens expire after 5 days. Fix: `beginAuth()` now unconditionally
+ * discards any previous client/transport (`discardSession()`) before minting a fresh
+ * `Client`, so every login starts from a guaranteed-clean slate regardless of whether the
+ * prior session succeeded, failed, or was never started. `completeAuth()`/`getClient()`
+ * also discard the session on an unexpected `connect()` failure so a half-open client is
+ * never left behind for the next call to trip over.
  */
 @Injectable()
 export class McpSessionFactory {
@@ -69,10 +89,32 @@ export class McpSessionFactory {
     });
   }
 
+  /**
+   * Tears down any existing client/transport so the next `connect()` starts from a
+   * guaranteed-clean slate — see the FIX ROUND 1 addendum above for why this is required
+   * before every `beginAuth()`, and on any unexpected `connect()` failure elsewhere.
+   */
+  private async discardSession(): Promise<void> {
+    if (this.client) {
+      try {
+        await this.client.close();
+      } catch {
+        // Best-effort — the client/transport are being discarded regardless.
+      }
+    }
+    this.client = null;
+    this.transport = null;
+    this.connected = false;
+  }
+
   async beginAuth(): Promise<URL> {
+    // A prior successful login (or a half-open client left by some other failure) must
+    // not leak into this attempt — Protocol.connect() throws a plain Error("Already
+    // connected...") if `client._transport` is still set, which beginAuth's catch below
+    // (scoped to UnauthorizedError) would not swallow.
+    await this.discardSession();
     const client = this.ensureClient();
     this.transport = this.newTransport();
-    this.connected = false;
     try {
       await client.connect(this.transport); // triggers discovery + DCR + PKCE, then throws
       // No tokens yet means this should not happen, but if the SDK somehow authorized
@@ -98,8 +140,15 @@ export class McpSessionFactory {
     // the same client, now that the provider/store hold valid tokens.
     const client = this.ensureClient();
     this.transport = this.newTransport();
-    await client.connect(this.transport);
-    this.connected = true;
+    try {
+      await client.connect(this.transport);
+      this.connected = true;
+    } catch (e) {
+      // Don't leave a half-open client for the next call (e.g. a retried /oauth/login) to
+      // trip over — discard so the next attempt starts clean.
+      await this.discardSession();
+      throw e;
+    }
   }
 
   async getClient(): Promise<Client> {
@@ -109,8 +158,13 @@ export class McpSessionFactory {
     const client = this.ensureClient();
     if (!this.connected) {
       this.transport = this.newTransport();
-      await client.connect(this.transport);
-      this.connected = true;
+      try {
+        await client.connect(this.transport);
+        this.connected = true;
+      } catch (e) {
+        await this.discardSession();
+        throw e;
+      }
     }
     return client;
   }

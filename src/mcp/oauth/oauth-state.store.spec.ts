@@ -20,7 +20,16 @@ describe('OAuthStateStore', () => {
   it('clear wipes everything', () => {
     const s = new OAuthStateStore();
     s.tokens = { access_token: 'abc', token_type: 'Bearer' } as any;
+    s.state = 'csrf-token';
     s.clear();
     expect(s.isAuthenticated()).toBe(false);
+    expect(s.state).toBeUndefined();
+  });
+
+  it('stores the CSRF state token', () => {
+    const s = new OAuthStateStore();
+    expect(s.state).toBeUndefined();
+    s.state = 'csrf-token';
+    expect(s.state).toBe('csrf-token');
   });
 });

@@ -31,7 +31,11 @@ export class SwiggyOAuthProvider implements OAuthClientProvider {
   }
 
   state(): string {
-    return randomBytes(16).toString('base64url');
+    const value = randomBytes(16).toString('base64url');
+    // Persisted so /oauth/callback can validate the state param it receives back from
+    // Swiggy against the value we actually generated (CSRF protection).
+    this.store.state = value;
+    return value;
   }
 
   clientInformation(): OAuthClientInformationFull | undefined {

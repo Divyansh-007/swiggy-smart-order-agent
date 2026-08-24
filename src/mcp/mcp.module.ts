@@ -6,11 +6,12 @@ import { McpSessionFactory } from './real/mcp-session.factory';
 import { OAuthStateStore } from './oauth/oauth-state.store';
 import { SwiggyOAuthProvider } from './oauth/swiggy-oauth.provider';
 import { OAuthController } from './oauth/oauth.controller';
+import { McpDebugController } from './real/debug.controller';
 
 export const SWIGGY_MCP_CLIENT = 'SWIGGY_MCP_CLIENT';
 
 @Module({
-  controllers: [OAuthController],
+  controllers: [OAuthController, McpDebugController],
   providers: [
     OAuthStateStore,
     SwiggyOAuthProvider,

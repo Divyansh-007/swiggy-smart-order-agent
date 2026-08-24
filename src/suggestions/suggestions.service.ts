@@ -1,7 +1,7 @@
 import { Inject, Injectable } from '@nestjs/common';
 import { SWIGGY_MCP_CLIENT } from '../mcp/mcp.module';
-import { SwiggyMcpClient } from '../mcp/mcp-client.interface';
-import { PreferencesService } from '../preferences/preferences.service';
+import { RestaurantResult, SwiggyMcpClient } from '../mcp/mcp-client.interface';
+import { PreferencesService, PreferenceProfile } from '../preferences/preferences.service';
 import { RankingService, RankedSuggestion } from '../ranking/ranking.service';
 
 function currentTimeSlot(date = new Date()): string {
@@ -13,6 +13,22 @@ function currentTimeSlot(date = new Date()): string {
   return 'late_night';
 }
 
+const MEAL_DEFAULT_QUERY: Record<string, string> = {
+  breakfast: 'south indian',
+  lunch: 'thali',
+  evening_snack: 'rolls',
+  dinner: 'biryani',
+  late_night: 'pizza',
+};
+
+function searchQueries(profile: PreferenceProfile, slot: string): string[] {
+  const top = Object.entries(profile.cuisineCounts)
+    .sort((a, b) => b[1] - a[1])
+    .slice(0, 2)
+    .map(([cuisine]) => cuisine.replace('_', ' '));
+  return top.length ? top : [MEAL_DEFAULT_QUERY[slot] ?? 'popular'];
+}
+
 @Injectable()
 export class SuggestionsService {
   constructor(
@@ -21,19 +37,26 @@ export class SuggestionsService {
     private ranking: RankingService,
   ) {}
 
-  async getTopSuggestions(userId: string, lat: number, lng: number): Promise<RankedSuggestion[]> {
+  async getTopSuggestions(userId: string, addressId?: string): Promise<RankedSuggestion[]> {
     const profile = await this.preferences.getProfile(userId);
+    const slot = currentTimeSlot();
 
-    // Cast a wide net first; rank narrows it. Could also filter by profile's
-    // top cuisines here to cut down MCP payload size once real data volumes matter.
-    const candidates = await this.mcpClient.searchRestaurants({ lat, lng });
+    const resolvedAddressId = addressId ?? (await this.mcpClient.getAddresses())[0]?.addressId;
+    if (!resolvedAddressId) return [];
 
-    return this.ranking.rank(candidates, profile, currentTimeSlot(), 5);
+    const byId = new Map<string, RestaurantResult>();
+    for (const q of searchQueries(profile, slot)) {
+      const results = await this.mcpClient.searchRestaurants({ addressId: resolvedAddressId, query: q });
+      for (const r of results) byId.set(r.restaurantId, r);
+    }
+
+    return this.ranking.rank([...byId.values()], profile, slot, 5);
   }
 
-  async acceptSuggestion(userId: string, restaurantId: string, itemIds: string[]) {
+  async acceptSuggestion(userId: string, restaurantId: string, _itemIds: string[]) {
     await this.preferences.recordFeedback(userId, restaurantId, 'accepted');
-    return this.mcpClient.placeOrder({ restaurantId, itemIds });
+    // Ordering is completed in Phase 4 (buildCart → confirm → placeOrder).
+    return { recorded: true };
   }
 
   async skipSuggestion(userId: string, restaurantId: string) {

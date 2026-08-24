@@ -5,18 +5,10 @@ import { SuggestionsService } from './suggestions.service';
 export class SuggestionsController {
   constructor(private readonly suggestionsService: SuggestionsService) {}
 
-  // GET /suggestions?userId=dj&lat=28.6&lng=77.2
+  // GET /suggestions?userId=dj&addressId=addr_home
   @Get()
-  async getSuggestions(
-    @Query('userId') userId: string,
-    @Query('lat') lat: string,
-    @Query('lng') lng: string,
-  ) {
-    const results = await this.suggestionsService.getTopSuggestions(
-      userId,
-      parseFloat(lat),
-      parseFloat(lng),
-    );
+  async getSuggestions(@Query('userId') userId: string, @Query('addressId') addressId?: string) {
+    const results = await this.suggestionsService.getTopSuggestions(userId, addressId);
     return {
       count: results.length,
       suggestions: results.map((s) => ({

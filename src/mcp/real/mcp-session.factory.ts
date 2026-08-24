@@ -77,6 +77,15 @@ export class McpSessionFactory {
   private ensureClient(): Client {
     if (!this.client) {
       this.client = new Client({ name: 'smart-order-agent', version: '0.1.0' });
+      // If the transport drops mid-session (network blip / server-side session expiry),
+      // the SDK resets client._transport to undefined on its own, but nothing told the
+      // factory — without this, `connected` would stay stuck `true` and getClient() would
+      // hand back a client with no live transport. This makes the next getClient() call
+      // transparently reconnect instead. Harmless during intentional teardown
+      // (discardSession()/reset() already null everything out regardless).
+      this.client.onclose = () => {
+        this.connected = false;
+      };
     }
     return this.client;
   }

@@ -1,23 +1,39 @@
+export interface SwiggyAddress {
+  addressId: string;
+  label: string;        // "Home" | "Work" | ...
+  displayText?: string; // human-readable address line (no coordinates ever)
+}
+
 export interface RestaurantResult {
   restaurantId: string;
   name: string;
-  cuisine: string;
-  avgPrice: number;
-  isOpen: boolean;
-  etaMinutes: number;
-  rating: number;
+  cuisine: string;      // primary cuisine (first of cuisines[]), lowercased+snaked for ranking
+  avgPrice: number;     // costForTwo (rupees)
+  isOpen: boolean;      // derived from availabilityStatus === "OPEN"
+  etaMinutes: number;   // delivery ETA (minutes)
+  rating: number;       // 0..5
+  distanceKm?: number;
 }
 
 export interface SearchRestaurantsParams {
-  lat: number;
-  lng: number;
-  cuisine?: string;
-  maxPrice?: number;
+  addressId: string;
+  query: string;        // required by the real tool; SuggestionsService supplies a cuisine/meal term
+  offset?: number;
 }
 
-export interface PlaceOrderParams {
+// --- ordering (cart journey) ---
+export interface CartItemRef { itemId: string; quantity: number; }
+
+export interface BuildCartParams {
   restaurantId: string;
-  itemIds: string[];
+  items: CartItemRef[];
+}
+
+export interface CartSummary {
+  restaurantId: string;
+  restaurantName: string;
+  items: { name: string; quantity: number; price: number }[];
+  total: number;        // rupees
 }
 
 export interface PlaceOrderResult {
@@ -26,12 +42,9 @@ export interface PlaceOrderResult {
   etaMinutes: number;
 }
 
-/**
- * Anything that talks to Swiggy's Food MCP server must implement this.
- * Swap MockSwiggyMcpClient for a real client once localhost/prod MCP
- * access is granted — nothing else in the app needs to change.
- */
 export interface SwiggyMcpClient {
+  getAddresses(): Promise<SwiggyAddress[]>;
   searchRestaurants(params: SearchRestaurantsParams): Promise<RestaurantResult[]>;
-  placeOrder(params: PlaceOrderParams): Promise<PlaceOrderResult>;
+  buildCart(params: BuildCartParams): Promise<CartSummary>;   // update_food_cart + get_food_cart
+  placeOrder(): Promise<PlaceOrderResult>;                    // place_food_order (COD); guarded by caller
 }

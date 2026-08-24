@@ -1,0 +1,27 @@
+{
+  "name": "smart-order-agent",
+  "version": "0.1.0",
+  "description": "Agent that ranks Swiggy Food options against your order history so you get a top-5 shortlist instead of scrolling for an hour.",
+  "scripts": {
+    "build": "tsc -p tsconfig.json",
+    "start": "node dist/main.js",
+    "start:dev": "ts-node-dev --respawn --transpile-only src/main.ts",
+    "seed": "ts-node src/seed.ts"
+  },
+  "dependencies": {
+    "@nestjs/common": "^10.4.0",
+    "@nestjs/core": "^10.4.0",
+    "@nestjs/mongoose": "^10.0.10",
+    "@nestjs/config": "^3.2.3",
+    "@nestjs/platform-express": "^10.4.0",
+    "mongoose": "^8.5.0",
+    "reflect-metadata": "^0.2.2",
+    "rxjs": "^7.8.1"
+  },
+  "devDependencies": {
+    "@types/node": "^20.14.0",
+    "ts-node": "^10.9.2",
+    "ts-node-dev": "^2.0.0",
+    "typescript": "^5.5.0"
+  }
+}

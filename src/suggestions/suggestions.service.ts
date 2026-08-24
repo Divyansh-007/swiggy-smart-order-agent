@@ -44,13 +44,22 @@ export class SuggestionsService {
     const resolvedAddressId = addressId ?? (await this.mcpClient.getAddresses())[0]?.addressId;
     if (!resolvedAddressId) return [];
 
+    const topN = 5;
     const byId = new Map<string, RestaurantResult>();
     for (const q of searchQueries(profile, slot)) {
       const results = await this.mcpClient.searchRestaurants({ addressId: resolvedAddressId, query: q });
       for (const r of results) byId.set(r.restaurantId, r);
     }
 
-    return this.ranking.rank([...byId.values()], profile, slot, 5);
+    // Cast a wide net; rank narrows it. The personalized top-cuisine searches above
+    // can come up short (small mock fixtures, narrow real-world matches), so top up
+    // the candidate pool with a broad 'popular' search when we don't have enough yet.
+    if (byId.size < topN) {
+      const popular = await this.mcpClient.searchRestaurants({ addressId: resolvedAddressId, query: 'popular' });
+      for (const r of popular) byId.set(r.restaurantId, r);
+    }
+
+    return this.ranking.rank([...byId.values()], profile, slot, topN);
   }
 
   async acceptSuggestion(userId: string, restaurantId: string, _itemIds: string[]) {

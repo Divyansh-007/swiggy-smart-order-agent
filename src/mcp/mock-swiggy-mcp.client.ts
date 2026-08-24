@@ -29,8 +29,13 @@ export class MockSwiggyMcpClient implements SwiggyMcpClient {
     await this.latency();
     const q = params.query?.toLowerCase().trim();
     if (!q || q === 'popular' || q === 'best food') return MOCK_RESTAURANTS;
+    // Real Swiggy's fuzzy search doesn't care about snake_case vs natural language
+    // ("south indian" should still match a "south_indian" cuisine slug) — normalize
+    // both sides the same way before comparing.
+    const norm = (s: string) => s.toLowerCase().replace(/_/g, ' ').trim();
+    const nq = norm(q);
     return MOCK_RESTAURANTS.filter(
-      (r) => r.cuisine.includes(q) || r.name.toLowerCase().includes(q),
+      (r) => norm(r.cuisine).includes(nq) || norm(r.name).includes(nq),
     );
   }
 

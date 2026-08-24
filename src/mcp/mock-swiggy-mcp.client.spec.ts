@@ -13,4 +13,9 @@ describe('MockSwiggyMcpClient', () => {
     expect(r.every((x) => typeof x.isOpen === 'boolean')).toBe(true);
     expect(r.some((x) => x.cuisine === 'biryani')).toBe(true);
   });
+
+  it('normalizes underscores/spaces so a natural-language query matches a snake_case cuisine slug', async () => {
+    const r = await c.searchRestaurants({ addressId: 'addr_home', query: 'south indian' });
+    expect(r.some((x) => x.cuisine === 'south_indian')).toBe(true);
+  });
 });

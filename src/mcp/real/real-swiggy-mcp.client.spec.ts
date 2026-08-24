@@ -1,3 +1,4 @@
+import { UnauthorizedException } from '@nestjs/common';
 import { UnauthorizedError } from '@modelcontextprotocol/sdk/client/auth.js';
 import { RealSwiggyMcpClient } from './real-swiggy-mcp.client';
 
@@ -18,15 +19,39 @@ function makeStore() {
 }
 
 describe('RealSwiggyMcpClient', () => {
-  it('clears the OAuth session and resets on a real UnauthorizedError', async () => {
+  it('clears the OAuth session and resets on a real UnauthorizedError, throwing a 401', async () => {
     const callTool = jest.fn().mockRejectedValue(new UnauthorizedError('x'));
     const sessions = makeSessions(callTool);
     const store = makeStore();
     const client = new RealSwiggyMcpClient(sessions, store);
 
-    await expect(client.getAddresses()).rejects.toThrow(/re-authenticate/i);
+    let caught: any;
+    try {
+      await client.getAddresses();
+    } catch (e) {
+      caught = e;
+    }
+    expect(caught).toBeInstanceOf(UnauthorizedException);
+    expect(caught.message).toMatch(/re-authenticate/i);
     expect(store.clear).toHaveBeenCalledTimes(1);
     expect(sessions.reset).toHaveBeenCalledTimes(1);
+  });
+
+  it('rethrows a not-yet-authenticated UnauthorizedException from getClient() without clearing anything', async () => {
+    const callTool = jest.fn();
+    const sessions = {
+      getClient: jest.fn().mockRejectedValue(new UnauthorizedException('Not authenticated — visit /oauth/login')),
+      reset: jest.fn(),
+      beginAuth: jest.fn(),
+      completeAuth: jest.fn(),
+    } as any;
+    const store = makeStore();
+    const client = new RealSwiggyMcpClient(sessions, store);
+
+    await expect(client.getAddresses()).rejects.toBeInstanceOf(UnauthorizedException);
+    expect(callTool).not.toHaveBeenCalled();
+    expect(store.clear).not.toHaveBeenCalled();
+    expect(sessions.reset).not.toHaveBeenCalled();
   });
 
   it('does NOT clear the session on a -32001 timeout', async () => {

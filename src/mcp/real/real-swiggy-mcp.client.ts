@@ -1,4 +1,4 @@
-import { Injectable } from '@nestjs/common';
+import { Injectable, UnauthorizedException } from '@nestjs/common';
 import { UnauthorizedError } from '@modelcontextprotocol/sdk/client/auth.js';
 import {
   BuildCartParams, CartSummary, PlaceOrderResult, RestaurantResult,
@@ -37,13 +37,18 @@ export class RealSwiggyMcpClient implements SwiggyMcpClient {
     try {
       return this.unwrap(await run());
     } catch (e: any) {
+      // Not yet authenticated (McpSessionFactory.getClient() gate) — already a clean 401,
+      // nothing to clear since no session was ever established. Rethrow as-is.
+      if (e instanceof UnauthorizedException) {
+        throw e;
+      }
       // NOTE: SDK -32001 = RequestTimeout, not auth — do not clear the session on it.
       // Task 3.7 to verify Swiggy's live auth-error surface.
       const unauthorized = e instanceof UnauthorizedError || e?.status === 401;
       if (unauthorized) {
         this.store.clear();
         this.sessions.reset();
-        throw new Error('Swiggy session expired — re-authenticate at /oauth/login');
+        throw new UnauthorizedException('Swiggy session expired — re-authenticate at /oauth/login');
       }
       throw e;
     }

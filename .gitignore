@@ -28,3 +28,6 @@ yarn-error.log*
 
 # Scratch
 scratchpad/
+
+# Subagent-driven-development workspace (internal ledger/briefs/reports)
+.superpowers/

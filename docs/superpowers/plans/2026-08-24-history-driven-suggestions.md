@@ -344,26 +344,36 @@ git commit -m "feat(ranking): reorder ranking over account restaurant history"
 
 ---
 
-## Task 7: Wire the combined `{ reorder, discover }` endpoint
+## Task 7: Wire the combined `{ reorder, discover }` endpoint (HYBRID dish-name Discovery)
+
+> **Design update (post live-capture):** `get_food_order_details` returns EMPTY structuredContent live — there is NO per-order cuisine available. Discovery therefore does NOT use cuisine. Instead it is a **hybrid**: (1) the user's past **dish names** (from `reorderItems[].name`, already in the profile) as `search_restaurants` queries, plus (2) a **meal-time "popular" search** — merged, with the user's KNOWN restaurants excluded (those are the reorder list), then ranked. Also REMOVE the now-dead `getRestaurantCuisines` enrichment from `AccountProfileService` (it costs ≤10 wasted calls and returns nothing live); `cuisineCounts` from account history is left empty.
 
 **Files:**
-- Modify: `src/suggestions/suggestions.service.ts`, `src/suggestions/suggestions.controller.ts`, `src/suggestions/suggestions.service.spec.ts`, `src/suggestions/suggestions.module.ts`, `src/ranking/ranking.module.ts`
+- Modify: `src/suggestions/suggestions.service.ts`, `src/suggestions/suggestions.controller.ts`, `src/suggestions/suggestions.service.spec.ts`, `src/suggestions/suggestions.module.ts`, `src/ranking/ranking.module.ts`, `src/suggestions/account-profile.service.ts` (+ its spec — drop the enrichment).
 
 **Interfaces:**
 - Consumes: `AccountProfileService`, `ReorderRankingService`, existing `RankingService`, `SwiggyMcpClient`.
 - Produces: `getTopSuggestions(userId, addressId?)` → `{ reorder: ReorderSuggestion[]; discover: RankedSuggestion[] }`.
 
-- `getTopSuggestions`: resolve `addressId` (given, else first from `getAddresses()`; if none → `{ reorder: [], discover: [] }`). Build `AccountProfile` via `AccountProfileService`. **Reorder** = `ReorderRankingService.rank(profile, slot, 5)`. **Discover** = existing flow: derive top-cuisine queries from `profile.cuisineCounts`, `searchRestaurants` per query (+ 'popular' widen when the pool < 5), `RankingService.rank(candidates, profile, slot, 5)`. Return both.
+**Dish-keyword extraction** (helper in the suggestions service): collect `name` from every `profile.restaurants[].reorderItems`; clean each — lowercase, strip trailing size/qty noise (parentheticals like `(350-450 GM)`, trailing unit tokens like `50 GM`, `x2`), collapse whitespace; count frequency; take the **top 3 distinct** non-empty keywords.
+
+`getTopSuggestions`:
+- resolve `addressId` (given, else first from `getAddresses()`; if none → `{ reorder: [], discover: [] }`).
+- Build `AccountProfile` via `AccountProfileService`.
+- **Reorder** = `ReorderRankingService.rank(profile, slot, 5)`.
+- **Discover**: queries = top-3 dish keywords ∪ `{ MEAL_DEFAULT_QUERY[slot] }` (reuse the existing meal-time default map). `searchRestaurants({ addressId, query })` per query; merge/de-dupe by `restaurantId`; **EXCLUDE** any restaurant whose `restaurantId` is in `profile.recentRestaurantIds` (Discovery = NEW places, not your usuals). If the merged pool is still < 5, widen with a `'popular'` search (also excluding known). `RankingService.rank(candidates, profile, slot, 5)`. (cuisineCounts is empty from account history — ranking leans on price-fit from `avgOrderValue` + rating + the explore slot, which is fine.)
+- Return both lists.
 - Register `AccountProfileService` in `SuggestionsModule` and `ReorderRankingService` in `RankingModule` (export it), import into `SuggestionsModule`.
 - Controller GET maps to `{ reorder: [...], discover: [...] }` — reorder items exposed as `{ menuItemId, name, quantity }`, discover as today's shape.
 
-- [ ] **Step 1: Update the service spec** — fake mcp returns history + cuisines + restaurants; assert the response has non-empty `reorder` and `discover`, reorder[0] carries items. **Step 2: fail. Step 3: implement service + controller + module wiring. Step 4:** `npx jest && npx tsc --noEmit` clean.
-- [ ] **Step 5: Boot check (mock mode):** `curl -s "http://localhost:3000/suggestions?userId=dj"` → JSON with `reorder` (≤5, items present) and `discover` (≤5). Paste it.
-- [ ] **Step 6: Commit**
+- [ ] **Step 1: Trim `AccountProfileService`** — remove the `getRestaurantCuisines` enrichment loop (dead live); leave `cuisineCounts` as `{}` (or drop its population), keep `restaurants`/`avgOrderValue`/`timeSlotCounts`/`recentRestaurantIds`/`rejectedRestaurantIds`. Update its spec to not assert cuisine enrichment.
+- [ ] **Step 2: Update the service spec** — fake mcp returns history (with reorderItems names) + restaurants; a fake `searchRestaurants` that branches on `query` (returns dish-relevant restaurants for a dish keyword, a fuller set for `'popular'`); assert the response has non-empty `reorder` (items present) and `discover` (≤5), and that a restaurant already in history is NOT in `discover`. **Step 3: fail. Step 4: implement dish-keyword helper + service + controller + module wiring. Step 5:** `npx jest && npx tsc --noEmit` clean.
+- [ ] **Step 6: Boot check (mock mode):** `curl -s "http://localhost:3000/suggestions?userId=dj"` → JSON with `reorder` (≤5, items present) and `discover` (≤5, none overlapping the reorder restaurants). Paste it.
+- [ ] **Step 7: Commit**
 
 ```bash
 git add src/suggestions src/ranking/ranking.module.ts
-git commit -m "feat(suggestions): return reorder + discovery lists from account history"
+git commit -m "feat(suggestions): reorder + hybrid dish-name/popular discovery from account history"
 ```
 
 ---

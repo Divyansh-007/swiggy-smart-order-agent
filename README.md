@@ -77,8 +77,14 @@ token in Swiggy v1.0); re-run `/oauth/login` when a call returns 401.
   with reasons. `reorder` entries carry `items: [{ menuItemId, name, quantity }]`
   (the exact items to re-add). `addressId` is optional (defaults to your first
   saved Swiggy address).
+- `POST /suggestions/surprise-cart` — `{ userId, addressId? }`. **"Surprise me":**
+  randomly picks one suggestion (reorder *or* discover), adds **one item (qty 1)**
+  to your **real Swiggy cart**, and returns `{ picked, cart }` (the cart carries a
+  live `toPay`). It **stops at the cart** — no order is placed. You tap pay in the
+  Swiggy app. (For a discover pick, it fetches the restaurant's menu and chooses an
+  in-stock item without required variants/add-ons.)
 - `POST /suggestions/accept` — `{ userId, restaurantId, itemIds }`. Records
-  positive feedback. **Does not place an order yet** — see the roadmap.
+  positive feedback.
 - `POST /suggestions/skip` — `{ userId, restaurantId }`. Records negative feedback.
 - `GET /oauth/login|callback|status` — the OAuth browser bridge.
 
@@ -123,14 +129,19 @@ skip/accept feedback is still keyed by a separate `userId`. Binding them fully
   but not personalized. A short onboarding Q&A would fix it.
 - Response adapters (`src/mcp/real/*.adapter.ts`) are reconciled against captured
   live payloads; broaden coverage as more Swiggy fields are used.
+- **`surprise-cart` adds a single un-customized item** — it *prefers* an in-stock
+  item with no required variants/add-ons and adds a bare `{menu_item_id, quantity}`.
+  If a picked restaurant has only customizable items it falls back to one, which the
+  cart API may reject (surfaced as an error, never a wrong cart). Handling required
+  customizations is a follow-up.
 
-## Roadmap — conclude at cart (next)
+## Conclude at cart (shipped)
 
-The next build takes a chosen `reorder` pick and **fills your Swiggy cart with its
-items, then stops** — you tap pay in the Swiggy app. Building the cart
-(`update_food_cart` → `get_food_cart`) spends nothing, so there's no real-money
-step here. Actually **placing** an order (`place_food_order` + payment) stays
-deliberately out of scope.
+`POST /suggestions/surprise-cart` **fills your Swiggy cart and stops** — it never
+places an order. Building the cart (`update_food_cart` → `get_food_cart`) spends
+nothing; **placing** an order (`place_food_order` + payment) is deliberately out of
+scope, so there's no real-money step. Verified end-to-end against live Swiggy
+(a discover pick → menu → cart with a real `toPay`).
 
 ## Architecture note
 

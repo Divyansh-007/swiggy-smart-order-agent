@@ -22,18 +22,31 @@ export interface SearchRestaurantsParams {
 }
 
 // --- ordering (cart journey) ---
-export interface CartItemRef { itemId: string; quantity: number; }
+export interface CartItemInput { menuItemId: string; quantity: number; }
 
 export interface BuildCartParams {
   restaurantId: string;
-  items: CartItemRef[];
+  addressId: string;                 // REQUIRED by update_food_cart/get_food_cart
+  items: CartItemInput[];
+  restaurantName?: string;
+}
+
+export interface MenuItem {
+  menuItemId: string;
+  name: string;
+  price: number;
+  inStock: boolean;
+  isVeg?: boolean;
+  hasVariants: boolean;
+  hasAddons: boolean;
 }
 
 export interface CartSummary {
   restaurantId: string;
   restaurantName: string;
   items: { name: string; quantity: number; price: number }[];
-  total: number;        // rupees
+  itemTotal: number;
+  toPay: number;         // pricing.to_pay — the live payable total
 }
 
 export interface PlaceOrderResult {
@@ -63,6 +76,7 @@ export interface SwiggyMcpClient {
   getAddresses(): Promise<SwiggyAddress[]>;
   searchRestaurants(params: SearchRestaurantsParams): Promise<RestaurantResult[]>;
   buildCart(params: BuildCartParams): Promise<CartSummary>;   // update_food_cart + get_food_cart
+  getRestaurantMenu(restaurantId: string, addressId: string): Promise<MenuItem[]>; // get_restaurant_menu
   placeOrder(): Promise<PlaceOrderResult>;                    // place_food_order (COD); guarded by caller
   getOrderHistory(addressId: string): Promise<AccountOrder[]>;        // get_food_orders (newest-first)
   getRestaurantCuisines(orderId: string): Promise<string[]>;          // get_food_order_details -> restaurant_cuisine[]

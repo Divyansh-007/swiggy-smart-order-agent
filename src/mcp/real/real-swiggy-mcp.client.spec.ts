@@ -121,4 +121,133 @@ describe('RealSwiggyMcpClient', () => {
     expect(callTool).toHaveBeenCalledWith({ name: 'get_food_order_details', arguments: { orderId: 'o1' } });
     expect(cuisines).toEqual(['biryani', 'north_indian']);
   });
+
+  it('buildCart calls update_food_cart then get_food_cart with the correct real args, and maps the cart response', async () => {
+    const calls: { name: string; arguments: any }[] = [];
+    const callTool = jest.fn().mockImplementation(async ({ name, arguments: args }) => {
+      calls.push({ name, arguments: args });
+      if (name === 'update_food_cart') {
+        return { structuredContent: { success: true, data: {} } };
+      }
+      return {
+        structuredContent: {
+          success: true,
+          data: {
+            restaurant: { id: 'r1', name: 'Bawarchi' },
+            items: [{ menu_item_id: 'm1', name: 'Chicken Biryani', quantity: 2, final_price: 400 }],
+            pricing: { item_total: 400, to_pay: 445 },
+          },
+        },
+      };
+    });
+    const client = new RealSwiggyMcpClient(makeSessions(callTool), makeStore());
+
+    const cart = await client.buildCart({
+      restaurantId: 'r1',
+      addressId: 'addr_home',
+      items: [{ menuItemId: 'm1', quantity: 2 }],
+    });
+
+    expect(calls[0]).toEqual({
+      name: 'update_food_cart',
+      arguments: {
+        restaurantId: 'r1',
+        addressId: 'addr_home',
+        cartItems: [{ menu_item_id: 'm1', quantity: 2 }],
+      },
+    });
+    expect(calls[1]).toEqual({
+      name: 'get_food_cart',
+      arguments: { addressId: 'addr_home' },
+    });
+    expect(cart).toEqual({
+      restaurantId: 'r1',
+      restaurantName: 'Bawarchi',
+      items: [{ name: 'Chicken Biryani', quantity: 2, price: 400 }],
+      itemTotal: 400,
+      toPay: 445,
+    });
+  });
+
+  it('getRestaurantMenu calls get_restaurant_menu with restaurantId/addressId and maps the menu envelope', async () => {
+    const callTool = jest.fn().mockResolvedValue({
+      structuredContent: {
+        success: true,
+        data: {
+          categories: [
+            {
+              items: [
+                { id: 'm1', name: 'Chole', price: 196, inStock: 1, isVeg: true, hasVariants: false, hasAddons: false },
+                { id: 'm2', name: 'Combo', price: 400, inStock: 0, hasVariants: true },
+              ],
+            },
+          ],
+        },
+      },
+    });
+    const client = new RealSwiggyMcpClient(makeSessions(callTool), makeStore());
+
+    const menu = await client.getRestaurantMenu('r1', 'addr_home');
+
+    expect(callTool).toHaveBeenCalledWith({
+      name: 'get_restaurant_menu',
+      arguments: { restaurantId: 'r1', addressId: 'addr_home' },
+    });
+    expect(menu).toEqual([
+      { menuItemId: 'm1', name: 'Chole', price: 196, inStock: true, isVeg: true, hasVariants: false, hasAddons: false },
+      { menuItemId: 'm2', name: 'Combo', price: 400, inStock: false, isVeg: undefined, hasVariants: true, hasAddons: false },
+    ]);
+  });
+
+  it('buildCart passes restaurantName through to both calls when provided', async () => {
+    const calls: { name: string; arguments: any }[] = [];
+    const callTool = jest.fn().mockImplementation(async ({ name, arguments: args }) => {
+      calls.push({ name, arguments: args });
+      return { structuredContent: { success: true, data: {} } };
+    });
+    const client = new RealSwiggyMcpClient(makeSessions(callTool), makeStore());
+
+    await client.buildCart({
+      restaurantId: 'r1',
+      addressId: 'addr_home',
+      items: [{ menuItemId: 'm1', quantity: 1 }],
+      restaurantName: 'Bawarchi',
+    });
+
+    expect(calls[0].arguments.restaurantName).toBe('Bawarchi');
+    expect(calls[1].arguments.restaurantName).toBe('Bawarchi');
+  });
+
+  it('threads restaurantId/name from params when the live cart omits restaurant.id/name', async () => {
+    // Mirrors the LIVE get_food_cart shape: restaurant object carries only deliverySubtitle.
+    const callTool = jest.fn().mockImplementation(async ({ name }) => {
+      if (name === 'update_food_cart') return { structuredContent: { success: true, data: {} } };
+      return {
+        structuredContent: {
+          success: true,
+          data: {
+            restaurant: { deliverySubtitle: '35-40 mins to <address>' },
+            items: [{ menu_item_id: 'm1', name: 'Soya Chaap Biryani', quantity: 1, final_price: 244 }],
+            pricing: { item_total: 244, to_pay: 361 },
+          },
+        },
+      };
+    });
+    const client = new RealSwiggyMcpClient(makeSessions(callTool), makeStore());
+
+    const cart = await client.buildCart({
+      restaurantId: '451688',
+      addressId: '2522624',
+      items: [{ menuItemId: 'm1', quantity: 1 }],
+      restaurantName: 'Biryani Blues (Ad)',
+    });
+
+    expect(cart).toEqual({
+      restaurantId: '451688', // threaded from params — cart omitted restaurant.id
+      restaurantName: 'Biryani Blues (Ad)', // threaded from params — cart omitted restaurant.name
+      items: [{ name: 'Soya Chaap Biryani', quantity: 1, price: 244 }],
+      itemTotal: 244,
+      toPay: 361,
+    });
+  });
 });

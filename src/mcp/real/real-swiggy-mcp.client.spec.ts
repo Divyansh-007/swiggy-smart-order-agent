@@ -112,16 +112,6 @@ describe('RealSwiggyMcpClient', () => {
     expect(orders[0]).toMatchObject({ orderId: 'o1', orderTotal: 340, reorderItems: [{ menuItemId: 'm1', name: 'Biryani', quantity: 1 }] });
   });
 
-  it('getRestaurantCuisines maps get_food_order_details to snake-cased cuisines', async () => {
-    const callTool = jest.fn().mockResolvedValue({
-      structuredContent: { order: { restaurant_cuisine: ['Biryani', 'North Indian'] } },
-    });
-    const client = new RealSwiggyMcpClient(makeSessions(callTool), makeStore());
-    const cuisines = await client.getRestaurantCuisines('o1');
-    expect(callTool).toHaveBeenCalledWith({ name: 'get_food_order_details', arguments: { orderId: 'o1' } });
-    expect(cuisines).toEqual(['biryani', 'north_indian']);
-  });
-
   it('buildCart calls update_food_cart then get_food_cart with the correct real args, and maps the cart response', async () => {
     const calls: { name: string; arguments: any }[] = [];
     const callTool = jest.fn().mockImplementation(async ({ name, arguments: args }) => {

@@ -1,13 +1,13 @@
 import { Injectable, UnauthorizedException } from '@nestjs/common';
 import { UnauthorizedError } from '@modelcontextprotocol/sdk/client/auth.js';
 import {
-  AccountOrder, BuildCartParams, CartSummary, MenuItem, PlaceOrderResult, RestaurantResult,
+  AccountOrder, BuildCartParams, CartSummary, MenuItem, RestaurantResult,
   SearchRestaurantsParams, SwiggyAddress, SwiggyMcpClient,
 } from '../mcp-client.interface';
 import { McpSessionFactory } from './mcp-session.factory';
 import { OAuthStateStore } from '../oauth/oauth-state.store';
 import { toAddresses, toRestaurants } from './swiggy-response.adapter';
-import { toAccountOrders, cuisinesFromOrderDetails } from './order-history.adapter';
+import { toAccountOrders } from './order-history.adapter';
 import { toCartSummary, toMenuItems } from './cart.adapter';
 
 @Injectable()
@@ -95,20 +95,7 @@ export class RealSwiggyMcpClient implements SwiggyMcpClient {
     return toMenuItems(await this.call('get_restaurant_menu', { restaurantId, addressId }));
   }
 
-  async placeOrder(): Promise<PlaceOrderResult> {
-    const order = await this.call('place_food_order', { paymentMethod: 'COD' });
-    return {
-      orderId: order?.orderId,
-      status: order?.status ?? 'placed',
-      etaMinutes: Number(order?.etaMinutes ?? 0),
-    };
-  }
-
   async getOrderHistory(addressId: string): Promise<AccountOrder[]> {
     return toAccountOrders(await this.call('get_food_orders', { addressId }));
-  }
-
-  async getRestaurantCuisines(orderId: string): Promise<string[]> {
-    return cuisinesFromOrderDetails(await this.call('get_food_order_details', { orderId }));
   }
 }

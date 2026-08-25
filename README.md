@@ -1,7 +1,8 @@
 # Smart Order Agent
 
-Ranks Swiggy Food options against your own order history so you get a
-top-5 shortlist instead of scrolling for an hour deciding what to eat.
+Looks at your **real Swiggy order history** and hands you two short lists — the
+usuals worth re-ordering and new places worth trying — instead of scrolling for
+an hour deciding what to eat.
 
 Built for the [Swiggy Builders program](https://mcp.swiggy.com/builders). It talks
 to the **real Swiggy Food MCP server** over OAuth 2.1 + PKCE — or a drop-in mock
@@ -10,21 +11,26 @@ so it runs fully offline. The two are interchangeable behind one interface
 
 ## How it works
 
-1. `PreferencesService` builds a lightweight profile from your order history in
-   MongoDB — cuisine frequency, average order value, time-of-day patterns, and
-   recently-skipped restaurants.
-2. `SuggestionsService` resolves your Swiggy delivery address, searches the Food
-   MCP server for your top cuisines (widening to a broad "popular" search when
-   the pool is thin), and merges the candidates.
-3. `RankingService` scores each candidate against your profile:
-   frequency + time-of-day match + price fit − repeat-fatigue penalty −
-   recent-rejection penalty, plus a small rating tie-breaker. One of the 5 slots
-   is reserved for an "explore" pick — new to you, but in a cuisine you already
-   like. Every suggestion carries a one-line "why".
+`GET /suggestions` returns two ranked top-5 lists — **`reorder`** and **`discover`**:
+
+1. `AccountProfileService` builds a profile from your **real Swiggy order history**
+   (`get_food_orders`) — per-restaurant order frequency, recency, average order
+   value, time-of-day patterns, and the exact items to re-add — merged with local
+   skip feedback. (In mock mode, synthetic history stands in.)
+2. **`reorder`** — `ReorderRankingService` ranks the restaurants you actually order
+   from (frequency + recency + price-fit − rejection penalty). Each pick carries the
+   precise items to re-add to your cart.
+3. **`discover`** — a hybrid search for *new* places: your frequent past **dish names**
+   (pulled from those order items) plus a meal-time "popular" search, merged, with
+   your known restaurants excluded, then scored by `RankingService` (price-fit +
+   rating + an explore slot). Every suggestion carries a one-line "why".
 4. You accept or skip via the API (feedback feeds back into future ranking).
 
-The deterministic ranking engine is the point — this is recommender-system
-reasoning over your context, not an LLM tool-dispatch loop.
+The deterministic ranking is the point — recommender-system reasoning over your
+real order history, not an LLM tool-dispatch loop.
+
+> Note: Swiggy's `get_food_order_details` doesn't expose per-order **cuisine** live,
+> so `discover` personalizes by your past **dishes** rather than cuisine tags.
 
 ## Run it locally
 
@@ -39,14 +45,15 @@ npm run start:dev   # http://localhost:3000
 
 ### Mock mode (default — no Swiggy account needed)
 
-`USE_MOCK_MCP=true` (the default) serves canned restaurants, so the whole
-pipeline runs offline:
+`USE_MOCK_MCP=true` (the default) serves synthetic history + restaurants, so the
+whole pipeline runs offline:
 
 ```bash
 curl "http://localhost:3000/suggestions?userId=dj"
 ```
 
-Returns a top-5 shortlist ranked against the seeded history, each with a reason.
+Returns `{ reorder: [...], discover: [...] }` ranked against the synthetic
+history, each entry with a reason.
 
 ### Real Swiggy mode
 
@@ -56,7 +63,7 @@ Set `USE_MOCK_MCP=false`, start the app, then complete the one-time browser logi
 ```
 open http://localhost:3000/oauth/login       # phone + OTP in the browser
 curl  http://localhost:3000/oauth/status      # {"authenticated":true}
-curl "http://localhost:3000/suggestions?userId=dj"   # ranked over REAL nearby restaurants
+curl "http://localhost:3000/suggestions?userId=dj"   # reorder + discover from YOUR real orders
 ```
 
 Auth uses the MCP SDK's native `OAuthClientProvider`, so **Dynamic Client
@@ -66,8 +73,10 @@ token in Swiggy v1.0); re-run `/oauth/login` when a call returns 401.
 
 ## Endpoints
 
-- `GET /suggestions?userId=&addressId=` — top-5 ranked suggestions with reasons.
-  `addressId` is optional (defaults to your first saved Swiggy address).
+- `GET /suggestions?userId=&addressId=` — `{ reorder, discover }`, two top-5 lists
+  with reasons. `reorder` entries carry `items: [{ menuItemId, name, quantity }]`
+  (the exact items to re-add). `addressId` is optional (defaults to your first
+  saved Swiggy address).
 - `POST /suggestions/accept` — `{ userId, restaurantId, itemIds }`. Records
   positive feedback. **Does not place an order yet** — see the roadmap.
 - `POST /suggestions/skip` — `{ userId, restaurantId }`. Records negative feedback.
@@ -75,19 +84,18 @@ token in Swiggy v1.0); re-run `/oauth/login` when a call returns 401.
 
 ## Two notions of "user" (important)
 
-There are two independent identities in this app, currently **decoupled**:
+There are two identities in this app, still **partly decoupled**:
 
-- **`userId`** (e.g. `dj`, from `DEFAULT_USER_ID`) — the key for the local
-  preference store (order history + feedback in MongoDB) that ranking scores
-  against. It is just a string partition key passed as `?userId=`; there is no
-  local auth.
 - **The Swiggy OAuth session** — the real authenticated Swiggy account (you, via
-  phone + OTP) that supplies live restaurant data through MCP.
+  phone + OTP). In real mode this now supplies both the live restaurants **and your
+  actual order history** (`get_food_orders`) that the ranking is built from.
+- **`userId`** (e.g. `dj`, from `DEFAULT_USER_ID`) — a string partition key for the
+  local **feedback** store (accept/skip) in MongoDB, passed as `?userId=`. There is
+  no local auth.
 
-So `userId=dj` chooses *whose seeded taste* to rank, while the OAuth session
-supplies *the live restaurants*. Fine for a single-user local demo; a production
-version would bind them (map the authenticated Swiggy user to their own
-preference record instead of a fixed `dj`).
+So the order history is now the authenticated account's real orders, but the local
+skip/accept feedback is still keyed by a separate `userId`. Binding them fully
+(feedback keyed to the Swiggy user) is the remaining production step.
 
 ## Configuration (`.env`)
 
@@ -103,26 +111,26 @@ preference record instead of a fixed `dj`).
 
 ## Known simplifications (good next steps)
 
-- **`userId` vs Swiggy identity are not linked yet** (see above) — production would
-  key preferences off the authenticated Swiggy user.
-- Frequency score is overall cuisine frequency, not conditioned on time slot
-  (doesn't yet learn "south Indian *for breakfast*" as distinct from "south Indian
-  in general"). Worth splitting `cuisineCounts` by time slot.
+- **Local feedback isn't keyed to the Swiggy user yet** (see above) — production would
+  key accept/skip off the authenticated Swiggy account.
+- **`discover` personalizes by dish, not cuisine** — Swiggy's `get_food_order_details`
+  returns no per-order cuisine live, so cuisine-based discovery isn't possible;
+  dish-name search is the workaround. Mapping restaurants → cuisines via
+  `search_restaurants` is a possible enrichment.
 - Ranking weights are hand-picked, not learned. A real version could fit them from
   accept/skip feedback over time.
-- Cold-start (brand-new user, no history) falls back to rating + price-fit only —
-  works, but not personalized. A short onboarding Q&A would fix it.
-- Response adapters (`src/mcp/real/swiggy-response.adapter.ts`) are reconciled
-  against captured live payloads; broaden coverage as more Swiggy fields are used.
+- Cold-start (no order history) falls back to a meal-time "popular" search — works,
+  but not personalized. A short onboarding Q&A would fix it.
+- Response adapters (`src/mcp/real/*.adapter.ts`) are reconciled against captured
+  live payloads; broaden coverage as more Swiggy fields are used.
 
-## Roadmap — ordering (not built yet)
+## Roadmap — conclude at cart (next)
 
-Placing a real order is deliberately deferred (it spends real money and is
-non-idempotent). The interface already exposes `buildCart`/`placeOrder`, and the
-plan (`docs/superpowers/plans/`) specs the full cart journey
-(`update_food_cart` → `get_food_cart` → `place_food_order`) **double-gated** by
-`ALLOW_REAL_ORDERS=true` **and** an explicit `confirm:true`, with a ₹1000 cap and a
-non-idempotency guard.
+The next build takes a chosen `reorder` pick and **fills your Swiggy cart with its
+items, then stops** — you tap pay in the Swiggy app. Building the cart
+(`update_food_cart` → `get_food_cart`) spends nothing, so there's no real-money
+step here. Actually **placing** an order (`place_food_order` + payment) stays
+deliberately out of scope.
 
 ## Architecture note
 

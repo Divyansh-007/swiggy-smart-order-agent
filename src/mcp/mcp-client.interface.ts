@@ -42,9 +42,28 @@ export interface PlaceOrderResult {
   etaMinutes: number;
 }
 
+// --- account order history (reorder suggestions) ---
+export interface ReorderItem {
+  menuItemId: string;
+  name: string;
+  quantity: number;
+}
+
+export interface AccountOrder {
+  orderId: string;
+  restaurantId: string;
+  restaurantName: string;
+  orderTotal: number;      // rupees, parsed from Swiggy's string
+  orderedAt: Date;         // parsed from orderedTime
+  isActiveOrder: boolean;
+  reorderItems: ReorderItem[]; // exact items to re-add ([] if the order has no reorder action)
+}
+
 export interface SwiggyMcpClient {
   getAddresses(): Promise<SwiggyAddress[]>;
   searchRestaurants(params: SearchRestaurantsParams): Promise<RestaurantResult[]>;
   buildCart(params: BuildCartParams): Promise<CartSummary>;   // update_food_cart + get_food_cart
   placeOrder(): Promise<PlaceOrderResult>;                    // place_food_order (COD); guarded by caller
+  getOrderHistory(addressId: string): Promise<AccountOrder[]>;        // get_food_orders (newest-first)
+  getRestaurantCuisines(orderId: string): Promise<string[]>;          // get_food_order_details -> restaurant_cuisine[]
 }

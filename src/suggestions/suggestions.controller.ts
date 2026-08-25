@@ -8,10 +8,16 @@ export class SuggestionsController {
   // GET /suggestions?userId=dj&addressId=addr_home
   @Get()
   async getSuggestions(@Query('userId') userId: string, @Query('addressId') addressId?: string) {
-    const results = await this.suggestionsService.getTopSuggestions(userId, addressId);
+    const { reorder, discover } = await this.suggestionsService.getTopSuggestions(userId, addressId);
     return {
-      count: results.length,
-      suggestions: results.map((s) => ({
+      reorder: reorder.map((s) => ({
+        restaurant: s.name,
+        restaurantId: s.restaurantId,
+        score: Number(s.score.toFixed(3)),
+        reason: s.reason,
+        items: s.items.map((i) => ({ menuItemId: i.menuItemId, name: i.name, quantity: i.quantity })),
+      })),
+      discover: discover.map((s) => ({
         restaurant: s.restaurant.name,
         cuisine: s.restaurant.cuisine,
         etaMinutes: s.restaurant.etaMinutes,

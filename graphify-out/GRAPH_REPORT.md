@@ -1,16 +1,16 @@
 # Graph Report - smart-order-agent  (2026-08-25)
 
 ## Corpus Check
-- 56 files · ~35,349 words
+- 56 files · ~37,753 words
 - Verdict: corpus is large enough that graph structure adds value.
 
 ## Summary
-- 420 nodes · 660 edges · 28 communities (23 shown, 5 thin omitted)
-- Extraction: 97% EXTRACTED · 3% INFERRED · 0% AMBIGUOUS · INFERRED: 20 edges (avg confidence: 0.8)
+- 431 nodes · 688 edges · 29 communities (23 shown, 6 thin omitted)
+- Extraction: 97% EXTRACTED · 3% INFERRED · 0% AMBIGUOUS · INFERRED: 21 edges (avg confidence: 0.8)
 - Token cost: 0 input · 0 output
 
 ## Graph Freshness
-- Built from commit: `510b3800`
+- Built from commit: `f83427cd`
 - Run `git rev-parse HEAD` and compare to check if the graph is stale.
 - Run `graphify update .` after code changes (no API cost).
 
@@ -41,55 +41,56 @@
 - CLAUDE.md
 - .claude/CLAUDE.md
 - extraction-spec.md
+- SwiggyMcpClient
 
 ## God Nodes (most connected - your core abstractions)
 1. `SwiggyOAuthProvider` - 18 edges
 2. `McpSessionFactory` - 18 edges
-3. `SwiggyMcpClient` - 15 edges
+3. `SwiggyMcpClient` - 16 edges
 4. `OAuthStateStore` - 15 edges
-5. `RealSwiggyMcpClient` - 14 edges
+5. `RealSwiggyMcpClient` - 15 edges
 6. `compilerOptions` - 14 edges
-7. `RestaurantResult` - 12 edges
-8. `MockSwiggyMcpClient` - 12 edges
-9. `What You Must Do When Invoked` - 12 edges
-10. `History-Driven Suggestions (Reorder + Discovery) Implementation Plan` - 12 edges
+7. `MockSwiggyMcpClient` - 13 edges
+8. `RestaurantResult` - 12 edges
+9. `SuggestionsService` - 12 edges
+10. `What You Must Do When Invoked` - 12 edges
 
 ## Surprising Connections (you probably didn't know these)
+- `MockSwiggyMcpClient` --implements--> `SwiggyMcpClient`  [EXTRACTED]
+  src/mcp/mock-swiggy-mcp.client.ts → src/mcp/mcp-client.interface.ts
+- `RealSwiggyMcpClient` --implements--> `SwiggyMcpClient`  [EXTRACTED]
+  src/mcp/real/real-swiggy-mcp.client.ts → src/mcp/mcp-client.interface.ts
 - `Scored` --references--> `RestaurantMeta`  [EXTRACTED]
   src/ranking/reorder-ranking.service.ts → src/suggestions/account-profile.service.ts
 - `RankedSuggestion` --references--> `RestaurantResult`  [EXTRACTED]
   src/ranking/ranking.service.ts → src/mcp/mcp-client.interface.ts
 - `ReorderSuggestion` --references--> `ReorderItem`  [EXTRACTED]
   src/ranking/reorder-ranking.service.ts → src/mcp/mcp-client.interface.ts
-- `RestaurantMeta` --references--> `ReorderItem`  [EXTRACTED]
-  src/suggestions/account-profile.service.ts → src/mcp/mcp-client.interface.ts
-- `MockSwiggyMcpClient` --implements--> `SwiggyMcpClient`  [EXTRACTED]
-  src/mcp/mock-swiggy-mcp.client.ts → src/mcp/mcp-client.interface.ts
 
 ## Import Cycles
 - None detected.
 
-## Communities (28 total, 5 thin omitted)
+## Communities (29 total, 6 thin omitted)
 
 ### Community 0 - "suggestions.service.ts"
-Cohesion: 0.07
-Nodes (35): ReorderItem, RestaurantResult, SWIGGY_MCP_CLIENT, PreferenceProfile, PreferencesService, Injectable, RankingModule, Module (+27 more)
+Cohesion: 0.08
+Nodes (32): ReorderItem, RestaurantResult, SWIGGY_MCP_CLIENT, PreferenceProfile, RankingModule, Module, RankedSuggestion, RankingService (+24 more)
 
 ### Community 1 - "real-swiggy-mcp.client.ts"
 Cohesion: 0.08
-Nodes (21): AccountOrder, BuildCartParams, CartItemInput, CartSummary, PlaceOrderResult, SearchRestaurantsParams, SwiggyAddress, SwiggyMcpClient (+13 more)
+Nodes (24): AccountOrder, BuildCartParams, CartItemInput, CartSummary, MenuItem, PlaceOrderResult, SearchRestaurantsParams, SwiggyAddress (+16 more)
 
 ### Community 2 - "devDependencies"
 Cohesion: 0.08
 Nodes (25): jest, description, devDependencies, jest, ts-jest, ts-node, ts-node-dev, @types/jest (+17 more)
 
 ### Community 3 - "mcp.module.ts"
-Cohesion: 0.07
+Cohesion: 0.06
 Nodes (19): Res, McpModule, Module, OAuthController, Controller, Get, Query, OAuthStateStore (+11 more)
 
 ### Community 4 - "preferences.service.ts"
-Cohesion: 0.14
-Nodes (17): InjectModel, PreferencesModule, Module, Feedback, FeedbackDocument, FeedbackSchema, Prop, Schema (+9 more)
+Cohesion: 0.13
+Nodes (19): InjectModel, PreferencesModule, Module, PreferencesService, Injectable, Feedback, FeedbackDocument, FeedbackSchema (+11 more)
 
 ### Community 5 - "What You Must Do When Invoked"
 Cohesion: 0.08
@@ -117,7 +118,7 @@ Nodes (12): File Structure, Global Constraints, History-Driven Suggestions (Reor
 
 ### Community 11 - "Smart Order Agent"
 Cohesion: 0.17
-Nodes (11): Architecture note, Configuration (`.env`), Endpoints, How it works, Known simplifications (good next steps), Mock mode (default — no Swiggy account needed), Real Swiggy mode, Roadmap — conclude at cart (next) (+3 more)
+Nodes (11): Architecture note, Conclude at cart (shipped), Configuration (`.env`), Endpoints, How it works, Known simplifications (good next steps), Mock mode (default — no Swiggy account needed), Real Swiggy mode (+3 more)
 
 ### Community 12 - "Surprise-To-Cart (Conclude at Cart) Implementation Plan"
 Cohesion: 0.20
@@ -156,24 +157,24 @@ Cohesion: 0.50
 Nodes (3): For --cluster-only, For --update (incremental re-extraction), graphify reference: incremental update and cluster-only
 
 ## Knowledge Gaps
-- **152 isolated node(s):** `name`, `version`, `description`, `build`, `start` (+147 more)
+- **154 isolated node(s):** `name`, `version`, `description`, `build`, `start` (+149 more)
   These have ≤1 connection - possible missing edges or undocumented components.
-- **5 thin communities (<3 nodes) omitted from report** — run `graphify query` to explore isolated nodes.
+- **6 thin communities (<3 nodes) omitted from report** — run `graphify query` to explore isolated nodes.
 
 ## Suggested Questions
 _Questions this graph is uniquely positioned to answer:_
 
-- **Why does `SwiggyMcpClient` connect `real-swiggy-mcp.client.ts` to `suggestions.service.ts`?**
-  _High betweenness centrality (0.028) - this node is a cross-community bridge._
+- **Why does `SwiggyMcpClient` connect `SwiggyMcpClient` to `suggestions.service.ts`, `real-swiggy-mcp.client.ts`?**
+  _High betweenness centrality (0.030) - this node is a cross-community bridge._
 - **Why does `McpSessionFactory` connect `mcp.module.ts` to `real-swiggy-mcp.client.ts`?**
   _High betweenness centrality (0.027) - this node is a cross-community bridge._
 - **What connects `name`, `version`, `description` to the rest of the system?**
-  _152 weakly-connected nodes found - possible documentation gaps or missing edges._
+  _154 weakly-connected nodes found - possible documentation gaps or missing edges._
 - **Should `suggestions.service.ts` be split into smaller, more focused modules?**
-  _Cohesion score 0.07402597402597402 - nodes in this community are weakly interconnected._
+  _Cohesion score 0.07547169811320754 - nodes in this community are weakly interconnected._
 - **Should `real-swiggy-mcp.client.ts` be split into smaller, more focused modules?**
-  _Cohesion score 0.07542087542087542 - nodes in this community are weakly interconnected._
+  _Cohesion score 0.0841799709724238 - nodes in this community are weakly interconnected._
 - **Should `devDependencies` be split into smaller, more focused modules?**
   _Cohesion score 0.07692307692307693 - nodes in this community are weakly interconnected._
 - **Should `mcp.module.ts` be split into smaller, more focused modules?**
-  _Cohesion score 0.06594071385359952 - nodes in this community are weakly interconnected._
+  _Cohesion score 0.06428988895382817 - nodes in this community are weakly interconnected._

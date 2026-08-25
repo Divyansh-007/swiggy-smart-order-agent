@@ -14,7 +14,7 @@
       "file_type": "code",
       "norm_label": "reorderitem",
       "source_file": "src/mcp/mcp-client.interface.ts",
-      "source_location": "L49"
+      "source_location": "L59"
     },
     {
       "id": "src_mcp_mcp_client_interface_restaurantresult",
@@ -41,19 +41,6 @@
       "norm_label": "preferenceprofile",
       "source_file": "src/preferences/preferences.service.ts",
       "source_location": "L7"
-    },
-    {
-      "id": "src_preferences_preferences_service_preferencesservice",
-      "label": "PreferencesService",
-      "_callable": true,
-      "_callable_class": true,
-      "_origin": "ast",
-      "community": 0,
-      "community_name": "suggestions.service.ts",
-      "file_type": "code",
-      "norm_label": "preferencesservice",
-      "source_file": "src/preferences/preferences.service.ts",
-      "source_location": "L16"
     },
     {
       "id": "src_ranking_ranking_module_rankingmodule",
@@ -183,7 +170,7 @@
       "file_type": "code",
       "norm_label": "accountorder",
       "source_file": "src/mcp/mcp-client.interface.ts",
-      "source_location": "L55"
+      "source_location": "L65"
     },
     {
       "id": "src_mcp_mcp_client_interface_buildcartparams",
@@ -222,6 +209,19 @@
       "file_type": "code",
       "norm_label": "cartsummary",
       "source_file": "src/mcp/mcp-client.interface.ts",
+      "source_location": "L44"
+    },
+    {
+      "id": "src_mcp_mcp_client_interface_menuitem",
+      "label": "MenuItem",
+      "_callable": true,
+      "_callable_class": true,
+      "_origin": "ast",
+      "community": 1,
+      "community_name": "real-swiggy-mcp.client.ts",
+      "file_type": "code",
+      "norm_label": "menuitem",
+      "source_file": "src/mcp/mcp-client.interface.ts",
       "source_location": "L34"
     },
     {
@@ -235,7 +235,7 @@
       "file_type": "code",
       "norm_label": "placeorderresult",
       "source_file": "src/mcp/mcp-client.interface.ts",
-      "source_location": "L42"
+      "source_location": "L52"
     },
     {
       "id": "src_mcp_mcp_client_interface_searchrestaurantsparams",
@@ -264,19 +264,6 @@
       "source_location": "L1"
     },
     {
-      "id": "src_mcp_mcp_client_interface_swiggymcpclient",
-      "label": "SwiggyMcpClient",
-      "_callable": true,
-      "_callable_class": true,
-      "_origin": "ast",
-      "community": 1,
-      "community_name": "real-swiggy-mcp.client.ts",
-      "file_type": "code",
-      "norm_label": "swiggymcpclient",
-      "source_file": "src/mcp/mcp-client.interface.ts",
-      "source_location": "L65"
-    },
-    {
       "id": "src_mcp_mock_swiggy_mcp_client_mockswiggymcpclient",
       "label": "MockSwiggyMcpClient",
       "_callable": true,
@@ -287,7 +274,7 @@
       "file_type": "code",
       "norm_label": "mockswiggymcpclient",
       "source_file": "src/mcp/mock-swiggy-mcp.client.ts",
-      "source_location": "L108"
+      "source_location": "L141"
     },
     {
       "id": "src_mcp_real_real_swiggy_mcp_client_realswiggymcpclient",
@@ -327,6 +314,19 @@
       "norm_label": "suggestionsmodule",
       "source_file": "src/suggestions/suggestions.module.ts",
       "source_location": "L14"
+    },
+    {
+      "id": "src_mcp_mcp_client_interface_swiggymcpclient",
+      "label": "SwiggyMcpClient",
+      "_callable": true,
+      "_callable_class": true,
+      "_origin": "ast",
+      "community": 28,
+      "community_name": "SwiggyMcpClient",
+      "file_type": "code",
+      "norm_label": "swiggymcpclient",
+      "source_file": "src/mcp/mcp-client.interface.ts",
+      "source_location": "L75"
     },
     {
       "id": "src_mcp_mcp_module_mcpmodule",
@@ -391,7 +391,7 @@
       "file_type": "code",
       "norm_label": "mcpdebugcontroller",
       "source_file": "src/mcp/real/debug.controller.ts",
-      "source_location": "L11"
+      "source_location": "L18"
     },
     {
       "id": "src_mcp_real_mcp_session_factory_mcpsessionfactory",
@@ -418,6 +418,19 @@
       "norm_label": "preferencesmodule",
       "source_file": "src/preferences/preferences.module.ts",
       "source_location": "L17"
+    },
+    {
+      "id": "src_preferences_preferences_service_preferencesservice",
+      "label": "PreferencesService",
+      "_callable": true,
+      "_callable_class": true,
+      "_origin": "ast",
+      "community": 4,
+      "community_name": "preferences.service.ts",
+      "file_type": "code",
+      "norm_label": "preferencesservice",
+      "source_file": "src/preferences/preferences.service.ts",
+      "source_location": "L16"
     },
     {
       "id": "src_preferences_schemas_feedback_schema_feedback",
@@ -495,7 +508,7 @@
       "file_type": "code",
       "norm_label": "suggestionsservice",
       "source_file": "src/suggestions/suggestions.service.ts",
-      "source_location": "L57"
+      "source_location": "L59"
     },
     {
       "id": "src_preferences_preferences_service_preferencesservice_getprofile",
@@ -582,18 +595,6 @@
       "source_location": "L36"
     },
     {
-      "id": "src_suggestions_account_profile_service_accountprofileservice_constructor",
-      "label": ".constructor()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 0,
-      "community_name": "suggestions.service.ts",
-      "file_type": "code",
-      "norm_label": ".constructor()",
-      "source_file": "src/suggestions/account-profile.service.ts",
-      "source_location": "L31"
-    },
-    {
       "id": "src_suggestions_account_profile_service_timeslotfor",
       "label": "timeSlotFor()",
       "_callable": true,
@@ -615,7 +616,7 @@
       "file_type": "code",
       "norm_label": "cleandishname()",
       "source_file": "src/suggestions/suggestions.service.ts",
-      "source_location": "L29"
+      "source_location": "L31"
     },
     {
       "id": "src_suggestions_suggestions_service_currenttimeslot",
@@ -627,7 +628,31 @@
       "file_type": "code",
       "norm_label": "currenttimeslot()",
       "source_file": "src/suggestions/suggestions.service.ts",
+      "source_location": "L11"
+    },
+    {
+      "id": "src_suggestions_suggestions_service_pick",
+      "label": "pick()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 0,
+      "community_name": "suggestions.service.ts",
+      "file_type": "code",
+      "norm_label": "pick()",
+      "source_file": "src/suggestions/suggestions.service.ts",
       "source_location": "L9"
+    },
+    {
+      "id": "src_suggestions_suggestions_service_spec_buildcartspy",
+      "label": "buildCartSpy()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 0,
+      "community_name": "suggestions.service.ts",
+      "file_type": "code",
+      "norm_label": "buildcartspy()",
+      "source_file": "src/suggestions/suggestions.service.spec.ts",
+      "source_location": "L132"
     },
     {
       "id": "src_suggestions_suggestions_service_spec_buildservice",
@@ -639,7 +664,7 @@
       "file_type": "code",
       "norm_label": "buildservice()",
       "source_file": "src/suggestions/suggestions.service.spec.ts",
-      "source_location": "L84"
+      "source_location": "L85"
     },
     {
       "id": "src_suggestions_suggestions_service_spec_makerestaurant",
@@ -651,7 +676,7 @@
       "file_type": "code",
       "norm_label": "makerestaurant()",
       "source_file": "src/suggestions/suggestions.service.spec.ts",
-      "source_location": "L7"
+      "source_location": "L8"
     },
     {
       "id": "src_suggestions_suggestions_service_suggestionsservice_constructor",
@@ -663,7 +688,7 @@
       "file_type": "code",
       "norm_label": ".constructor()",
       "source_file": "src/suggestions/suggestions.service.ts",
-      "source_location": "L58"
+      "source_location": "L60"
     },
     {
       "id": "src_suggestions_suggestions_service_suggestionsservice_discovernewrestaurants",
@@ -675,7 +700,7 @@
       "file_type": "code",
       "norm_label": ".discovernewrestaurants()",
       "source_file": "src/suggestions/suggestions.service.ts",
-      "source_location": "L82"
+      "source_location": "L84"
     },
     {
       "id": "src_suggestions_suggestions_service_suggestionsservice_gettopsuggestions",
@@ -687,7 +712,7 @@
       "file_type": "code",
       "norm_label": ".gettopsuggestions()",
       "source_file": "src/suggestions/suggestions.service.ts",
-      "source_location": "L66"
+      "source_location": "L68"
     },
     {
       "id": "src_suggestions_suggestions_service_topdishkeywords",
@@ -699,79 +724,7 @@
       "file_type": "code",
       "norm_label": "topdishkeywords()",
       "source_file": "src/suggestions/suggestions.service.ts",
-      "source_location": "L41"
-    },
-    {
-      "id": "src_mcp_mcp_client_interface_swiggymcpclient_buildcart",
-      "label": ".buildCart()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 1,
-      "community_name": "real-swiggy-mcp.client.ts",
-      "file_type": "code",
-      "norm_label": ".buildcart()",
-      "source_file": "src/mcp/mcp-client.interface.ts",
-      "source_location": "L68"
-    },
-    {
-      "id": "src_mcp_mcp_client_interface_swiggymcpclient_getaddresses",
-      "label": ".getAddresses()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 1,
-      "community_name": "real-swiggy-mcp.client.ts",
-      "file_type": "code",
-      "norm_label": ".getaddresses()",
-      "source_file": "src/mcp/mcp-client.interface.ts",
-      "source_location": "L66"
-    },
-    {
-      "id": "src_mcp_mcp_client_interface_swiggymcpclient_getorderhistory",
-      "label": ".getOrderHistory()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 1,
-      "community_name": "real-swiggy-mcp.client.ts",
-      "file_type": "code",
-      "norm_label": ".getorderhistory()",
-      "source_file": "src/mcp/mcp-client.interface.ts",
-      "source_location": "L70"
-    },
-    {
-      "id": "src_mcp_mcp_client_interface_swiggymcpclient_getrestaurantcuisines",
-      "label": ".getRestaurantCuisines()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 1,
-      "community_name": "real-swiggy-mcp.client.ts",
-      "file_type": "code",
-      "norm_label": ".getrestaurantcuisines()",
-      "source_file": "src/mcp/mcp-client.interface.ts",
-      "source_location": "L71"
-    },
-    {
-      "id": "src_mcp_mcp_client_interface_swiggymcpclient_placeorder",
-      "label": ".placeOrder()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 1,
-      "community_name": "real-swiggy-mcp.client.ts",
-      "file_type": "code",
-      "norm_label": ".placeorder()",
-      "source_file": "src/mcp/mcp-client.interface.ts",
-      "source_location": "L69"
-    },
-    {
-      "id": "src_mcp_mcp_client_interface_swiggymcpclient_searchrestaurants",
-      "label": ".searchRestaurants()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 1,
-      "community_name": "real-swiggy-mcp.client.ts",
-      "file_type": "code",
-      "norm_label": ".searchrestaurants()",
-      "source_file": "src/mcp/mcp-client.interface.ts",
-      "source_location": "L67"
+      "source_location": "L43"
     },
     {
       "id": "src_mcp_mock_swiggy_mcp_client_daysago",
@@ -783,7 +736,7 @@
       "file_type": "code",
       "norm_label": "daysago()",
       "source_file": "src/mcp/mock-swiggy-mcp.client.ts",
-      "source_location": "L32"
+      "source_location": "L65"
     },
     {
       "id": "src_mcp_mock_swiggy_mcp_client_mockswiggymcpclient_buildcart",
@@ -795,7 +748,7 @@
       "file_type": "code",
       "norm_label": ".buildcart()",
       "source_file": "src/mcp/mock-swiggy-mcp.client.ts",
-      "source_location": "L131"
+      "source_location": "L164"
     },
     {
       "id": "src_mcp_mock_swiggy_mcp_client_mockswiggymcpclient_getaddresses",
@@ -807,7 +760,7 @@
       "file_type": "code",
       "norm_label": ".getaddresses()",
       "source_file": "src/mcp/mock-swiggy-mcp.client.ts",
-      "source_location": "L109"
+      "source_location": "L142"
     },
     {
       "id": "src_mcp_mock_swiggy_mcp_client_mockswiggymcpclient_getorderhistory",
@@ -819,7 +772,7 @@
       "file_type": "code",
       "norm_label": ".getorderhistory()",
       "source_file": "src/mcp/mock-swiggy-mcp.client.ts",
-      "source_location": "L150"
+      "source_location": "L191"
     },
     {
       "id": "src_mcp_mock_swiggy_mcp_client_mockswiggymcpclient_getrestaurantcuisines",
@@ -831,7 +784,19 @@
       "file_type": "code",
       "norm_label": ".getrestaurantcuisines()",
       "source_file": "src/mcp/mock-swiggy-mcp.client.ts",
-      "source_location": "L158"
+      "source_location": "L199"
+    },
+    {
+      "id": "src_mcp_mock_swiggy_mcp_client_mockswiggymcpclient_getrestaurantmenu",
+      "label": ".getRestaurantMenu()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 1,
+      "community_name": "real-swiggy-mcp.client.ts",
+      "file_type": "code",
+      "norm_label": ".getrestaurantmenu()",
+      "source_file": "src/mcp/mock-swiggy-mcp.client.ts",
+      "source_location": "L178"
     },
     {
       "id": "src_mcp_mock_swiggy_mcp_client_mockswiggymcpclient_latency",
@@ -843,7 +808,7 @@
       "file_type": "code",
       "norm_label": ".latency()",
       "source_file": "src/mcp/mock-swiggy-mcp.client.ts",
-      "source_location": "L165"
+      "source_location": "L206"
     },
     {
       "id": "src_mcp_mock_swiggy_mcp_client_mockswiggymcpclient_placeorder",
@@ -855,7 +820,7 @@
       "file_type": "code",
       "norm_label": ".placeorder()",
       "source_file": "src/mcp/mock-swiggy-mcp.client.ts",
-      "source_location": "L145"
+      "source_location": "L186"
     },
     {
       "id": "src_mcp_mock_swiggy_mcp_client_mockswiggymcpclient_searchrestaurants",
@@ -867,7 +832,7 @@
       "file_type": "code",
       "norm_label": ".searchrestaurants()",
       "source_file": "src/mcp/mock-swiggy-mcp.client.ts",
-      "source_location": "L117"
+      "source_location": "L150"
     },
     {
       "id": "src_mcp_real_cart_adapter_tocartsummary",
@@ -882,16 +847,16 @@
       "source_location": "L11"
     },
     {
-      "id": "src_mcp_real_mcp_session_factory_mcpsessionfactory_reset",
-      "label": ".reset()",
+      "id": "src_mcp_real_cart_adapter_tomenuitems",
+      "label": "toMenuItems()",
       "_callable": true,
       "_origin": "ast",
       "community": 1,
       "community_name": "real-swiggy-mcp.client.ts",
       "file_type": "code",
-      "norm_label": ".reset()",
-      "source_file": "src/mcp/real/mcp-session.factory.ts",
-      "source_location": "L181"
+      "norm_label": "tomenuitems()",
+      "source_file": "src/mcp/real/cart.adapter.ts",
+      "source_location": "L35"
     },
     {
       "id": "src_mcp_real_real_swiggy_mcp_client_realswiggymcpclient_buildcart",
@@ -939,7 +904,7 @@
       "file_type": "code",
       "norm_label": ".getorderhistory()",
       "source_file": "src/mcp/real/real-swiggy-mcp.client.ts",
-      "source_location": "L96"
+      "source_location": "L107"
     },
     {
       "id": "src_mcp_real_real_swiggy_mcp_client_realswiggymcpclient_getrestaurantcuisines",
@@ -951,7 +916,19 @@
       "file_type": "code",
       "norm_label": ".getrestaurantcuisines()",
       "source_file": "src/mcp/real/real-swiggy-mcp.client.ts",
-      "source_location": "L100"
+      "source_location": "L111"
+    },
+    {
+      "id": "src_mcp_real_real_swiggy_mcp_client_realswiggymcpclient_getrestaurantmenu",
+      "label": ".getRestaurantMenu()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 1,
+      "community_name": "real-swiggy-mcp.client.ts",
+      "file_type": "code",
+      "norm_label": ".getrestaurantmenu()",
+      "source_file": "src/mcp/real/real-swiggy-mcp.client.ts",
+      "source_location": "L94"
     },
     {
       "id": "src_mcp_real_real_swiggy_mcp_client_realswiggymcpclient_placeorder",
@@ -963,7 +940,7 @@
       "file_type": "code",
       "norm_label": ".placeorder()",
       "source_file": "src/mcp/real/real-swiggy-mcp.client.ts",
-      "source_location": "L87"
+      "source_location": "L98"
     },
     {
       "id": "src_mcp_real_real_swiggy_mcp_client_realswiggymcpclient_searchrestaurants",
@@ -1144,6 +1121,102 @@
       "norm_label": "bootstrap()",
       "source_file": "src/main.ts",
       "source_location": "L5"
+    },
+    {
+      "id": "src_mcp_mcp_client_interface_swiggymcpclient_buildcart",
+      "label": ".buildCart()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 28,
+      "community_name": "SwiggyMcpClient",
+      "file_type": "code",
+      "norm_label": ".buildcart()",
+      "source_file": "src/mcp/mcp-client.interface.ts",
+      "source_location": "L78"
+    },
+    {
+      "id": "src_mcp_mcp_client_interface_swiggymcpclient_getaddresses",
+      "label": ".getAddresses()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 28,
+      "community_name": "SwiggyMcpClient",
+      "file_type": "code",
+      "norm_label": ".getaddresses()",
+      "source_file": "src/mcp/mcp-client.interface.ts",
+      "source_location": "L76"
+    },
+    {
+      "id": "src_mcp_mcp_client_interface_swiggymcpclient_getorderhistory",
+      "label": ".getOrderHistory()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 28,
+      "community_name": "SwiggyMcpClient",
+      "file_type": "code",
+      "norm_label": ".getorderhistory()",
+      "source_file": "src/mcp/mcp-client.interface.ts",
+      "source_location": "L81"
+    },
+    {
+      "id": "src_mcp_mcp_client_interface_swiggymcpclient_getrestaurantcuisines",
+      "label": ".getRestaurantCuisines()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 28,
+      "community_name": "SwiggyMcpClient",
+      "file_type": "code",
+      "norm_label": ".getrestaurantcuisines()",
+      "source_file": "src/mcp/mcp-client.interface.ts",
+      "source_location": "L82"
+    },
+    {
+      "id": "src_mcp_mcp_client_interface_swiggymcpclient_getrestaurantmenu",
+      "label": ".getRestaurantMenu()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 28,
+      "community_name": "SwiggyMcpClient",
+      "file_type": "code",
+      "norm_label": ".getrestaurantmenu()",
+      "source_file": "src/mcp/mcp-client.interface.ts",
+      "source_location": "L79"
+    },
+    {
+      "id": "src_mcp_mcp_client_interface_swiggymcpclient_placeorder",
+      "label": ".placeOrder()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 28,
+      "community_name": "SwiggyMcpClient",
+      "file_type": "code",
+      "norm_label": ".placeorder()",
+      "source_file": "src/mcp/mcp-client.interface.ts",
+      "source_location": "L80"
+    },
+    {
+      "id": "src_mcp_mcp_client_interface_swiggymcpclient_searchrestaurants",
+      "label": ".searchRestaurants()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 28,
+      "community_name": "SwiggyMcpClient",
+      "file_type": "code",
+      "norm_label": ".searchrestaurants()",
+      "source_file": "src/mcp/mcp-client.interface.ts",
+      "source_location": "L77"
+    },
+    {
+      "id": "src_suggestions_account_profile_service_accountprofileservice_constructor",
+      "label": ".constructor()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 28,
+      "community_name": "SwiggyMcpClient",
+      "file_type": "code",
+      "norm_label": ".constructor()",
+      "source_file": "src/suggestions/account-profile.service.ts",
+      "source_location": "L31"
     },
     {
       "id": "src_mcp_oauth_oauth_controller_oauthcontroller_callback",
@@ -1371,7 +1444,7 @@
       "file_type": "code",
       "norm_label": ".constructor()",
       "source_file": "src/mcp/real/debug.controller.ts",
-      "source_location": "L12"
+      "source_location": "L19"
     },
     {
       "id": "src_mcp_real_debug_controller_mcpdebugcontroller_guard",
@@ -1383,7 +1456,7 @@
       "file_type": "code",
       "norm_label": ".guard()",
       "source_file": "src/mcp/real/debug.controller.ts",
-      "source_location": "L14"
+      "source_location": "L21"
     },
     {
       "id": "src_mcp_real_debug_controller_mcpdebugcontroller_raw",
@@ -1395,7 +1468,7 @@
       "file_type": "code",
       "norm_label": ".raw()",
       "source_file": "src/mcp/real/debug.controller.ts",
-      "source_location": "L26"
+      "source_location": "L33"
     },
     {
       "id": "src_mcp_real_debug_controller_mcpdebugcontroller_tools",
@@ -1407,7 +1480,7 @@
       "file_type": "code",
       "norm_label": ".tools()",
       "source_file": "src/mcp/real/debug.controller.ts",
-      "source_location": "L19"
+      "source_location": "L26"
     },
     {
       "id": "src_mcp_real_mcp_session_factory_mcpsessionfactory_beginauth",
@@ -1492,6 +1565,18 @@
       "norm_label": ".newtransport()",
       "source_file": "src/mcp/real/mcp-session.factory.ts",
       "source_location": "L95"
+    },
+    {
+      "id": "src_mcp_real_mcp_session_factory_mcpsessionfactory_reset",
+      "label": ".reset()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 3,
+      "community_name": "mcp.module.ts",
+      "file_type": "code",
+      "norm_label": ".reset()",
+      "source_file": "src/mcp/real/mcp-session.factory.ts",
+      "source_location": "L181"
     },
     {
       "id": "src_mcp_real_mcp_session_factory_mcpsessionfactory_serverurl",
@@ -1638,6 +1723,18 @@
       "source_location": "L40"
     },
     {
+      "id": "src_suggestions_suggestions_controller_suggestionscontroller_surprisecart",
+      "label": ".surpriseCart()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 9,
+      "community_name": "SuggestionsService",
+      "file_type": "code",
+      "norm_label": ".surprisecart()",
+      "source_file": "src/suggestions/suggestions.controller.ts",
+      "source_location": "L46"
+    },
+    {
       "id": "src_suggestions_suggestions_service_suggestionsservice_acceptsuggestion",
       "label": ".acceptSuggestion()",
       "_callable": true,
@@ -1647,7 +1744,7 @@
       "file_type": "code",
       "norm_label": ".acceptsuggestion()",
       "source_file": "src/suggestions/suggestions.service.ts",
-      "source_location": "L113"
+      "source_location": "L178"
     },
     {
       "id": "src_suggestions_suggestions_service_suggestionsservice_skipsuggestion",
@@ -1659,7 +1756,19 @@
       "file_type": "code",
       "norm_label": ".skipsuggestion()",
       "source_file": "src/suggestions/suggestions.service.ts",
-      "source_location": "L119"
+      "source_location": "L184"
+    },
+    {
+      "id": "src_suggestions_suggestions_service_suggestionsservice_surprisetocart",
+      "label": ".surpriseToCart()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 9,
+      "community_name": "SuggestionsService",
+      "file_type": "code",
+      "norm_label": ".surprisetocart()",
+      "source_file": "src/suggestions/suggestions.service.ts",
+      "source_location": "L118"
     },
     {
       "id": "src_mcp_mcp_module_swiggy_mcp_client",
@@ -1671,17 +1780,6 @@
       "norm_label": "swiggy_mcp_client",
       "source_file": "src/mcp/mcp.module.ts",
       "source_location": "L11"
-    },
-    {
-      "id": "src_preferences_preferences_service_ts_injectable",
-      "label": "Injectable",
-      "_origin": "ast",
-      "community": 0,
-      "community_name": "suggestions.service.ts",
-      "file_type": "code",
-      "norm_label": "injectable",
-      "source_file": "",
-      "source_location": ""
     },
     {
       "id": "src_ranking_ranking_module",
@@ -1816,17 +1914,6 @@
       "source_location": "L1"
     },
     {
-      "id": "src_suggestions_account_profile_service_ts_inject",
-      "label": "Inject",
-      "_origin": "ast",
-      "community": 0,
-      "community_name": "suggestions.service.ts",
-      "file_type": "code",
-      "norm_label": "inject",
-      "source_file": "",
-      "source_location": ""
-    },
-    {
       "id": "src_suggestions_account_profile_service_ts_injectable",
       "label": "Injectable",
       "_origin": "ast",
@@ -1868,7 +1955,7 @@
       "file_type": "code",
       "norm_label": "meal_default_query",
       "source_file": "src/suggestions/suggestions.service.ts",
-      "source_location": "L18"
+      "source_location": "L20"
     },
     {
       "id": "src_suggestions_suggestions_service_spec",
@@ -1890,7 +1977,7 @@
       "file_type": "code",
       "norm_label": "fakemcp",
       "source_file": "src/suggestions/suggestions.service.spec.ts",
-      "source_location": "L43"
+      "source_location": "L44"
     },
     {
       "id": "src_suggestions_suggestions_service_spec_fakepreferences",
@@ -1901,7 +1988,7 @@
       "file_type": "code",
       "norm_label": "fakepreferences",
       "source_file": "src/suggestions/suggestions.service.spec.ts",
-      "source_location": "L73"
+      "source_location": "L74"
     },
     {
       "id": "src_suggestions_suggestions_service_spec_ordera",
@@ -1912,7 +1999,7 @@
       "file_type": "code",
       "norm_label": "ordera",
       "source_file": "src/suggestions/suggestions.service.spec.ts",
-      "source_location": "L13"
+      "source_location": "L14"
     },
     {
       "id": "src_suggestions_suggestions_service_spec_orderb",
@@ -1923,7 +2010,7 @@
       "file_type": "code",
       "norm_label": "orderb",
       "source_file": "src/suggestions/suggestions.service.spec.ts",
-      "source_location": "L23"
+      "source_location": "L24"
     },
     {
       "id": "src_suggestions_suggestions_service_spec_orderc",
@@ -1934,7 +2021,7 @@
       "file_type": "code",
       "norm_label": "orderc",
       "source_file": "src/suggestions/suggestions.service.spec.ts",
-      "source_location": "L33"
+      "source_location": "L34"
     },
     {
       "id": "src_suggestions_suggestions_service_ts_inject",
@@ -1970,6 +2057,17 @@
       "source_location": "L1"
     },
     {
+      "id": "src_mcp_mock_swiggy_mcp_client_default_menu",
+      "label": "DEFAULT_MENU",
+      "_origin": "ast",
+      "community": 1,
+      "community_name": "real-swiggy-mcp.client.ts",
+      "file_type": "code",
+      "norm_label": "default_menu",
+      "source_file": "src/mcp/mock-swiggy-mcp.client.ts",
+      "source_location": "L35"
+    },
+    {
       "id": "src_mcp_mock_swiggy_mcp_client_mock_cuisines",
       "label": "MOCK_CUISINES",
       "_origin": "ast",
@@ -1981,6 +2079,17 @@
       "source_location": "L20"
     },
     {
+      "id": "src_mcp_mock_swiggy_mcp_client_mock_menus",
+      "label": "MOCK_MENUS",
+      "_origin": "ast",
+      "community": 1,
+      "community_name": "real-swiggy-mcp.client.ts",
+      "file_type": "code",
+      "norm_label": "mock_menus",
+      "source_file": "src/mcp/mock-swiggy-mcp.client.ts",
+      "source_location": "L42"
+    },
+    {
       "id": "src_mcp_mock_swiggy_mcp_client_mock_orders",
       "label": "MOCK_ORDERS",
       "_origin": "ast",
@@ -1989,7 +2098,7 @@
       "file_type": "code",
       "norm_label": "mock_orders",
       "source_file": "src/mcp/mock-swiggy-mcp.client.ts",
-      "source_location": "L38"
+      "source_location": "L71"
     },
     {
       "id": "src_mcp_mock_swiggy_mcp_client_mock_restaurants",
@@ -2290,7 +2399,19 @@
       "node_kind": "heading",
       "norm_label": "architecture note",
       "source_file": "README.md",
-      "source_location": "L135"
+      "source_location": "L146"
+    },
+    {
+      "id": "readme_conclude_at_cart_shipped",
+      "label": "Conclude at cart (shipped)",
+      "_origin": "ast",
+      "community": 11,
+      "community_name": "Smart Order Agent",
+      "file_type": "document",
+      "node_kind": "heading",
+      "norm_label": "conclude at cart (shipped)",
+      "source_file": "README.md",
+      "source_location": "L138"
     },
     {
       "id": "readme_configuration_env",
@@ -2302,7 +2423,7 @@
       "node_kind": "heading",
       "norm_label": "configuration (`.env`)",
       "source_file": "README.md",
-      "source_location": "L100"
+      "source_location": "L106"
     },
     {
       "id": "readme_endpoints",
@@ -2338,7 +2459,7 @@
       "node_kind": "heading",
       "norm_label": "known simplifications (good next steps)",
       "source_file": "README.md",
-      "source_location": "L112"
+      "source_location": "L118"
     },
     {
       "id": "readme_mock_mode_default_no_swiggy_account_needed",
@@ -2363,18 +2484,6 @@
       "norm_label": "real swiggy mode",
       "source_file": "README.md",
       "source_location": "L58"
-    },
-    {
-      "id": "readme_roadmap_conclude_at_cart_next",
-      "label": "Roadmap \u2014 conclude at cart (next)",
-      "_origin": "ast",
-      "community": 11,
-      "community_name": "Smart Order Agent",
-      "file_type": "document",
-      "node_kind": "heading",
-      "norm_label": "roadmap \u2014 conclude at cart (next)",
-      "source_file": "README.md",
-      "source_location": "L127"
     },
     {
       "id": "readme_run_it_locally",
@@ -2410,7 +2519,7 @@
       "node_kind": "heading",
       "norm_label": "two notions of \"user\" (important)",
       "source_file": "README.md",
-      "source_location": "L85"
+      "source_location": "L91"
     },
     {
       "id": "docs_superpowers_plans_2026_08_25_surprise_to_cart",
@@ -3452,6 +3561,17 @@
       "source_location": "L1"
     },
     {
+      "id": "src_suggestions_account_profile_service_ts_inject",
+      "label": "Inject",
+      "_origin": "ast",
+      "community": 28,
+      "community_name": "SwiggyMcpClient",
+      "file_type": "code",
+      "norm_label": "inject",
+      "source_file": "",
+      "source_location": ""
+    },
+    {
       "id": "res",
       "label": "Res",
       "_origin": "ast",
@@ -3725,6 +3845,17 @@
       "norm_label": "preferences.service.ts",
       "source_file": "src/preferences/preferences.service.ts",
       "source_location": "L1"
+    },
+    {
+      "id": "src_preferences_preferences_service_ts_injectable",
+      "label": "Injectable",
+      "_origin": "ast",
+      "community": 4,
+      "community_name": "preferences.service.ts",
+      "file_type": "code",
+      "norm_label": "injectable",
+      "source_file": "",
+      "source_location": ""
     },
     {
       "id": "src_preferences_schemas_feedback_schema",
@@ -4935,7 +5066,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "src/mcp/mock-swiggy-mcp.client.ts",
-      "source_location": "L132",
+      "source_location": "L165",
       "weight": 1.0
     },
     {
@@ -4947,7 +5078,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "src/mcp/mock-swiggy-mcp.client.ts",
-      "source_location": "L110",
+      "source_location": "L143",
       "weight": 1.0
     },
     {
@@ -4959,7 +5090,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "src/mcp/mock-swiggy-mcp.client.ts",
-      "source_location": "L151",
+      "source_location": "L192",
       "weight": 1.0
     },
     {
@@ -4971,7 +5102,19 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "src/mcp/mock-swiggy-mcp.client.ts",
-      "source_location": "L159",
+      "source_location": "L200",
+      "weight": 1.0
+    },
+    {
+      "source": "src_mcp_mock_swiggy_mcp_client_mockswiggymcpclient_getrestaurantmenu",
+      "target": "src_mcp_mock_swiggy_mcp_client_mockswiggymcpclient_latency",
+      "relation": "calls",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "call",
+      "source_file": "src/mcp/mock-swiggy-mcp.client.ts",
+      "source_location": "L179",
       "weight": 1.0
     },
     {
@@ -4983,7 +5126,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "src/mcp/mock-swiggy-mcp.client.ts",
-      "source_location": "L146",
+      "source_location": "L187",
       "weight": 1.0
     },
     {
@@ -4995,7 +5138,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "src/mcp/mock-swiggy-mcp.client.ts",
-      "source_location": "L118",
+      "source_location": "L151",
       "weight": 1.0
     },
     {
@@ -5019,7 +5162,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "src/mcp/real/debug.controller.ts",
-      "source_location": "L32",
+      "source_location": "L40",
       "weight": 1.0
     },
     {
@@ -5031,7 +5174,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "src/mcp/real/debug.controller.ts",
-      "source_location": "L20",
+      "source_location": "L27",
       "weight": 1.0
     },
     {
@@ -5259,7 +5402,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "src/mcp/real/real-swiggy-mcp.client.ts",
-      "source_location": "L97",
+      "source_location": "L108",
       "weight": 1.0
     },
     {
@@ -5271,7 +5414,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "src/mcp/real/real-swiggy-mcp.client.ts",
-      "source_location": "L97",
+      "source_location": "L108",
       "weight": 1.0
     },
     {
@@ -5283,7 +5426,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "src/mcp/real/real-swiggy-mcp.client.ts",
-      "source_location": "L101",
+      "source_location": "L112",
       "weight": 1.0
     },
     {
@@ -5295,7 +5438,31 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "src/mcp/real/real-swiggy-mcp.client.ts",
-      "source_location": "L101",
+      "source_location": "L112",
+      "weight": 1.0
+    },
+    {
+      "source": "src_mcp_real_real_swiggy_mcp_client_realswiggymcpclient_getrestaurantmenu",
+      "target": "src_mcp_real_cart_adapter_tomenuitems",
+      "relation": "calls",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "call",
+      "source_file": "src/mcp/real/real-swiggy-mcp.client.ts",
+      "source_location": "L95",
+      "weight": 1.0
+    },
+    {
+      "source": "src_mcp_real_real_swiggy_mcp_client_realswiggymcpclient_getrestaurantmenu",
+      "target": "src_mcp_real_real_swiggy_mcp_client_realswiggymcpclient_call",
+      "relation": "calls",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "call",
+      "source_file": "src/mcp/real/real-swiggy-mcp.client.ts",
+      "source_location": "L95",
       "weight": 1.0
     },
     {
@@ -5307,7 +5474,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "src/mcp/real/real-swiggy-mcp.client.ts",
-      "source_location": "L88",
+      "source_location": "L99",
       "weight": 1.0
     },
     {
@@ -5427,7 +5594,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "src/suggestions/suggestions.service.ts",
-      "source_location": "L88",
+      "source_location": "L90",
       "weight": 1.0
     },
     {
@@ -5439,7 +5606,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "src/suggestions/suggestions.service.ts",
-      "source_location": "L74",
+      "source_location": "L76",
       "weight": 1.0
     },
     {
@@ -5451,7 +5618,19 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "src/suggestions/suggestions.service.ts",
-      "source_location": "L77",
+      "source_location": "L79",
+      "weight": 1.0
+    },
+    {
+      "source": "src_suggestions_suggestions_service_suggestionsservice_surprisetocart",
+      "target": "src_suggestions_suggestions_service_suggestionsservice_gettopsuggestions",
+      "relation": "calls",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "call",
+      "source_file": "src/suggestions/suggestions.service.ts",
+      "source_location": "L130",
       "weight": 1.0
     },
     {
@@ -5463,7 +5642,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "src/suggestions/suggestions.service.ts",
-      "source_location": "L45",
+      "source_location": "L47",
       "weight": 1.0
     },
     {
@@ -5499,7 +5678,7 @@
       "confidence_score": 1.0,
       "context": "decorator",
       "source_file": "src/mcp/mock-swiggy-mcp.client.ts",
-      "source_location": "L107",
+      "source_location": "L140",
       "weight": 1.0
     },
     {
@@ -5619,7 +5798,7 @@
       "confidence_score": 1.0,
       "context": "decorator",
       "source_file": "src/mcp/real/debug.controller.ts",
-      "source_location": "L10",
+      "source_location": "L17",
       "weight": 1.0
     },
     {
@@ -5631,7 +5810,7 @@
       "confidence_score": 1.0,
       "context": "decorator",
       "source_file": "src/mcp/real/debug.controller.ts",
-      "source_location": "L25",
+      "source_location": "L32",
       "weight": 1.0
     },
     {
@@ -5643,7 +5822,7 @@
       "confidence_score": 1.0,
       "context": "decorator",
       "source_file": "src/mcp/real/debug.controller.ts",
-      "source_location": "L30",
+      "source_location": "L38",
       "weight": 1.0
     },
     {
@@ -5655,7 +5834,7 @@
       "confidence_score": 1.0,
       "context": "decorator",
       "source_file": "src/mcp/real/debug.controller.ts",
-      "source_location": "L18",
+      "source_location": "L25",
       "weight": 1.0
     },
     {
@@ -5911,6 +6090,30 @@
       "weight": 1.0
     },
     {
+      "source": "src_suggestions_suggestions_controller_suggestionscontroller_surprisecart",
+      "target": "post",
+      "relation": "references",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "decorator",
+      "source_file": "src/suggestions/suggestions.controller.ts",
+      "source_location": "L45",
+      "weight": 1.0
+    },
+    {
+      "source": "src_suggestions_suggestions_controller_suggestionscontroller_surprisecart",
+      "target": "body",
+      "relation": "references",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "decorator",
+      "source_file": "src/suggestions/suggestions.controller.ts",
+      "source_location": "L46",
+      "weight": 1.0
+    },
+    {
       "source": "src_suggestions_suggestions_module_suggestionsmodule",
       "target": "src_suggestions_suggestions_module_ts_module",
       "relation": "references",
@@ -5931,7 +6134,7 @@
       "confidence_score": 1.0,
       "context": "decorator",
       "source_file": "src/suggestions/suggestions.service.ts",
-      "source_location": "L56",
+      "source_location": "L58",
       "weight": 1.0
     },
     {
@@ -5943,7 +6146,7 @@
       "confidence_score": 1.0,
       "context": "decorator",
       "source_file": "src/suggestions/suggestions.service.ts",
-      "source_location": "L59",
+      "source_location": "L61",
       "weight": 1.0
     },
     {
@@ -6003,7 +6206,7 @@
       "confidence_score": 1.0,
       "context": "generic_arg",
       "source_file": "src/mcp/mock-swiggy-mcp.client.ts",
-      "source_location": "L131",
+      "source_location": "L164",
       "weight": 1.0
     },
     {
@@ -6015,7 +6218,7 @@
       "confidence_score": 1.0,
       "context": "generic_arg",
       "source_file": "src/mcp/mock-swiggy-mcp.client.ts",
-      "source_location": "L109",
+      "source_location": "L142",
       "weight": 1.0
     },
     {
@@ -6027,7 +6230,19 @@
       "confidence_score": 1.0,
       "context": "generic_arg",
       "source_file": "src/mcp/mock-swiggy-mcp.client.ts",
-      "source_location": "L150",
+      "source_location": "L191",
+      "weight": 1.0
+    },
+    {
+      "source": "src_mcp_mock_swiggy_mcp_client_mockswiggymcpclient_getrestaurantmenu",
+      "target": "src_mcp_mcp_client_interface_menuitem",
+      "relation": "references",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "generic_arg",
+      "source_file": "src/mcp/mock-swiggy-mcp.client.ts",
+      "source_location": "L178",
       "weight": 1.0
     },
     {
@@ -6039,7 +6254,7 @@
       "confidence_score": 1.0,
       "context": "generic_arg",
       "source_file": "src/mcp/mock-swiggy-mcp.client.ts",
-      "source_location": "L145",
+      "source_location": "L186",
       "weight": 1.0
     },
     {
@@ -6051,7 +6266,7 @@
       "confidence_score": 1.0,
       "context": "generic_arg",
       "source_file": "src/mcp/mock-swiggy-mcp.client.ts",
-      "source_location": "L117",
+      "source_location": "L150",
       "weight": 1.0
     },
     {
@@ -6087,7 +6302,19 @@
       "confidence_score": 1.0,
       "context": "generic_arg",
       "source_file": "src/mcp/real/real-swiggy-mcp.client.ts",
-      "source_location": "L96",
+      "source_location": "L107",
+      "weight": 1.0
+    },
+    {
+      "source": "src_mcp_real_real_swiggy_mcp_client_realswiggymcpclient_getrestaurantmenu",
+      "target": "src_mcp_mcp_client_interface_menuitem",
+      "relation": "references",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "generic_arg",
+      "source_file": "src/mcp/real/real-swiggy-mcp.client.ts",
+      "source_location": "L94",
       "weight": 1.0
     },
     {
@@ -6099,7 +6326,7 @@
       "confidence_score": 1.0,
       "context": "generic_arg",
       "source_file": "src/mcp/real/real-swiggy-mcp.client.ts",
-      "source_location": "L87",
+      "source_location": "L98",
       "weight": 1.0
     },
     {
@@ -6159,7 +6386,7 @@
       "confidence_score": 1.0,
       "context": "generic_arg",
       "source_file": "src/suggestions/suggestions.service.ts",
-      "source_location": "L82",
+      "source_location": "L84",
       "weight": 1.0
     },
     {
@@ -6171,7 +6398,7 @@
       "confidence_score": 1.0,
       "context": "generic_arg",
       "source_file": "src/suggestions/suggestions.service.ts",
-      "source_location": "L66",
+      "source_location": "L68",
       "weight": 1.0
     },
     {
@@ -6183,7 +6410,19 @@
       "confidence_score": 1.0,
       "context": "generic_arg",
       "source_file": "src/suggestions/suggestions.service.ts",
-      "source_location": "L66",
+      "source_location": "L68",
+      "weight": 1.0
+    },
+    {
+      "source": "src_suggestions_suggestions_service_suggestionsservice_surprisetocart",
+      "target": "src_mcp_mcp_client_interface_cartsummary",
+      "relation": "references",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "generic_arg",
+      "source_file": "src/suggestions/suggestions.service.ts",
+      "source_location": "L118",
       "weight": 1.0
     },
     {
@@ -6548,6 +6787,18 @@
     },
     {
       "source": "src_mcp_mock_swiggy_mcp_client",
+      "target": "src_mcp_mcp_client_interface_menuitem",
+      "relation": "imports",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "import",
+      "source_file": "src/mcp/mock-swiggy-mcp.client.ts",
+      "source_location": "L2",
+      "weight": 1.0
+    },
+    {
+      "source": "src_mcp_mock_swiggy_mcp_client",
       "target": "src_mcp_mcp_client_interface_placeorderresult",
       "relation": "imports",
       "_origin": "ast",
@@ -6703,8 +6954,32 @@
       "weight": 1.0
     },
     {
+      "source": "src_mcp_real_cart_adapter",
+      "target": "src_mcp_mcp_client_interface_menuitem",
+      "relation": "imports",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "import",
+      "source_file": "src/mcp/real/cart.adapter.ts",
+      "source_location": "L2",
+      "weight": 1.0
+    },
+    {
       "source": "src_mcp_real_cart_adapter_spec",
       "target": "src_mcp_real_cart_adapter_tocartsummary",
+      "relation": "imports",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "import",
+      "source_file": "src/mcp/real/cart.adapter.spec.ts",
+      "source_location": "L1",
+      "weight": 1.0
+    },
+    {
+      "source": "src_mcp_real_cart_adapter_spec",
+      "target": "src_mcp_real_cart_adapter_tomenuitems",
       "relation": "imports",
       "_origin": "ast",
       "confidence": "EXTRACTED",
@@ -6836,6 +7111,18 @@
     },
     {
       "source": "src_mcp_real_real_swiggy_mcp_client",
+      "target": "src_mcp_real_cart_adapter_tomenuitems",
+      "relation": "imports",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "import",
+      "source_file": "src/mcp/real/real-swiggy-mcp.client.ts",
+      "source_location": "L11",
+      "weight": 1.0
+    },
+    {
+      "source": "src_mcp_real_real_swiggy_mcp_client",
       "target": "src_mcp_mcp_client_interface_accountorder",
       "relation": "imports",
       "_origin": "ast",
@@ -6861,6 +7148,18 @@
     {
       "source": "src_mcp_real_real_swiggy_mcp_client",
       "target": "src_mcp_mcp_client_interface_cartsummary",
+      "relation": "imports",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "import",
+      "source_file": "src/mcp/real/real-swiggy-mcp.client.ts",
+      "source_location": "L3",
+      "weight": 1.0
+    },
+    {
+      "source": "src_mcp_real_real_swiggy_mcp_client",
+      "target": "src_mcp_mcp_client_interface_menuitem",
       "relation": "imports",
       "_origin": "ast",
       "confidence": "EXTRACTED",
@@ -7484,6 +7783,18 @@
     },
     {
       "source": "src_suggestions_suggestions_service",
+      "target": "src_mcp_mcp_client_interface_cartsummary",
+      "relation": "imports",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "import",
+      "source_file": "src/suggestions/suggestions.service.ts",
+      "source_location": "L3",
+      "weight": 1.0
+    },
+    {
+      "source": "src_suggestions_suggestions_service",
       "target": "src_mcp_mcp_client_interface_restaurantresult",
       "relation": "imports",
       "_origin": "ast",
@@ -7599,7 +7910,7 @@
       "confidence_score": 1.0,
       "context": "import",
       "source_file": "src/suggestions/suggestions.service.spec.ts",
-      "source_location": "L1",
+      "source_location": "L2",
       "weight": 1.0
     },
     {
@@ -7611,7 +7922,7 @@
       "confidence_score": 1.0,
       "context": "import",
       "source_file": "src/suggestions/suggestions.service.spec.ts",
-      "source_location": "L2",
+      "source_location": "L3",
       "weight": 1.0
     },
     {
@@ -7623,7 +7934,7 @@
       "confidence_score": 1.0,
       "context": "import",
       "source_file": "src/suggestions/suggestions.service.spec.ts",
-      "source_location": "L3",
+      "source_location": "L4",
       "weight": 1.0
     },
     {
@@ -7635,7 +7946,7 @@
       "confidence_score": 1.0,
       "context": "import",
       "source_file": "src/suggestions/suggestions.service.spec.ts",
-      "source_location": "L4",
+      "source_location": "L5",
       "weight": 1.0
     },
     {
@@ -7647,7 +7958,19 @@
       "confidence_score": 1.0,
       "context": "import",
       "source_file": "src/suggestions/suggestions.service.spec.ts",
-      "source_location": "L5",
+      "source_location": "L6",
+      "weight": 1.0
+    },
+    {
+      "source": "src_suggestions_suggestions_service_spec",
+      "target": "src_mcp_mcp_client_interface_menuitem",
+      "relation": "imports",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "import",
+      "source_file": "src/suggestions/suggestions.service.spec.ts",
+      "source_location": "L6",
       "weight": 1.0
     },
     {
@@ -7659,7 +7982,7 @@
       "confidence_score": 1.0,
       "context": "import",
       "source_file": "src/suggestions/suggestions.service.spec.ts",
-      "source_location": "L5",
+      "source_location": "L6",
       "weight": 1.0
     },
     {
@@ -8451,7 +8774,7 @@
       "confidence_score": 1.0,
       "context": "import",
       "source_file": "src/suggestions/suggestions.service.spec.ts",
-      "source_location": "L1",
+      "source_location": "L2",
       "weight": 1.0
     },
     {
@@ -8463,7 +8786,7 @@
       "confidence_score": 1.0,
       "context": "import",
       "source_file": "src/suggestions/suggestions.service.spec.ts",
-      "source_location": "L2",
+      "source_location": "L3",
       "weight": 1.0
     },
     {
@@ -8475,7 +8798,7 @@
       "confidence_score": 1.0,
       "context": "import",
       "source_file": "src/suggestions/suggestions.service.spec.ts",
-      "source_location": "L3",
+      "source_location": "L4",
       "weight": 1.0
     },
     {
@@ -8487,7 +8810,7 @@
       "confidence_score": 1.0,
       "context": "import",
       "source_file": "src/suggestions/suggestions.service.spec.ts",
-      "source_location": "L4",
+      "source_location": "L5",
       "weight": 1.0
     },
     {
@@ -8499,7 +8822,7 @@
       "confidence_score": 1.0,
       "context": "import",
       "source_file": "src/suggestions/suggestions.service.spec.ts",
-      "source_location": "L5",
+      "source_location": "L6",
       "weight": 1.0
     },
     {
@@ -8511,7 +8834,7 @@
       "confidence_score": 1.0,
       "context": "parameter_type",
       "source_file": "src/mcp/mock-swiggy-mcp.client.ts",
-      "source_location": "L131",
+      "source_location": "L164",
       "weight": 1.0
     },
     {
@@ -8523,7 +8846,7 @@
       "confidence_score": 1.0,
       "context": "parameter_type",
       "source_file": "src/mcp/mock-swiggy-mcp.client.ts",
-      "source_location": "L117",
+      "source_location": "L150",
       "weight": 1.0
     },
     {
@@ -8571,7 +8894,7 @@
       "confidence_score": 1.0,
       "context": "parameter_type",
       "source_file": "src/mcp/real/debug.controller.ts",
-      "source_location": "L12",
+      "source_location": "L19",
       "weight": 1.0
     },
     {
@@ -8751,7 +9074,7 @@
       "confidence_score": 1.0,
       "context": "parameter_type",
       "source_file": "src/suggestions/suggestions.service.ts",
-      "source_location": "L58",
+      "source_location": "L60",
       "weight": 1.0
     },
     {
@@ -8763,7 +9086,7 @@
       "confidence_score": 1.0,
       "context": "parameter_type",
       "source_file": "src/suggestions/suggestions.service.ts",
-      "source_location": "L58",
+      "source_location": "L60",
       "weight": 1.0
     },
     {
@@ -8775,7 +9098,7 @@
       "confidence_score": 1.0,
       "context": "parameter_type",
       "source_file": "src/suggestions/suggestions.service.ts",
-      "source_location": "L58",
+      "source_location": "L60",
       "weight": 1.0
     },
     {
@@ -8787,7 +9110,7 @@
       "confidence_score": 1.0,
       "context": "parameter_type",
       "source_file": "src/suggestions/suggestions.service.ts",
-      "source_location": "L58",
+      "source_location": "L60",
       "weight": 1.0
     },
     {
@@ -8799,7 +9122,7 @@
       "confidence_score": 1.0,
       "context": "parameter_type",
       "source_file": "src/suggestions/suggestions.service.ts",
-      "source_location": "L58",
+      "source_location": "L60",
       "weight": 1.0
     },
     {
@@ -8811,7 +9134,7 @@
       "confidence_score": 1.0,
       "context": "parameter_type",
       "source_file": "src/suggestions/suggestions.service.ts",
-      "source_location": "L82",
+      "source_location": "L84",
       "weight": 1.0
     },
     {
@@ -8823,7 +9146,7 @@
       "confidence_score": 1.0,
       "context": "type",
       "source_file": "src/mcp/mock-swiggy-mcp.client.ts",
-      "source_location": "L108",
+      "source_location": "L141",
       "weight": 1.0
     },
     {
@@ -10277,7 +10600,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "README.md",
-      "source_location": "L100",
+      "source_location": "L106",
       "weight": 1.0
     },
     {
@@ -10288,7 +10611,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "README.md",
-      "source_location": "L112",
+      "source_location": "L118",
       "weight": 1.0
     },
     {
@@ -10304,13 +10627,13 @@
     },
     {
       "source": "readme_smart_order_agent",
-      "target": "readme_roadmap_conclude_at_cart_next",
+      "target": "readme_conclude_at_cart_shipped",
       "relation": "contains",
       "_origin": "ast",
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "README.md",
-      "source_location": "L127",
+      "source_location": "L138",
       "weight": 1.0
     },
     {
@@ -10321,7 +10644,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "README.md",
-      "source_location": "L135",
+      "source_location": "L146",
       "weight": 1.0
     },
     {
@@ -10354,7 +10677,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "README.md",
-      "source_location": "L85",
+      "source_location": "L91",
       "weight": 1.0
     },
     {
@@ -10425,7 +10748,7 @@
     },
     {
       "source": "src_mcp_mcp_client_interface",
-      "target": "src_mcp_mcp_client_interface_cartsummary",
+      "target": "src_mcp_mcp_client_interface_menuitem",
       "relation": "contains",
       "_origin": "ast",
       "confidence": "EXTRACTED",
@@ -10436,13 +10759,24 @@
     },
     {
       "source": "src_mcp_mcp_client_interface",
+      "target": "src_mcp_mcp_client_interface_cartsummary",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "src/mcp/mcp-client.interface.ts",
+      "source_location": "L44",
+      "weight": 1.0
+    },
+    {
+      "source": "src_mcp_mcp_client_interface",
       "target": "src_mcp_mcp_client_interface_placeorderresult",
       "relation": "contains",
       "_origin": "ast",
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "src/mcp/mcp-client.interface.ts",
-      "source_location": "L42",
+      "source_location": "L52",
       "weight": 1.0
     },
     {
@@ -10453,23 +10787,12 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "src/mcp/mcp-client.interface.ts",
-      "source_location": "L49",
+      "source_location": "L59",
       "weight": 1.0
     },
     {
       "source": "src_mcp_mcp_client_interface",
       "target": "src_mcp_mcp_client_interface_accountorder",
-      "relation": "contains",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "src/mcp/mcp-client.interface.ts",
-      "source_location": "L55",
-      "weight": 1.0
-    },
-    {
-      "source": "src_mcp_mcp_client_interface",
-      "target": "src_mcp_mcp_client_interface_swiggymcpclient",
       "relation": "contains",
       "_origin": "ast",
       "confidence": "EXTRACTED",
@@ -10487,6 +10810,17 @@
       "confidence_score": 1.0,
       "source_file": "src/mcp/mcp-client.interface.ts",
       "source_location": "L7",
+      "weight": 1.0
+    },
+    {
+      "source": "src_mcp_mcp_client_interface",
+      "target": "src_mcp_mcp_client_interface_swiggymcpclient",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "src/mcp/mcp-client.interface.ts",
+      "source_location": "L75",
       "weight": 1.0
     },
     {
@@ -10519,7 +10853,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "src/mcp/mock-swiggy-mcp.client.ts",
-      "source_location": "L108",
+      "source_location": "L141",
       "weight": 1.0
     },
     {
@@ -10535,24 +10869,35 @@
     },
     {
       "source": "src_mcp_mock_swiggy_mcp_client",
+      "target": "src_mcp_mock_swiggy_mcp_client_default_menu",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "src/mcp/mock-swiggy-mcp.client.ts",
+      "source_location": "L35",
+      "weight": 1.0
+    },
+    {
+      "source": "src_mcp_mock_swiggy_mcp_client",
+      "target": "src_mcp_mock_swiggy_mcp_client_mock_menus",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "src/mcp/mock-swiggy-mcp.client.ts",
+      "source_location": "L42",
+      "weight": 1.0
+    },
+    {
+      "source": "src_mcp_mock_swiggy_mcp_client",
       "target": "src_mcp_mock_swiggy_mcp_client_daysago",
       "relation": "contains",
       "_origin": "ast",
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "src/mcp/mock-swiggy-mcp.client.ts",
-      "source_location": "L32",
-      "weight": 1.0
-    },
-    {
-      "source": "src_mcp_mock_swiggy_mcp_client",
-      "target": "src_mcp_mock_swiggy_mcp_client_mock_orders",
-      "relation": "contains",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "src/mcp/mock-swiggy-mcp.client.ts",
-      "source_location": "L38",
+      "source_location": "L65",
       "weight": 1.0
     },
     {
@@ -10564,6 +10909,17 @@
       "confidence_score": 1.0,
       "source_file": "src/mcp/mock-swiggy-mcp.client.ts",
       "source_location": "L7",
+      "weight": 1.0
+    },
+    {
+      "source": "src_mcp_mock_swiggy_mcp_client",
+      "target": "src_mcp_mock_swiggy_mcp_client_mock_orders",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "src/mcp/mock-swiggy-mcp.client.ts",
+      "source_location": "L71",
       "weight": 1.0
     },
     {
@@ -10622,6 +10978,17 @@
       "weight": 1.0
     },
     {
+      "source": "src_mcp_real_cart_adapter",
+      "target": "src_mcp_real_cart_adapter_tomenuitems",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "src/mcp/real/cart.adapter.ts",
+      "source_location": "L35",
+      "weight": 1.0
+    },
+    {
       "source": "src_mcp_real_debug_controller",
       "target": "src_mcp_real_debug_controller_mcpdebugcontroller",
       "relation": "contains",
@@ -10629,7 +10996,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "src/mcp/real/debug.controller.ts",
-      "source_location": "L11",
+      "source_location": "L18",
       "weight": 1.0
     },
     {
@@ -11195,13 +11562,24 @@
     },
     {
       "source": "src_suggestions_suggestions_service",
+      "target": "src_suggestions_suggestions_service_currenttimeslot",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "src/suggestions/suggestions.service.ts",
+      "source_location": "L11",
+      "weight": 1.0
+    },
+    {
+      "source": "src_suggestions_suggestions_service",
       "target": "src_suggestions_suggestions_service_meal_default_query",
       "relation": "contains",
       "_origin": "ast",
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "src/suggestions/suggestions.service.ts",
-      "source_location": "L18",
+      "source_location": "L20",
       "weight": 1.0
     },
     {
@@ -11212,7 +11590,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "src/suggestions/suggestions.service.ts",
-      "source_location": "L29",
+      "source_location": "L31",
       "weight": 1.0
     },
     {
@@ -11223,7 +11601,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "src/suggestions/suggestions.service.ts",
-      "source_location": "L41",
+      "source_location": "L43",
       "weight": 1.0
     },
     {
@@ -11234,12 +11612,12 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "src/suggestions/suggestions.service.ts",
-      "source_location": "L57",
+      "source_location": "L59",
       "weight": 1.0
     },
     {
       "source": "src_suggestions_suggestions_service",
-      "target": "src_suggestions_suggestions_service_currenttimeslot",
+      "target": "src_suggestions_suggestions_service_pick",
       "relation": "contains",
       "_origin": "ast",
       "confidence": "EXTRACTED",
@@ -11250,13 +11628,24 @@
     },
     {
       "source": "src_suggestions_suggestions_service_spec",
+      "target": "src_suggestions_suggestions_service_spec_buildcartspy",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "src/suggestions/suggestions.service.spec.ts",
+      "source_location": "L132",
+      "weight": 1.0
+    },
+    {
+      "source": "src_suggestions_suggestions_service_spec",
       "target": "src_suggestions_suggestions_service_spec_ordera",
       "relation": "contains",
       "_origin": "ast",
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "src/suggestions/suggestions.service.spec.ts",
-      "source_location": "L13",
+      "source_location": "L14",
       "weight": 1.0
     },
     {
@@ -11267,7 +11656,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "src/suggestions/suggestions.service.spec.ts",
-      "source_location": "L23",
+      "source_location": "L24",
       "weight": 1.0
     },
     {
@@ -11278,7 +11667,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "src/suggestions/suggestions.service.spec.ts",
-      "source_location": "L33",
+      "source_location": "L34",
       "weight": 1.0
     },
     {
@@ -11289,18 +11678,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "src/suggestions/suggestions.service.spec.ts",
-      "source_location": "L43",
-      "weight": 1.0
-    },
-    {
-      "source": "src_suggestions_suggestions_service_spec",
-      "target": "src_suggestions_suggestions_service_spec_makerestaurant",
-      "relation": "contains",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "src/suggestions/suggestions.service.spec.ts",
-      "source_location": "L7",
+      "source_location": "L44",
       "weight": 1.0
     },
     {
@@ -11311,7 +11689,18 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "src/suggestions/suggestions.service.spec.ts",
-      "source_location": "L73",
+      "source_location": "L74",
+      "weight": 1.0
+    },
+    {
+      "source": "src_suggestions_suggestions_service_spec",
+      "target": "src_suggestions_suggestions_service_spec_makerestaurant",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "src/suggestions/suggestions.service.spec.ts",
+      "source_location": "L8",
       "weight": 1.0
     },
     {
@@ -11322,7 +11711,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "src/suggestions/suggestions.service.spec.ts",
-      "source_location": "L84",
+      "source_location": "L85",
       "weight": 1.0
     },
     {
@@ -11498,7 +11887,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "src/mcp/mcp-client.interface.ts",
-      "source_location": "L66",
+      "source_location": "L76",
       "weight": 1.0
     },
     {
@@ -11509,7 +11898,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "src/mcp/mcp-client.interface.ts",
-      "source_location": "L67",
+      "source_location": "L77",
       "weight": 1.0
     },
     {
@@ -11520,7 +11909,18 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "src/mcp/mcp-client.interface.ts",
-      "source_location": "L68",
+      "source_location": "L78",
+      "weight": 1.0
+    },
+    {
+      "source": "src_mcp_mcp_client_interface_swiggymcpclient",
+      "target": "src_mcp_mcp_client_interface_swiggymcpclient_getrestaurantmenu",
+      "relation": "method",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "src/mcp/mcp-client.interface.ts",
+      "source_location": "L79",
       "weight": 1.0
     },
     {
@@ -11531,7 +11931,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "src/mcp/mcp-client.interface.ts",
-      "source_location": "L69",
+      "source_location": "L80",
       "weight": 1.0
     },
     {
@@ -11542,7 +11942,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "src/mcp/mcp-client.interface.ts",
-      "source_location": "L70",
+      "source_location": "L81",
       "weight": 1.0
     },
     {
@@ -11553,7 +11953,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "src/mcp/mcp-client.interface.ts",
-      "source_location": "L71",
+      "source_location": "L82",
       "weight": 1.0
     },
     {
@@ -11564,7 +11964,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "src/mcp/mock-swiggy-mcp.client.ts",
-      "source_location": "L109",
+      "source_location": "L142",
       "weight": 1.0
     },
     {
@@ -11575,7 +11975,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "src/mcp/mock-swiggy-mcp.client.ts",
-      "source_location": "L117",
+      "source_location": "L150",
       "weight": 1.0
     },
     {
@@ -11586,7 +11986,18 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "src/mcp/mock-swiggy-mcp.client.ts",
-      "source_location": "L131",
+      "source_location": "L164",
+      "weight": 1.0
+    },
+    {
+      "source": "src_mcp_mock_swiggy_mcp_client_mockswiggymcpclient",
+      "target": "src_mcp_mock_swiggy_mcp_client_mockswiggymcpclient_getrestaurantmenu",
+      "relation": "method",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "src/mcp/mock-swiggy-mcp.client.ts",
+      "source_location": "L178",
       "weight": 1.0
     },
     {
@@ -11597,7 +12008,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "src/mcp/mock-swiggy-mcp.client.ts",
-      "source_location": "L145",
+      "source_location": "L186",
       "weight": 1.0
     },
     {
@@ -11608,7 +12019,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "src/mcp/mock-swiggy-mcp.client.ts",
-      "source_location": "L150",
+      "source_location": "L191",
       "weight": 1.0
     },
     {
@@ -11619,7 +12030,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "src/mcp/mock-swiggy-mcp.client.ts",
-      "source_location": "L158",
+      "source_location": "L199",
       "weight": 1.0
     },
     {
@@ -11630,7 +12041,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "src/mcp/mock-swiggy-mcp.client.ts",
-      "source_location": "L165",
+      "source_location": "L206",
       "weight": 1.0
     },
     {
@@ -11839,7 +12250,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "src/mcp/real/debug.controller.ts",
-      "source_location": "L12",
+      "source_location": "L19",
       "weight": 1.0
     },
     {
@@ -11850,7 +12261,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "src/mcp/real/debug.controller.ts",
-      "source_location": "L14",
+      "source_location": "L21",
       "weight": 1.0
     },
     {
@@ -11861,7 +12272,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "src/mcp/real/debug.controller.ts",
-      "source_location": "L19",
+      "source_location": "L26",
       "weight": 1.0
     },
     {
@@ -11872,7 +12283,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "src/mcp/real/debug.controller.ts",
-      "source_location": "L26",
+      "source_location": "L33",
       "weight": 1.0
     },
     {
@@ -11976,13 +12387,24 @@
     },
     {
       "source": "src_mcp_real_real_swiggy_mcp_client_realswiggymcpclient",
+      "target": "src_mcp_real_real_swiggy_mcp_client_realswiggymcpclient_getorderhistory",
+      "relation": "method",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "src/mcp/real/real-swiggy-mcp.client.ts",
+      "source_location": "L107",
+      "weight": 1.0
+    },
+    {
+      "source": "src_mcp_real_real_swiggy_mcp_client_realswiggymcpclient",
       "target": "src_mcp_real_real_swiggy_mcp_client_realswiggymcpclient_getrestaurantcuisines",
       "relation": "method",
       "_origin": "ast",
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "src/mcp/real/real-swiggy-mcp.client.ts",
-      "source_location": "L100",
+      "source_location": "L111",
       "weight": 1.0
     },
     {
@@ -12053,24 +12475,24 @@
     },
     {
       "source": "src_mcp_real_real_swiggy_mcp_client_realswiggymcpclient",
+      "target": "src_mcp_real_real_swiggy_mcp_client_realswiggymcpclient_getrestaurantmenu",
+      "relation": "method",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "src/mcp/real/real-swiggy-mcp.client.ts",
+      "source_location": "L94",
+      "weight": 1.0
+    },
+    {
+      "source": "src_mcp_real_real_swiggy_mcp_client_realswiggymcpclient",
       "target": "src_mcp_real_real_swiggy_mcp_client_realswiggymcpclient_placeorder",
       "relation": "method",
       "_origin": "ast",
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "src/mcp/real/real-swiggy-mcp.client.ts",
-      "source_location": "L87",
-      "weight": 1.0
-    },
-    {
-      "source": "src_mcp_real_real_swiggy_mcp_client_realswiggymcpclient",
-      "target": "src_mcp_real_real_swiggy_mcp_client_realswiggymcpclient_getorderhistory",
-      "relation": "method",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "src/mcp/real/real-swiggy-mcp.client.ts",
-      "source_location": "L96",
+      "source_location": "L98",
       "weight": 1.0
     },
     {
@@ -12218,6 +12640,17 @@
     },
     {
       "source": "src_suggestions_suggestions_controller_suggestionscontroller",
+      "target": "src_suggestions_suggestions_controller_suggestionscontroller_surprisecart",
+      "relation": "method",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "src/suggestions/suggestions.controller.ts",
+      "source_location": "L46",
+      "weight": 1.0
+    },
+    {
+      "source": "src_suggestions_suggestions_controller_suggestionscontroller",
       "target": "src_suggestions_suggestions_controller_suggestionscontroller_constructor",
       "relation": "method",
       "_origin": "ast",
@@ -12229,13 +12662,24 @@
     },
     {
       "source": "src_suggestions_suggestions_service_suggestionsservice",
+      "target": "src_suggestions_suggestions_service_suggestionsservice_surprisetocart",
+      "relation": "method",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "src/suggestions/suggestions.service.ts",
+      "source_location": "L118",
+      "weight": 1.0
+    },
+    {
+      "source": "src_suggestions_suggestions_service_suggestionsservice",
       "target": "src_suggestions_suggestions_service_suggestionsservice_acceptsuggestion",
       "relation": "method",
       "_origin": "ast",
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "src/suggestions/suggestions.service.ts",
-      "source_location": "L113",
+      "source_location": "L178",
       "weight": 1.0
     },
     {
@@ -12246,7 +12690,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "src/suggestions/suggestions.service.ts",
-      "source_location": "L119",
+      "source_location": "L184",
       "weight": 1.0
     },
     {
@@ -12257,7 +12701,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "src/suggestions/suggestions.service.ts",
-      "source_location": "L58",
+      "source_location": "L60",
       "weight": 1.0
     },
     {
@@ -12268,7 +12712,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "src/suggestions/suggestions.service.ts",
-      "source_location": "L66",
+      "source_location": "L68",
       "weight": 1.0
     },
     {
@@ -12279,7 +12723,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "src/suggestions/suggestions.service.ts",
-      "source_location": "L82",
+      "source_location": "L84",
       "weight": 1.0
     },
     {
@@ -12350,7 +12794,7 @@
       "confidence_score": 0.8,
       "context": "call",
       "source_file": "src/mcp/real/debug.controller.ts",
-      "source_location": "L36",
+      "source_location": "L44",
       "weight": 1.0
     },
     {
@@ -12362,7 +12806,7 @@
       "confidence_score": 0.8,
       "context": "call",
       "source_file": "src/mcp/real/debug.controller.ts",
-      "source_location": "L21",
+      "source_location": "L28",
       "weight": 1.0
     },
     {
@@ -12462,6 +12906,18 @@
       "weight": 1.0
     },
     {
+      "source": "src_suggestions_suggestions_controller_suggestionscontroller_surprisecart",
+      "target": "src_suggestions_suggestions_service_suggestionsservice_surprisetocart",
+      "relation": "calls",
+      "_origin": "ast",
+      "confidence": "INFERRED",
+      "confidence_score": 0.8,
+      "context": "call",
+      "source_file": "src/suggestions/suggestions.controller.ts",
+      "source_location": "L47",
+      "weight": 1.0
+    },
+    {
       "source": "src_suggestions_suggestions_service_suggestionsservice_acceptsuggestion",
       "target": "src_preferences_preferences_service_preferencesservice_recordfeedback",
       "relation": "calls",
@@ -12470,7 +12926,7 @@
       "confidence_score": 0.8,
       "context": "call",
       "source_file": "src/suggestions/suggestions.service.ts",
-      "source_location": "L114",
+      "source_location": "L179",
       "weight": 1.0
     },
     {
@@ -12482,7 +12938,7 @@
       "confidence_score": 0.8,
       "context": "call",
       "source_file": "src/suggestions/suggestions.service.ts",
-      "source_location": "L110",
+      "source_location": "L112",
       "weight": 1.0
     },
     {
@@ -12494,7 +12950,7 @@
       "confidence_score": 0.8,
       "context": "call",
       "source_file": "src/suggestions/suggestions.service.ts",
-      "source_location": "L73",
+      "source_location": "L75",
       "weight": 1.0
     },
     {
@@ -12506,7 +12962,7 @@
       "confidence_score": 0.8,
       "context": "call",
       "source_file": "src/suggestions/suggestions.service.ts",
-      "source_location": "L76",
+      "source_location": "L78",
       "weight": 1.0
     },
     {
@@ -12518,7 +12974,7 @@
       "confidence_score": 0.8,
       "context": "call",
       "source_file": "src/suggestions/suggestions.service.ts",
-      "source_location": "L120",
+      "source_location": "L185",
       "weight": 1.0
     },
     {
@@ -12535,5 +12991,5 @@
     }
   ],
   "hyperedges": [],
-  "built_at_commit": "510b3800f066d3f4eace7d8b4f7ba03527bda5fb"
+  "built_at_commit": "f83427cdb301aadac8152b45801fc11b5e339c5f"
 }

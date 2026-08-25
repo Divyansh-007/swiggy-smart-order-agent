@@ -129,9 +129,11 @@ skip/accept feedback is still keyed by a separate `userId`. Binding them fully
   but not personalized. A short onboarding Q&A would fix it.
 - Response adapters (`src/mcp/real/*.adapter.ts`) are reconciled against captured
   live payloads; broaden coverage as more Swiggy fields are used.
-- **`surprise-cart` adds a single simple item** — items requiring variant/add-on
-  selection are skipped for now (a bare `{menu_item_id, quantity}` add). Handling
-  required customizations is a follow-up.
+- **`surprise-cart` adds a single un-customized item** — it *prefers* an in-stock
+  item with no required variants/add-ons and adds a bare `{menu_item_id, quantity}`.
+  If a picked restaurant has only customizable items it falls back to one, which the
+  cart API may reject (surfaced as an error, never a wrong cart). Handling required
+  customizations is a follow-up.
 
 ## Conclude at cart (shipped)
 

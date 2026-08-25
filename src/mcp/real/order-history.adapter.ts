@@ -2,13 +2,7 @@
 // Key live-vs-doc differences the capture caught:
 //   - reorder item id field is `itemId` (docs said menu_item_id/item_id).
 //   - orderedTime is "Month DD, H:MM AM/PM" with NO year (JS mis-parses the year).
-//   - get_food_order_details returns EMPTY structuredContent (no restaurant_cuisine live),
-//     so cuisinesFromOrderDetails degrades to [] — Discovery cuisine enrichment is limited.
 import { AccountOrder, ReorderItem } from '../mcp-client.interface';
-
-function snake(s: string): string {
-  return s.toLowerCase().trim().replace(/\s+/g, '_');
-}
 
 /** Swiggy sends money as a display string ("₹340" / "₹1,200"); pull the integer out. */
 function parseAmount(v: unknown): number {
@@ -73,10 +67,4 @@ export function toAccountOrders(data: unknown): AccountOrder[] {
     isActiveOrder: !!o.isActiveOrder,
     reorderItems: reorderItemsOf(o),
   }));
-}
-
-export function cuisinesFromOrderDetails(data: unknown): string[] {
-  const cuisines =
-    (data as any)?.order?.restaurant_cuisine ?? (data as any)?.restaurant_cuisine ?? [];
-  return (cuisines as string[]).map(snake);
 }

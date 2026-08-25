@@ -14,7 +14,7 @@
       "file_type": "code",
       "norm_label": "reorderitem",
       "source_file": "src/mcp/mcp-client.interface.ts",
-      "source_location": "L59"
+      "source_location": "L53"
     },
     {
       "id": "src_mcp_mcp_client_interface_restaurantresult",
@@ -170,7 +170,7 @@
       "file_type": "code",
       "norm_label": "accountorder",
       "source_file": "src/mcp/mcp-client.interface.ts",
-      "source_location": "L65"
+      "source_location": "L59"
     },
     {
       "id": "src_mcp_mcp_client_interface_buildcartparams",
@@ -225,19 +225,6 @@
       "source_location": "L34"
     },
     {
-      "id": "src_mcp_mcp_client_interface_placeorderresult",
-      "label": "PlaceOrderResult",
-      "_callable": true,
-      "_callable_class": true,
-      "_origin": "ast",
-      "community": 1,
-      "community_name": "real-swiggy-mcp.client.ts",
-      "file_type": "code",
-      "norm_label": "placeorderresult",
-      "source_file": "src/mcp/mcp-client.interface.ts",
-      "source_location": "L52"
-    },
-    {
       "id": "src_mcp_mcp_client_interface_searchrestaurantsparams",
       "label": "SearchRestaurantsParams",
       "_callable": true,
@@ -264,6 +251,19 @@
       "source_location": "L1"
     },
     {
+      "id": "src_mcp_mcp_client_interface_swiggymcpclient",
+      "label": "SwiggyMcpClient",
+      "_callable": true,
+      "_callable_class": true,
+      "_origin": "ast",
+      "community": 1,
+      "community_name": "real-swiggy-mcp.client.ts",
+      "file_type": "code",
+      "norm_label": "swiggymcpclient",
+      "source_file": "src/mcp/mcp-client.interface.ts",
+      "source_location": "L69"
+    },
+    {
       "id": "src_mcp_mock_swiggy_mcp_client_mockswiggymcpclient",
       "label": "MockSwiggyMcpClient",
       "_callable": true,
@@ -274,7 +274,7 @@
       "file_type": "code",
       "norm_label": "mockswiggymcpclient",
       "source_file": "src/mcp/mock-swiggy-mcp.client.ts",
-      "source_location": "L141"
+      "source_location": "L129"
     },
     {
       "id": "src_mcp_real_real_swiggy_mcp_client_realswiggymcpclient",
@@ -314,19 +314,6 @@
       "norm_label": "suggestionsmodule",
       "source_file": "src/suggestions/suggestions.module.ts",
       "source_location": "L14"
-    },
-    {
-      "id": "src_mcp_mcp_client_interface_swiggymcpclient",
-      "label": "SwiggyMcpClient",
-      "_callable": true,
-      "_callable_class": true,
-      "_origin": "ast",
-      "community": 28,
-      "community_name": "SwiggyMcpClient",
-      "file_type": "code",
-      "norm_label": "swiggymcpclient",
-      "source_file": "src/mcp/mcp-client.interface.ts",
-      "source_location": "L75"
     },
     {
       "id": "src_mcp_mcp_module_mcpmodule",
@@ -652,7 +639,7 @@
       "file_type": "code",
       "norm_label": "buildcartspy()",
       "source_file": "src/suggestions/suggestions.service.spec.ts",
-      "source_location": "L132"
+      "source_location": "L131"
     },
     {
       "id": "src_suggestions_suggestions_service_spec_buildservice",
@@ -664,7 +651,7 @@
       "file_type": "code",
       "norm_label": "buildservice()",
       "source_file": "src/suggestions/suggestions.service.spec.ts",
-      "source_location": "L85"
+      "source_location": "L84"
     },
     {
       "id": "src_suggestions_suggestions_service_spec_makerestaurant",
@@ -727,6 +714,66 @@
       "source_location": "L43"
     },
     {
+      "id": "src_mcp_mcp_client_interface_swiggymcpclient_buildcart",
+      "label": ".buildCart()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 1,
+      "community_name": "real-swiggy-mcp.client.ts",
+      "file_type": "code",
+      "norm_label": ".buildcart()",
+      "source_file": "src/mcp/mcp-client.interface.ts",
+      "source_location": "L72"
+    },
+    {
+      "id": "src_mcp_mcp_client_interface_swiggymcpclient_getaddresses",
+      "label": ".getAddresses()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 1,
+      "community_name": "real-swiggy-mcp.client.ts",
+      "file_type": "code",
+      "norm_label": ".getaddresses()",
+      "source_file": "src/mcp/mcp-client.interface.ts",
+      "source_location": "L70"
+    },
+    {
+      "id": "src_mcp_mcp_client_interface_swiggymcpclient_getorderhistory",
+      "label": ".getOrderHistory()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 1,
+      "community_name": "real-swiggy-mcp.client.ts",
+      "file_type": "code",
+      "norm_label": ".getorderhistory()",
+      "source_file": "src/mcp/mcp-client.interface.ts",
+      "source_location": "L74"
+    },
+    {
+      "id": "src_mcp_mcp_client_interface_swiggymcpclient_getrestaurantmenu",
+      "label": ".getRestaurantMenu()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 1,
+      "community_name": "real-swiggy-mcp.client.ts",
+      "file_type": "code",
+      "norm_label": ".getrestaurantmenu()",
+      "source_file": "src/mcp/mcp-client.interface.ts",
+      "source_location": "L73"
+    },
+    {
+      "id": "src_mcp_mcp_client_interface_swiggymcpclient_searchrestaurants",
+      "label": ".searchRestaurants()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 1,
+      "community_name": "real-swiggy-mcp.client.ts",
+      "file_type": "code",
+      "norm_label": ".searchrestaurants()",
+      "source_file": "src/mcp/mcp-client.interface.ts",
+      "source_location": "L71"
+    },
+    {
       "id": "src_mcp_mock_swiggy_mcp_client_daysago",
       "label": "daysAgo()",
       "_callable": true,
@@ -736,7 +783,7 @@
       "file_type": "code",
       "norm_label": "daysago()",
       "source_file": "src/mcp/mock-swiggy-mcp.client.ts",
-      "source_location": "L65"
+      "source_location": "L53"
     },
     {
       "id": "src_mcp_mock_swiggy_mcp_client_mockswiggymcpclient_buildcart",
@@ -748,7 +795,7 @@
       "file_type": "code",
       "norm_label": ".buildcart()",
       "source_file": "src/mcp/mock-swiggy-mcp.client.ts",
-      "source_location": "L164"
+      "source_location": "L152"
     },
     {
       "id": "src_mcp_mock_swiggy_mcp_client_mockswiggymcpclient_getaddresses",
@@ -760,7 +807,7 @@
       "file_type": "code",
       "norm_label": ".getaddresses()",
       "source_file": "src/mcp/mock-swiggy-mcp.client.ts",
-      "source_location": "L142"
+      "source_location": "L130"
     },
     {
       "id": "src_mcp_mock_swiggy_mcp_client_mockswiggymcpclient_getorderhistory",
@@ -772,19 +819,7 @@
       "file_type": "code",
       "norm_label": ".getorderhistory()",
       "source_file": "src/mcp/mock-swiggy-mcp.client.ts",
-      "source_location": "L191"
-    },
-    {
-      "id": "src_mcp_mock_swiggy_mcp_client_mockswiggymcpclient_getrestaurantcuisines",
-      "label": ".getRestaurantCuisines()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 1,
-      "community_name": "real-swiggy-mcp.client.ts",
-      "file_type": "code",
-      "norm_label": ".getrestaurantcuisines()",
-      "source_file": "src/mcp/mock-swiggy-mcp.client.ts",
-      "source_location": "L199"
+      "source_location": "L174"
     },
     {
       "id": "src_mcp_mock_swiggy_mcp_client_mockswiggymcpclient_getrestaurantmenu",
@@ -796,7 +831,7 @@
       "file_type": "code",
       "norm_label": ".getrestaurantmenu()",
       "source_file": "src/mcp/mock-swiggy-mcp.client.ts",
-      "source_location": "L178"
+      "source_location": "L166"
     },
     {
       "id": "src_mcp_mock_swiggy_mcp_client_mockswiggymcpclient_latency",
@@ -808,19 +843,7 @@
       "file_type": "code",
       "norm_label": ".latency()",
       "source_file": "src/mcp/mock-swiggy-mcp.client.ts",
-      "source_location": "L206"
-    },
-    {
-      "id": "src_mcp_mock_swiggy_mcp_client_mockswiggymcpclient_placeorder",
-      "label": ".placeOrder()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 1,
-      "community_name": "real-swiggy-mcp.client.ts",
-      "file_type": "code",
-      "norm_label": ".placeorder()",
-      "source_file": "src/mcp/mock-swiggy-mcp.client.ts",
-      "source_location": "L186"
+      "source_location": "L182"
     },
     {
       "id": "src_mcp_mock_swiggy_mcp_client_mockswiggymcpclient_searchrestaurants",
@@ -832,7 +855,7 @@
       "file_type": "code",
       "norm_label": ".searchrestaurants()",
       "source_file": "src/mcp/mock-swiggy-mcp.client.ts",
-      "source_location": "L150"
+      "source_location": "L138"
     },
     {
       "id": "src_mcp_real_cart_adapter_tocartsummary",
@@ -859,6 +882,18 @@
       "source_location": "L35"
     },
     {
+      "id": "src_mcp_real_mcp_session_factory_mcpsessionfactory_reset",
+      "label": ".reset()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 1,
+      "community_name": "real-swiggy-mcp.client.ts",
+      "file_type": "code",
+      "norm_label": ".reset()",
+      "source_file": "src/mcp/real/mcp-session.factory.ts",
+      "source_location": "L181"
+    },
+    {
       "id": "src_mcp_real_real_swiggy_mcp_client_realswiggymcpclient_buildcart",
       "label": ".buildCart()",
       "_callable": true,
@@ -883,6 +918,18 @@
       "source_location": "L34"
     },
     {
+      "id": "src_mcp_real_real_swiggy_mcp_client_realswiggymcpclient_constructor",
+      "label": ".constructor()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 1,
+      "community_name": "real-swiggy-mcp.client.ts",
+      "file_type": "code",
+      "norm_label": ".constructor()",
+      "source_file": "src/mcp/real/real-swiggy-mcp.client.ts",
+      "source_location": "L15"
+    },
+    {
       "id": "src_mcp_real_real_swiggy_mcp_client_realswiggymcpclient_getaddresses",
       "label": ".getAddresses()",
       "_callable": true,
@@ -904,19 +951,7 @@
       "file_type": "code",
       "norm_label": ".getorderhistory()",
       "source_file": "src/mcp/real/real-swiggy-mcp.client.ts",
-      "source_location": "L107"
-    },
-    {
-      "id": "src_mcp_real_real_swiggy_mcp_client_realswiggymcpclient_getrestaurantcuisines",
-      "label": ".getRestaurantCuisines()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 1,
-      "community_name": "real-swiggy-mcp.client.ts",
-      "file_type": "code",
-      "norm_label": ".getrestaurantcuisines()",
-      "source_file": "src/mcp/real/real-swiggy-mcp.client.ts",
-      "source_location": "L111"
+      "source_location": "L98"
     },
     {
       "id": "src_mcp_real_real_swiggy_mcp_client_realswiggymcpclient_getrestaurantmenu",
@@ -929,18 +964,6 @@
       "norm_label": ".getrestaurantmenu()",
       "source_file": "src/mcp/real/real-swiggy-mcp.client.ts",
       "source_location": "L94"
-    },
-    {
-      "id": "src_mcp_real_real_swiggy_mcp_client_realswiggymcpclient_placeorder",
-      "label": ".placeOrder()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 1,
-      "community_name": "real-swiggy-mcp.client.ts",
-      "file_type": "code",
-      "norm_label": ".placeorder()",
-      "source_file": "src/mcp/real/real-swiggy-mcp.client.ts",
-      "source_location": "L98"
     },
     {
       "id": "src_mcp_real_real_swiggy_mcp_client_realswiggymcpclient_searchrestaurants",
@@ -1039,18 +1062,6 @@
       "source_location": "L40"
     },
     {
-      "id": "src_mcp_real_order_history_adapter_cuisinesfromorderdetails",
-      "label": "cuisinesFromOrderDetails()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 14,
-      "community_name": "order-history.adapter.ts",
-      "file_type": "code",
-      "norm_label": "cuisinesfromorderdetails()",
-      "source_file": "src/mcp/real/order-history.adapter.ts",
-      "source_location": "L78"
-    },
-    {
       "id": "src_mcp_real_order_history_adapter_parseamount",
       "label": "parseAmount()",
       "_callable": true,
@@ -1060,7 +1071,7 @@
       "file_type": "code",
       "norm_label": "parseamount()",
       "source_file": "src/mcp/real/order-history.adapter.ts",
-      "source_location": "L14"
+      "source_location": "L8"
     },
     {
       "id": "src_mcp_real_order_history_adapter_parseorderedat",
@@ -1072,7 +1083,7 @@
       "file_type": "code",
       "norm_label": "parseorderedat()",
       "source_file": "src/mcp/real/order-history.adapter.ts",
-      "source_location": "L30"
+      "source_location": "L24"
     },
     {
       "id": "src_mcp_real_order_history_adapter_reorderitemsof",
@@ -1084,19 +1095,7 @@
       "file_type": "code",
       "norm_label": "reorderitemsof()",
       "source_file": "src/mcp/real/order-history.adapter.ts",
-      "source_location": "L53"
-    },
-    {
-      "id": "src_mcp_real_order_history_adapter_snake",
-      "label": "snake()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 14,
-      "community_name": "order-history.adapter.ts",
-      "file_type": "code",
-      "norm_label": "snake()",
-      "source_file": "src/mcp/real/order-history.adapter.ts",
-      "source_location": "L9"
+      "source_location": "L47"
     },
     {
       "id": "src_mcp_real_order_history_adapter_toaccountorders",
@@ -1108,7 +1107,7 @@
       "file_type": "code",
       "norm_label": "toaccountorders()",
       "source_file": "src/mcp/real/order-history.adapter.ts",
-      "source_location": "L65"
+      "source_location": "L59"
     },
     {
       "id": "src_main_bootstrap",
@@ -1121,102 +1120,6 @@
       "norm_label": "bootstrap()",
       "source_file": "src/main.ts",
       "source_location": "L5"
-    },
-    {
-      "id": "src_mcp_mcp_client_interface_swiggymcpclient_buildcart",
-      "label": ".buildCart()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 28,
-      "community_name": "SwiggyMcpClient",
-      "file_type": "code",
-      "norm_label": ".buildcart()",
-      "source_file": "src/mcp/mcp-client.interface.ts",
-      "source_location": "L78"
-    },
-    {
-      "id": "src_mcp_mcp_client_interface_swiggymcpclient_getaddresses",
-      "label": ".getAddresses()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 28,
-      "community_name": "SwiggyMcpClient",
-      "file_type": "code",
-      "norm_label": ".getaddresses()",
-      "source_file": "src/mcp/mcp-client.interface.ts",
-      "source_location": "L76"
-    },
-    {
-      "id": "src_mcp_mcp_client_interface_swiggymcpclient_getorderhistory",
-      "label": ".getOrderHistory()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 28,
-      "community_name": "SwiggyMcpClient",
-      "file_type": "code",
-      "norm_label": ".getorderhistory()",
-      "source_file": "src/mcp/mcp-client.interface.ts",
-      "source_location": "L81"
-    },
-    {
-      "id": "src_mcp_mcp_client_interface_swiggymcpclient_getrestaurantcuisines",
-      "label": ".getRestaurantCuisines()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 28,
-      "community_name": "SwiggyMcpClient",
-      "file_type": "code",
-      "norm_label": ".getrestaurantcuisines()",
-      "source_file": "src/mcp/mcp-client.interface.ts",
-      "source_location": "L82"
-    },
-    {
-      "id": "src_mcp_mcp_client_interface_swiggymcpclient_getrestaurantmenu",
-      "label": ".getRestaurantMenu()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 28,
-      "community_name": "SwiggyMcpClient",
-      "file_type": "code",
-      "norm_label": ".getrestaurantmenu()",
-      "source_file": "src/mcp/mcp-client.interface.ts",
-      "source_location": "L79"
-    },
-    {
-      "id": "src_mcp_mcp_client_interface_swiggymcpclient_placeorder",
-      "label": ".placeOrder()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 28,
-      "community_name": "SwiggyMcpClient",
-      "file_type": "code",
-      "norm_label": ".placeorder()",
-      "source_file": "src/mcp/mcp-client.interface.ts",
-      "source_location": "L80"
-    },
-    {
-      "id": "src_mcp_mcp_client_interface_swiggymcpclient_searchrestaurants",
-      "label": ".searchRestaurants()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 28,
-      "community_name": "SwiggyMcpClient",
-      "file_type": "code",
-      "norm_label": ".searchrestaurants()",
-      "source_file": "src/mcp/mcp-client.interface.ts",
-      "source_location": "L77"
-    },
-    {
-      "id": "src_suggestions_account_profile_service_accountprofileservice_constructor",
-      "label": ".constructor()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 28,
-      "community_name": "SwiggyMcpClient",
-      "file_type": "code",
-      "norm_label": ".constructor()",
-      "source_file": "src/suggestions/account-profile.service.ts",
-      "source_location": "L31"
     },
     {
       "id": "src_mcp_oauth_oauth_controller_oauthcontroller_callback",
@@ -1567,18 +1470,6 @@
       "source_location": "L95"
     },
     {
-      "id": "src_mcp_real_mcp_session_factory_mcpsessionfactory_reset",
-      "label": ".reset()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 3,
-      "community_name": "mcp.module.ts",
-      "file_type": "code",
-      "norm_label": ".reset()",
-      "source_file": "src/mcp/real/mcp-session.factory.ts",
-      "source_location": "L181"
-    },
-    {
       "id": "src_mcp_real_mcp_session_factory_mcpsessionfactory_serverurl",
       "label": ".serverUrl()",
       "_callable": true,
@@ -1589,18 +1480,6 @@
       "norm_label": ".serverurl()",
       "source_file": "src/mcp/real/mcp-session.factory.ts",
       "source_location": "L72"
-    },
-    {
-      "id": "src_mcp_real_real_swiggy_mcp_client_realswiggymcpclient_constructor",
-      "label": ".constructor()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 3,
-      "community_name": "mcp.module.ts",
-      "file_type": "code",
-      "norm_label": ".constructor()",
-      "source_file": "src/mcp/real/real-swiggy-mcp.client.ts",
-      "source_location": "L15"
     },
     {
       "id": "src_preferences_preferences_service_preferencesservice_constructor",
@@ -1661,6 +1540,18 @@
       "norm_label": "timeslotfor()",
       "source_file": "src/seed.ts",
       "source_location": "L15"
+    },
+    {
+      "id": "src_suggestions_account_profile_service_accountprofileservice_constructor",
+      "label": ".constructor()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 4,
+      "community_name": "preferences.service.ts",
+      "file_type": "code",
+      "norm_label": ".constructor()",
+      "source_file": "src/suggestions/account-profile.service.ts",
+      "source_location": "L31"
     },
     {
       "id": "src_preferences_preferences_service_preferencesservice_recordfeedback",
@@ -1756,7 +1647,7 @@
       "file_type": "code",
       "norm_label": ".skipsuggestion()",
       "source_file": "src/suggestions/suggestions.service.ts",
-      "source_location": "L184"
+      "source_location": "L183"
     },
     {
       "id": "src_suggestions_suggestions_service_suggestionsservice_surprisetocart",
@@ -1914,6 +1805,72 @@
       "source_location": "L1"
     },
     {
+      "id": "src_suggestions_account_profile_service_spec",
+      "label": "account-profile.service.spec.ts",
+      "_origin": "ast",
+      "community": 0,
+      "community_name": "suggestions.service.ts",
+      "file_type": "code",
+      "norm_label": "account-profile.service.spec.ts",
+      "source_file": "src/suggestions/account-profile.service.spec.ts",
+      "source_location": "L1"
+    },
+    {
+      "id": "src_suggestions_account_profile_service_spec_fakemcp",
+      "label": "fakeMcp",
+      "_origin": "ast",
+      "community": 0,
+      "community_name": "suggestions.service.ts",
+      "file_type": "code",
+      "norm_label": "fakemcp",
+      "source_file": "src/suggestions/account-profile.service.spec.ts",
+      "source_location": "L34"
+    },
+    {
+      "id": "src_suggestions_account_profile_service_spec_fakepreferences",
+      "label": "fakePreferences",
+      "_origin": "ast",
+      "community": 0,
+      "community_name": "suggestions.service.ts",
+      "file_type": "code",
+      "norm_label": "fakepreferences",
+      "source_file": "src/suggestions/account-profile.service.spec.ts",
+      "source_location": "L38"
+    },
+    {
+      "id": "src_suggestions_account_profile_service_spec_ordera",
+      "label": "orderA",
+      "_origin": "ast",
+      "community": 0,
+      "community_name": "suggestions.service.ts",
+      "file_type": "code",
+      "norm_label": "ordera",
+      "source_file": "src/suggestions/account-profile.service.spec.ts",
+      "source_location": "L4"
+    },
+    {
+      "id": "src_suggestions_account_profile_service_spec_orderb",
+      "label": "orderB",
+      "_origin": "ast",
+      "community": 0,
+      "community_name": "suggestions.service.ts",
+      "file_type": "code",
+      "norm_label": "orderb",
+      "source_file": "src/suggestions/account-profile.service.spec.ts",
+      "source_location": "L14"
+    },
+    {
+      "id": "src_suggestions_account_profile_service_spec_orderc",
+      "label": "orderC",
+      "_origin": "ast",
+      "community": 0,
+      "community_name": "suggestions.service.ts",
+      "file_type": "code",
+      "norm_label": "orderc",
+      "source_file": "src/suggestions/account-profile.service.spec.ts",
+      "source_location": "L24"
+    },
+    {
       "id": "src_suggestions_account_profile_service_ts_injectable",
       "label": "Injectable",
       "_origin": "ast",
@@ -1988,7 +1945,7 @@
       "file_type": "code",
       "norm_label": "fakepreferences",
       "source_file": "src/suggestions/suggestions.service.spec.ts",
-      "source_location": "L74"
+      "source_location": "L73"
     },
     {
       "id": "src_suggestions_suggestions_service_spec_ordera",
@@ -2065,18 +2022,7 @@
       "file_type": "code",
       "norm_label": "default_menu",
       "source_file": "src/mcp/mock-swiggy-mcp.client.ts",
-      "source_location": "L35"
-    },
-    {
-      "id": "src_mcp_mock_swiggy_mcp_client_mock_cuisines",
-      "label": "MOCK_CUISINES",
-      "_origin": "ast",
-      "community": 1,
-      "community_name": "real-swiggy-mcp.client.ts",
-      "file_type": "code",
-      "norm_label": "mock_cuisines",
-      "source_file": "src/mcp/mock-swiggy-mcp.client.ts",
-      "source_location": "L20"
+      "source_location": "L23"
     },
     {
       "id": "src_mcp_mock_swiggy_mcp_client_mock_menus",
@@ -2087,7 +2033,7 @@
       "file_type": "code",
       "norm_label": "mock_menus",
       "source_file": "src/mcp/mock-swiggy-mcp.client.ts",
-      "source_location": "L42"
+      "source_location": "L30"
     },
     {
       "id": "src_mcp_mock_swiggy_mcp_client_mock_orders",
@@ -2098,7 +2044,7 @@
       "file_type": "code",
       "norm_label": "mock_orders",
       "source_file": "src/mcp/mock-swiggy-mcp.client.ts",
-      "source_location": "L71"
+      "source_location": "L59"
     },
     {
       "id": "src_mcp_mock_swiggy_mcp_client_mock_restaurants",
@@ -2399,7 +2345,7 @@
       "node_kind": "heading",
       "norm_label": "architecture note",
       "source_file": "README.md",
-      "source_location": "L146"
+      "source_location": "L145"
     },
     {
       "id": "readme_conclude_at_cart_shipped",
@@ -2411,7 +2357,7 @@
       "node_kind": "heading",
       "norm_label": "conclude at cart (shipped)",
       "source_file": "README.md",
-      "source_location": "L138"
+      "source_location": "L137"
     },
     {
       "id": "readme_configuration_env",
@@ -2459,7 +2405,7 @@
       "node_kind": "heading",
       "norm_label": "known simplifications (good next steps)",
       "source_file": "README.md",
-      "source_location": "L118"
+      "source_location": "L117"
     },
     {
       "id": "readme_mock_mode_default_no_swiggy_account_needed",
@@ -2769,7 +2715,7 @@
       "file_type": "code",
       "norm_label": "months",
       "source_file": "src/mcp/real/order-history.adapter.ts",
-      "source_location": "L23"
+      "source_location": "L17"
     },
     {
       "id": "src_mcp_real_order_history_adapter_spec",
@@ -2897,72 +2843,6 @@
       "norm_label": "step 1 \u2014 traversal",
       "source_file": ".claude/skills/graphify/references/query.md",
       "source_location": "L61"
-    },
-    {
-      "id": "src_suggestions_account_profile_service_spec",
-      "label": "account-profile.service.spec.ts",
-      "_origin": "ast",
-      "community": 17,
-      "community_name": "account-profile.service.spec.ts",
-      "file_type": "code",
-      "norm_label": "account-profile.service.spec.ts",
-      "source_file": "src/suggestions/account-profile.service.spec.ts",
-      "source_location": "L1"
-    },
-    {
-      "id": "src_suggestions_account_profile_service_spec_fakemcp",
-      "label": "fakeMcp",
-      "_origin": "ast",
-      "community": 17,
-      "community_name": "account-profile.service.spec.ts",
-      "file_type": "code",
-      "norm_label": "fakemcp",
-      "source_file": "src/suggestions/account-profile.service.spec.ts",
-      "source_location": "L34"
-    },
-    {
-      "id": "src_suggestions_account_profile_service_spec_fakepreferences",
-      "label": "fakePreferences",
-      "_origin": "ast",
-      "community": 17,
-      "community_name": "account-profile.service.spec.ts",
-      "file_type": "code",
-      "norm_label": "fakepreferences",
-      "source_file": "src/suggestions/account-profile.service.spec.ts",
-      "source_location": "L38"
-    },
-    {
-      "id": "src_suggestions_account_profile_service_spec_ordera",
-      "label": "orderA",
-      "_origin": "ast",
-      "community": 17,
-      "community_name": "account-profile.service.spec.ts",
-      "file_type": "code",
-      "norm_label": "ordera",
-      "source_file": "src/suggestions/account-profile.service.spec.ts",
-      "source_location": "L4"
-    },
-    {
-      "id": "src_suggestions_account_profile_service_spec_orderb",
-      "label": "orderB",
-      "_origin": "ast",
-      "community": 17,
-      "community_name": "account-profile.service.spec.ts",
-      "file_type": "code",
-      "norm_label": "orderb",
-      "source_file": "src/suggestions/account-profile.service.spec.ts",
-      "source_location": "L14"
-    },
-    {
-      "id": "src_suggestions_account_profile_service_spec_orderc",
-      "label": "orderC",
-      "_origin": "ast",
-      "community": 17,
-      "community_name": "account-profile.service.spec.ts",
-      "file_type": "code",
-      "norm_label": "orderc",
-      "source_file": "src/suggestions/account-profile.service.spec.ts",
-      "source_location": "L24"
     },
     {
       "id": "claude_skills_graphify_references_add_watch",
@@ -3561,17 +3441,6 @@
       "source_location": "L1"
     },
     {
-      "id": "src_suggestions_account_profile_service_ts_inject",
-      "label": "Inject",
-      "_origin": "ast",
-      "community": 28,
-      "community_name": "SwiggyMcpClient",
-      "file_type": "code",
-      "norm_label": "inject",
-      "source_file": "",
-      "source_location": ""
-    },
-    {
       "id": "res",
       "label": "Res",
       "_origin": "ast",
@@ -3966,6 +3835,17 @@
       "norm_label": "seedorders",
       "source_file": "src/seed.ts",
       "source_location": "L23"
+    },
+    {
+      "id": "src_suggestions_account_profile_service_ts_inject",
+      "label": "Inject",
+      "_origin": "ast",
+      "community": 4,
+      "community_name": "preferences.service.ts",
+      "file_type": "code",
+      "norm_label": "inject",
+      "source_file": "",
+      "source_location": ""
     },
     {
       "id": "claude_skills_graphify_skill",
@@ -5066,7 +4946,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "src/mcp/mock-swiggy-mcp.client.ts",
-      "source_location": "L165",
+      "source_location": "L153",
       "weight": 1.0
     },
     {
@@ -5078,7 +4958,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "src/mcp/mock-swiggy-mcp.client.ts",
-      "source_location": "L143",
+      "source_location": "L131",
       "weight": 1.0
     },
     {
@@ -5090,19 +4970,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "src/mcp/mock-swiggy-mcp.client.ts",
-      "source_location": "L192",
-      "weight": 1.0
-    },
-    {
-      "source": "src_mcp_mock_swiggy_mcp_client_mockswiggymcpclient_getrestaurantcuisines",
-      "target": "src_mcp_mock_swiggy_mcp_client_mockswiggymcpclient_latency",
-      "relation": "calls",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "context": "call",
-      "source_file": "src/mcp/mock-swiggy-mcp.client.ts",
-      "source_location": "L200",
+      "source_location": "L175",
       "weight": 1.0
     },
     {
@@ -5114,19 +4982,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "src/mcp/mock-swiggy-mcp.client.ts",
-      "source_location": "L179",
-      "weight": 1.0
-    },
-    {
-      "source": "src_mcp_mock_swiggy_mcp_client_mockswiggymcpclient_placeorder",
-      "target": "src_mcp_mock_swiggy_mcp_client_mockswiggymcpclient_latency",
-      "relation": "calls",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "context": "call",
-      "source_file": "src/mcp/mock-swiggy-mcp.client.ts",
-      "source_location": "L187",
+      "source_location": "L167",
       "weight": 1.0
     },
     {
@@ -5138,7 +4994,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "src/mcp/mock-swiggy-mcp.client.ts",
-      "source_location": "L151",
+      "source_location": "L139",
       "weight": 1.0
     },
     {
@@ -5306,7 +5162,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "src/mcp/real/order-history.adapter.ts",
-      "source_location": "L71",
+      "source_location": "L65",
       "weight": 1.0
     },
     {
@@ -5318,7 +5174,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "src/mcp/real/order-history.adapter.ts",
-      "source_location": "L72",
+      "source_location": "L66",
       "weight": 1.0
     },
     {
@@ -5330,7 +5186,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "src/mcp/real/order-history.adapter.ts",
-      "source_location": "L74",
+      "source_location": "L68",
       "weight": 1.0
     },
     {
@@ -5402,7 +5258,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "src/mcp/real/real-swiggy-mcp.client.ts",
-      "source_location": "L108",
+      "source_location": "L99",
       "weight": 1.0
     },
     {
@@ -5414,31 +5270,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "src/mcp/real/real-swiggy-mcp.client.ts",
-      "source_location": "L108",
-      "weight": 1.0
-    },
-    {
-      "source": "src_mcp_real_real_swiggy_mcp_client_realswiggymcpclient_getrestaurantcuisines",
-      "target": "src_mcp_real_order_history_adapter_cuisinesfromorderdetails",
-      "relation": "calls",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "context": "call",
-      "source_file": "src/mcp/real/real-swiggy-mcp.client.ts",
-      "source_location": "L112",
-      "weight": 1.0
-    },
-    {
-      "source": "src_mcp_real_real_swiggy_mcp_client_realswiggymcpclient_getrestaurantcuisines",
-      "target": "src_mcp_real_real_swiggy_mcp_client_realswiggymcpclient_call",
-      "relation": "calls",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "context": "call",
-      "source_file": "src/mcp/real/real-swiggy-mcp.client.ts",
-      "source_location": "L112",
+      "source_location": "L99",
       "weight": 1.0
     },
     {
@@ -5463,18 +5295,6 @@
       "context": "call",
       "source_file": "src/mcp/real/real-swiggy-mcp.client.ts",
       "source_location": "L95",
-      "weight": 1.0
-    },
-    {
-      "source": "src_mcp_real_real_swiggy_mcp_client_realswiggymcpclient_placeorder",
-      "target": "src_mcp_real_real_swiggy_mcp_client_realswiggymcpclient_call",
-      "relation": "calls",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "context": "call",
-      "source_file": "src/mcp/real/real-swiggy-mcp.client.ts",
-      "source_location": "L99",
       "weight": 1.0
     },
     {
@@ -5678,7 +5498,7 @@
       "confidence_score": 1.0,
       "context": "decorator",
       "source_file": "src/mcp/mock-swiggy-mcp.client.ts",
-      "source_location": "L140",
+      "source_location": "L128",
       "weight": 1.0
     },
     {
@@ -6206,7 +6026,7 @@
       "confidence_score": 1.0,
       "context": "generic_arg",
       "source_file": "src/mcp/mock-swiggy-mcp.client.ts",
-      "source_location": "L164",
+      "source_location": "L152",
       "weight": 1.0
     },
     {
@@ -6218,7 +6038,7 @@
       "confidence_score": 1.0,
       "context": "generic_arg",
       "source_file": "src/mcp/mock-swiggy-mcp.client.ts",
-      "source_location": "L142",
+      "source_location": "L130",
       "weight": 1.0
     },
     {
@@ -6230,7 +6050,7 @@
       "confidence_score": 1.0,
       "context": "generic_arg",
       "source_file": "src/mcp/mock-swiggy-mcp.client.ts",
-      "source_location": "L191",
+      "source_location": "L174",
       "weight": 1.0
     },
     {
@@ -6242,19 +6062,7 @@
       "confidence_score": 1.0,
       "context": "generic_arg",
       "source_file": "src/mcp/mock-swiggy-mcp.client.ts",
-      "source_location": "L178",
-      "weight": 1.0
-    },
-    {
-      "source": "src_mcp_mock_swiggy_mcp_client_mockswiggymcpclient_placeorder",
-      "target": "src_mcp_mcp_client_interface_placeorderresult",
-      "relation": "references",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "context": "generic_arg",
-      "source_file": "src/mcp/mock-swiggy-mcp.client.ts",
-      "source_location": "L186",
+      "source_location": "L166",
       "weight": 1.0
     },
     {
@@ -6266,7 +6074,7 @@
       "confidence_score": 1.0,
       "context": "generic_arg",
       "source_file": "src/mcp/mock-swiggy-mcp.client.ts",
-      "source_location": "L150",
+      "source_location": "L138",
       "weight": 1.0
     },
     {
@@ -6302,7 +6110,7 @@
       "confidence_score": 1.0,
       "context": "generic_arg",
       "source_file": "src/mcp/real/real-swiggy-mcp.client.ts",
-      "source_location": "L107",
+      "source_location": "L98",
       "weight": 1.0
     },
     {
@@ -6315,18 +6123,6 @@
       "context": "generic_arg",
       "source_file": "src/mcp/real/real-swiggy-mcp.client.ts",
       "source_location": "L94",
-      "weight": 1.0
-    },
-    {
-      "source": "src_mcp_real_real_swiggy_mcp_client_realswiggymcpclient_placeorder",
-      "target": "src_mcp_mcp_client_interface_placeorderresult",
-      "relation": "references",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "context": "generic_arg",
-      "source_file": "src/mcp/real/real-swiggy-mcp.client.ts",
-      "source_location": "L98",
       "weight": 1.0
     },
     {
@@ -6799,18 +6595,6 @@
     },
     {
       "source": "src_mcp_mock_swiggy_mcp_client",
-      "target": "src_mcp_mcp_client_interface_placeorderresult",
-      "relation": "imports",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "context": "import",
-      "source_file": "src/mcp/mock-swiggy-mcp.client.ts",
-      "source_location": "L2",
-      "weight": 1.0
-    },
-    {
-      "source": "src_mcp_mock_swiggy_mcp_client",
       "target": "src_mcp_mcp_client_interface_restaurantresult",
       "relation": "imports",
       "_origin": "ast",
@@ -7034,7 +6818,7 @@
       "confidence_score": 1.0,
       "context": "import",
       "source_file": "src/mcp/real/order-history.adapter.ts",
-      "source_location": "L7",
+      "source_location": "L5",
       "weight": 1.0
     },
     {
@@ -7046,19 +6830,7 @@
       "confidence_score": 1.0,
       "context": "import",
       "source_file": "src/mcp/real/order-history.adapter.ts",
-      "source_location": "L7",
-      "weight": 1.0
-    },
-    {
-      "source": "src_mcp_real_order_history_adapter_spec",
-      "target": "src_mcp_real_order_history_adapter_cuisinesfromorderdetails",
-      "relation": "imports",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "context": "import",
-      "source_file": "src/mcp/real/order-history.adapter.spec.ts",
-      "source_location": "L1",
+      "source_location": "L5",
       "weight": 1.0
     },
     {
@@ -7071,18 +6843,6 @@
       "context": "import",
       "source_file": "src/mcp/real/order-history.adapter.spec.ts",
       "source_location": "L1",
-      "weight": 1.0
-    },
-    {
-      "source": "src_mcp_real_real_swiggy_mcp_client",
-      "target": "src_mcp_real_order_history_adapter_cuisinesfromorderdetails",
-      "relation": "imports",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "context": "import",
-      "source_file": "src/mcp/real/real-swiggy-mcp.client.ts",
-      "source_location": "L10",
       "weight": 1.0
     },
     {
@@ -7160,18 +6920,6 @@
     {
       "source": "src_mcp_real_real_swiggy_mcp_client",
       "target": "src_mcp_mcp_client_interface_menuitem",
-      "relation": "imports",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "context": "import",
-      "source_file": "src/mcp/real/real-swiggy-mcp.client.ts",
-      "source_location": "L3",
-      "weight": 1.0
-    },
-    {
-      "source": "src_mcp_real_real_swiggy_mcp_client",
-      "target": "src_mcp_mcp_client_interface_placeorderresult",
       "relation": "imports",
       "_origin": "ast",
       "confidence": "EXTRACTED",
@@ -8258,7 +8006,7 @@
       "confidence_score": 1.0,
       "context": "import",
       "source_file": "src/mcp/real/order-history.adapter.ts",
-      "source_location": "L7",
+      "source_location": "L5",
       "weight": 1.0
     },
     {
@@ -8834,7 +8582,7 @@
       "confidence_score": 1.0,
       "context": "parameter_type",
       "source_file": "src/mcp/mock-swiggy-mcp.client.ts",
-      "source_location": "L164",
+      "source_location": "L152",
       "weight": 1.0
     },
     {
@@ -8846,7 +8594,7 @@
       "confidence_score": 1.0,
       "context": "parameter_type",
       "source_file": "src/mcp/mock-swiggy-mcp.client.ts",
-      "source_location": "L150",
+      "source_location": "L138",
       "weight": 1.0
     },
     {
@@ -9146,7 +8894,7 @@
       "confidence_score": 1.0,
       "context": "type",
       "source_file": "src/mcp/mock-swiggy-mcp.client.ts",
-      "source_location": "L141",
+      "source_location": "L129",
       "weight": 1.0
     },
     {
@@ -10611,7 +10359,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "README.md",
-      "source_location": "L118",
+      "source_location": "L117",
       "weight": 1.0
     },
     {
@@ -10633,7 +10381,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "README.md",
-      "source_location": "L138",
+      "source_location": "L137",
       "weight": 1.0
     },
     {
@@ -10644,7 +10392,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "README.md",
-      "source_location": "L146",
+      "source_location": "L145",
       "weight": 1.0
     },
     {
@@ -10770,24 +10518,13 @@
     },
     {
       "source": "src_mcp_mcp_client_interface",
-      "target": "src_mcp_mcp_client_interface_placeorderresult",
-      "relation": "contains",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "src/mcp/mcp-client.interface.ts",
-      "source_location": "L52",
-      "weight": 1.0
-    },
-    {
-      "source": "src_mcp_mcp_client_interface",
       "target": "src_mcp_mcp_client_interface_reorderitem",
       "relation": "contains",
       "_origin": "ast",
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "src/mcp/mcp-client.interface.ts",
-      "source_location": "L59",
+      "source_location": "L53",
       "weight": 1.0
     },
     {
@@ -10798,7 +10535,18 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "src/mcp/mcp-client.interface.ts",
-      "source_location": "L65",
+      "source_location": "L59",
+      "weight": 1.0
+    },
+    {
+      "source": "src_mcp_mcp_client_interface",
+      "target": "src_mcp_mcp_client_interface_swiggymcpclient",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "src/mcp/mcp-client.interface.ts",
+      "source_location": "L69",
       "weight": 1.0
     },
     {
@@ -10810,17 +10558,6 @@
       "confidence_score": 1.0,
       "source_file": "src/mcp/mcp-client.interface.ts",
       "source_location": "L7",
-      "weight": 1.0
-    },
-    {
-      "source": "src_mcp_mcp_client_interface",
-      "target": "src_mcp_mcp_client_interface_swiggymcpclient",
-      "relation": "contains",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "src/mcp/mcp-client.interface.ts",
-      "source_location": "L75",
       "weight": 1.0
     },
     {
@@ -10853,18 +10590,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "src/mcp/mock-swiggy-mcp.client.ts",
-      "source_location": "L141",
-      "weight": 1.0
-    },
-    {
-      "source": "src_mcp_mock_swiggy_mcp_client",
-      "target": "src_mcp_mock_swiggy_mcp_client_mock_cuisines",
-      "relation": "contains",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "src/mcp/mock-swiggy-mcp.client.ts",
-      "source_location": "L20",
+      "source_location": "L129",
       "weight": 1.0
     },
     {
@@ -10875,7 +10601,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "src/mcp/mock-swiggy-mcp.client.ts",
-      "source_location": "L35",
+      "source_location": "L23",
       "weight": 1.0
     },
     {
@@ -10886,7 +10612,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "src/mcp/mock-swiggy-mcp.client.ts",
-      "source_location": "L42",
+      "source_location": "L30",
       "weight": 1.0
     },
     {
@@ -10897,7 +10623,18 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "src/mcp/mock-swiggy-mcp.client.ts",
-      "source_location": "L65",
+      "source_location": "L53",
+      "weight": 1.0
+    },
+    {
+      "source": "src_mcp_mock_swiggy_mcp_client",
+      "target": "src_mcp_mock_swiggy_mcp_client_mock_orders",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "src/mcp/mock-swiggy-mcp.client.ts",
+      "source_location": "L59",
       "weight": 1.0
     },
     {
@@ -10909,17 +10646,6 @@
       "confidence_score": 1.0,
       "source_file": "src/mcp/mock-swiggy-mcp.client.ts",
       "source_location": "L7",
-      "weight": 1.0
-    },
-    {
-      "source": "src_mcp_mock_swiggy_mcp_client",
-      "target": "src_mcp_mock_swiggy_mcp_client_mock_orders",
-      "relation": "contains",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "src/mcp/mock-swiggy-mcp.client.ts",
-      "source_location": "L71",
       "weight": 1.0
     },
     {
@@ -11023,24 +10749,13 @@
     },
     {
       "source": "src_mcp_real_order_history_adapter",
-      "target": "src_mcp_real_order_history_adapter_parseamount",
-      "relation": "contains",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "src/mcp/real/order-history.adapter.ts",
-      "source_location": "L14",
-      "weight": 1.0
-    },
-    {
-      "source": "src_mcp_real_order_history_adapter",
       "target": "src_mcp_real_order_history_adapter_months",
       "relation": "contains",
       "_origin": "ast",
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "src/mcp/real/order-history.adapter.ts",
-      "source_location": "L23",
+      "source_location": "L17",
       "weight": 1.0
     },
     {
@@ -11051,7 +10766,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "src/mcp/real/order-history.adapter.ts",
-      "source_location": "L30",
+      "source_location": "L24",
       "weight": 1.0
     },
     {
@@ -11062,7 +10777,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "src/mcp/real/order-history.adapter.ts",
-      "source_location": "L53",
+      "source_location": "L47",
       "weight": 1.0
     },
     {
@@ -11073,29 +10788,18 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "src/mcp/real/order-history.adapter.ts",
-      "source_location": "L65",
+      "source_location": "L59",
       "weight": 1.0
     },
     {
       "source": "src_mcp_real_order_history_adapter",
-      "target": "src_mcp_real_order_history_adapter_cuisinesfromorderdetails",
+      "target": "src_mcp_real_order_history_adapter_parseamount",
       "relation": "contains",
       "_origin": "ast",
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "src/mcp/real/order-history.adapter.ts",
-      "source_location": "L78",
-      "weight": 1.0
-    },
-    {
-      "source": "src_mcp_real_order_history_adapter",
-      "target": "src_mcp_real_order_history_adapter_snake",
-      "relation": "contains",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "src/mcp/real/order-history.adapter.ts",
-      "source_location": "L9",
+      "source_location": "L8",
       "weight": 1.0
     },
     {
@@ -11634,7 +11338,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "src/suggestions/suggestions.service.spec.ts",
-      "source_location": "L132",
+      "source_location": "L131",
       "weight": 1.0
     },
     {
@@ -11689,7 +11393,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "src/suggestions/suggestions.service.spec.ts",
-      "source_location": "L74",
+      "source_location": "L73",
       "weight": 1.0
     },
     {
@@ -11711,7 +11415,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "src/suggestions/suggestions.service.spec.ts",
-      "source_location": "L85",
+      "source_location": "L84",
       "weight": 1.0
     },
     {
@@ -11887,7 +11591,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "src/mcp/mcp-client.interface.ts",
-      "source_location": "L76",
+      "source_location": "L70",
       "weight": 1.0
     },
     {
@@ -11898,7 +11602,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "src/mcp/mcp-client.interface.ts",
-      "source_location": "L77",
+      "source_location": "L71",
       "weight": 1.0
     },
     {
@@ -11909,7 +11613,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "src/mcp/mcp-client.interface.ts",
-      "source_location": "L78",
+      "source_location": "L72",
       "weight": 1.0
     },
     {
@@ -11920,18 +11624,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "src/mcp/mcp-client.interface.ts",
-      "source_location": "L79",
-      "weight": 1.0
-    },
-    {
-      "source": "src_mcp_mcp_client_interface_swiggymcpclient",
-      "target": "src_mcp_mcp_client_interface_swiggymcpclient_placeorder",
-      "relation": "method",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "src/mcp/mcp-client.interface.ts",
-      "source_location": "L80",
+      "source_location": "L73",
       "weight": 1.0
     },
     {
@@ -11942,18 +11635,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "src/mcp/mcp-client.interface.ts",
-      "source_location": "L81",
-      "weight": 1.0
-    },
-    {
-      "source": "src_mcp_mcp_client_interface_swiggymcpclient",
-      "target": "src_mcp_mcp_client_interface_swiggymcpclient_getrestaurantcuisines",
-      "relation": "method",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "src/mcp/mcp-client.interface.ts",
-      "source_location": "L82",
+      "source_location": "L74",
       "weight": 1.0
     },
     {
@@ -11964,7 +11646,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "src/mcp/mock-swiggy-mcp.client.ts",
-      "source_location": "L142",
+      "source_location": "L130",
       "weight": 1.0
     },
     {
@@ -11975,7 +11657,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "src/mcp/mock-swiggy-mcp.client.ts",
-      "source_location": "L150",
+      "source_location": "L138",
       "weight": 1.0
     },
     {
@@ -11986,7 +11668,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "src/mcp/mock-swiggy-mcp.client.ts",
-      "source_location": "L164",
+      "source_location": "L152",
       "weight": 1.0
     },
     {
@@ -11997,18 +11679,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "src/mcp/mock-swiggy-mcp.client.ts",
-      "source_location": "L178",
-      "weight": 1.0
-    },
-    {
-      "source": "src_mcp_mock_swiggy_mcp_client_mockswiggymcpclient",
-      "target": "src_mcp_mock_swiggy_mcp_client_mockswiggymcpclient_placeorder",
-      "relation": "method",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "src/mcp/mock-swiggy-mcp.client.ts",
-      "source_location": "L186",
+      "source_location": "L166",
       "weight": 1.0
     },
     {
@@ -12019,18 +11690,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "src/mcp/mock-swiggy-mcp.client.ts",
-      "source_location": "L191",
-      "weight": 1.0
-    },
-    {
-      "source": "src_mcp_mock_swiggy_mcp_client_mockswiggymcpclient",
-      "target": "src_mcp_mock_swiggy_mcp_client_mockswiggymcpclient_getrestaurantcuisines",
-      "relation": "method",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "src/mcp/mock-swiggy-mcp.client.ts",
-      "source_location": "L199",
+      "source_location": "L174",
       "weight": 1.0
     },
     {
@@ -12041,7 +11701,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "src/mcp/mock-swiggy-mcp.client.ts",
-      "source_location": "L206",
+      "source_location": "L182",
       "weight": 1.0
     },
     {
@@ -12387,28 +12047,6 @@
     },
     {
       "source": "src_mcp_real_real_swiggy_mcp_client_realswiggymcpclient",
-      "target": "src_mcp_real_real_swiggy_mcp_client_realswiggymcpclient_getorderhistory",
-      "relation": "method",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "src/mcp/real/real-swiggy-mcp.client.ts",
-      "source_location": "L107",
-      "weight": 1.0
-    },
-    {
-      "source": "src_mcp_real_real_swiggy_mcp_client_realswiggymcpclient",
-      "target": "src_mcp_real_real_swiggy_mcp_client_realswiggymcpclient_getrestaurantcuisines",
-      "relation": "method",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "src/mcp/real/real-swiggy-mcp.client.ts",
-      "source_location": "L111",
-      "weight": 1.0
-    },
-    {
-      "source": "src_mcp_real_real_swiggy_mcp_client_realswiggymcpclient",
       "target": "src_mcp_real_real_swiggy_mcp_client_realswiggymcpclient_constructor",
       "relation": "method",
       "_origin": "ast",
@@ -12486,7 +12124,7 @@
     },
     {
       "source": "src_mcp_real_real_swiggy_mcp_client_realswiggymcpclient",
-      "target": "src_mcp_real_real_swiggy_mcp_client_realswiggymcpclient_placeorder",
+      "target": "src_mcp_real_real_swiggy_mcp_client_realswiggymcpclient_getorderhistory",
       "relation": "method",
       "_origin": "ast",
       "confidence": "EXTRACTED",
@@ -12690,7 +12328,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "src/suggestions/suggestions.service.ts",
-      "source_location": "L184",
+      "source_location": "L183",
       "weight": 1.0
     },
     {
@@ -12974,22 +12612,10 @@
       "confidence_score": 0.8,
       "context": "call",
       "source_file": "src/suggestions/suggestions.service.ts",
-      "source_location": "L185",
-      "weight": 1.0
-    },
-    {
-      "source": "src_mcp_real_order_history_adapter_cuisinesfromorderdetails",
-      "target": "src_mcp_real_order_history_adapter_snake",
-      "relation": "indirect_call",
-      "_origin": "ast",
-      "confidence": "INFERRED",
-      "confidence_score": 0.85,
-      "context": "argument",
-      "source_file": "src/mcp/real/order-history.adapter.ts",
-      "source_location": "L81",
+      "source_location": "L184",
       "weight": 1.0
     }
   ],
   "hyperedges": [],
-  "built_at_commit": "f83427cdb301aadac8152b45801fc11b5e339c5f"
+  "built_at_commit": "22357eb4aca08e156f7d70e1e7b0776c9edd1d5f"
 }

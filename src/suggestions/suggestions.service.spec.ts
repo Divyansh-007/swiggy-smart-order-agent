@@ -68,7 +68,6 @@ const fakeMcp = {
     return [];
   },
   buildCart: async () => ({ restaurantId: 'r1', restaurantName: 'Bawarchi', items: [], total: 0 }),
-  placeOrder: async () => ({ orderId: 'o1', status: 'placed', etaMinutes: 30 }),
 } as any;
 
 const fakePreferences = {

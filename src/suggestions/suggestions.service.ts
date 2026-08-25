@@ -177,7 +177,6 @@ export class SuggestionsService {
 
   async acceptSuggestion(userId: string, restaurantId: string, _itemIds: string[]) {
     await this.preferences.recordFeedback(userId, restaurantId, 'accepted');
-    // Ordering is completed in Phase 4 (buildCart → confirm → placeOrder).
     return { recorded: true };
   }
 

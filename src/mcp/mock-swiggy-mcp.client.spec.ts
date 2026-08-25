@@ -26,10 +26,6 @@ describe('MockSwiggyMcpClient', () => {
     expect(orders[0].reorderItems[0].menuItemId).toBeTruthy();
   });
 
-  it('returns cuisines for an order', async () => {
-    expect(await c.getRestaurantCuisines('mock-ord-1')).toContain('biryani');
-  });
-
   it('buildCart echoes items with a synthetic price and computes itemTotal/toPay', async () => {
     const cart = await c.buildCart({
       restaurantId: 'r1',

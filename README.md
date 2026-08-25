@@ -111,7 +111,6 @@ skip/accept feedback is still keyed by a separate `userId`. Binding them fully
 | `USE_MOCK_MCP` | `true` = offline mock; `false` = real Swiggy MCP |
 | `SWIGGY_MCP_BASE_URL` | `https://mcp.swiggy.com` |
 | `SWIGGY_OAUTH_REDIRECT_URI` | `http://localhost:3000/oauth/callback` (exact-match) |
-| `ALLOW_REAL_ORDERS` | reserved for the ordering roadmap (default `false`) |
 | `DEFAULT_USER_ID` | demo preference-store user id (default `dj`) |
 | `PORT` | HTTP port (default `3000`) |
 

@@ -1,4 +1,4 @@
-import { toAccountOrders, cuisinesFromOrderDetails } from './order-history.adapter';
+import { toAccountOrders } from './order-history.adapter';
 
 // Fixtures mirror Swiggy's documented order-history structure with SYNTHETIC
 // values only (real payloads carry PII). Reconcile field names on live capture.
@@ -56,10 +56,4 @@ describe('order-history adapters', () => {
     expect(toAccountOrders(data)[0].orderTotal).toBe(1200);
   });
 
-  it('extracts snake-cased cuisines from order details', () => {
-    expect(cuisinesFromOrderDetails({ order: { restaurant_cuisine: ['Biryani', 'North Indian'] } }))
-      .toEqual(['biryani', 'north_indian']);
-    // also tolerates a flat shape
-    expect(cuisinesFromOrderDetails({ restaurant_cuisine: ['Thai'] })).toEqual(['thai']);
-  });
 });

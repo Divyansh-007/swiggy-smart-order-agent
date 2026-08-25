@@ -93,4 +93,32 @@ describe('RealSwiggyMcpClient', () => {
     const addresses = await client.getAddresses();
     expect(addresses).toEqual([{ addressId: 'a', label: 'Home', displayText: undefined }]);
   });
+
+  it('getOrderHistory maps get_food_orders payload to AccountOrder[]', async () => {
+    const callTool = jest.fn().mockResolvedValue({
+      structuredContent: {
+        orders: [
+          {
+            orderId: 'o1', restaurantId: 'r1', restaurantName: 'Bawarchi',
+            orderTotal: '₹340', orderedTime: '2026-08-20T21:00:00.000Z', isActiveOrder: false,
+            actions: [{ reorderMeta: { orderItems: [{ menu_item_id: 'm1', name: 'Biryani', quantity: 1 }] } }],
+          },
+        ],
+      },
+    });
+    const client = new RealSwiggyMcpClient(makeSessions(callTool), makeStore());
+    const orders = await client.getOrderHistory('addr_home');
+    expect(callTool).toHaveBeenCalledWith({ name: 'get_food_orders', arguments: { addressId: 'addr_home' } });
+    expect(orders[0]).toMatchObject({ orderId: 'o1', orderTotal: 340, reorderItems: [{ menuItemId: 'm1', name: 'Biryani', quantity: 1 }] });
+  });
+
+  it('getRestaurantCuisines maps get_food_order_details to snake-cased cuisines', async () => {
+    const callTool = jest.fn().mockResolvedValue({
+      structuredContent: { order: { restaurant_cuisine: ['Biryani', 'North Indian'] } },
+    });
+    const client = new RealSwiggyMcpClient(makeSessions(callTool), makeStore());
+    const cuisines = await client.getRestaurantCuisines('o1');
+    expect(callTool).toHaveBeenCalledWith({ name: 'get_food_order_details', arguments: { orderId: 'o1' } });
+    expect(cuisines).toEqual(['biryani', 'north_indian']);
+  });
 });

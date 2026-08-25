@@ -26,8 +26,6 @@ function timeSlotFor(hour: number): string {
   return 'late_night';
 }
 
-const MAX_ENRICHED_RESTAURANTS = 10;
-
 @Injectable()
 export class AccountProfileService {
   constructor(
@@ -89,17 +87,10 @@ export class AccountProfileService {
       .sort((a, b) => b.lastOrderedAt.getTime() - a.lastOrderedAt.getTime())
       .map((r) => r.restaurantId);
 
-    // Enrich cuisines for the <=10 most-recent distinct restaurants, one detail
-    // call each, weighting each returned cuisine by that restaurant's order count.
+    // Live get_food_order_details returns no per-order cuisine data, so there's
+    // nothing to enrich here. Left empty for the ranking engine to fall back on
+    // price-fit/recency instead of cuisine-frequency.
     const cuisineCounts: Record<string, number> = {};
-    const toEnrich = recentRestaurantIds.slice(0, MAX_ENRICHED_RESTAURANTS);
-    for (const restaurantId of toEnrich) {
-      const entry = byRestaurant.get(restaurantId)!;
-      const cuisines = await this.mcpClient.getRestaurantCuisines(entry.mostRecent.orderId);
-      for (const cuisine of cuisines) {
-        cuisineCounts[cuisine] = (cuisineCounts[cuisine] || 0) + entry.orders.length;
-      }
-    }
 
     const { rejectedRestaurantIds } = await this.preferences.getProfile(userId);
 

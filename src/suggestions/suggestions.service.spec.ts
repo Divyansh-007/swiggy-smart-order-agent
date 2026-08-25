@@ -1,59 +1,124 @@
 import { SuggestionsService } from './suggestions.service';
+import { AccountProfileService } from './account-profile.service';
+import { RankingService } from '../ranking/ranking.service';
+import { ReorderRankingService } from '../ranking/reorder-ranking.service';
+import { AccountOrder, RestaurantResult } from '../mcp/mcp-client.interface';
+
+function makeRestaurant(id: string, cuisine: string): RestaurantResult {
+  return { restaurantId: id, name: `Restaurant ${id}`, cuisine, avgPrice: 300, isOpen: true, etaMinutes: 25, rating: 4.0 };
+}
+
+// History: r1 ordered twice (repeat customer, 'Chicken Biryani'), r6 ordered once
+// ('Noodles'). Both are "known" restaurants — Discovery must exclude them.
+const orderA: AccountOrder = {
+  orderId: 'o_a',
+  restaurantId: 'r1',
+  restaurantName: 'Bawarchi Biryani House',
+  orderTotal: 300,
+  orderedAt: new Date('2026-08-20T20:00:00'),
+  isActiveOrder: false,
+  reorderItems: [{ menuItemId: 'm1', name: 'Chicken Biryani', quantity: 1 }],
+};
+
+const orderB: AccountOrder = {
+  orderId: 'o_b',
+  restaurantId: 'r1',
+  restaurantName: 'Bawarchi Biryani House',
+  orderTotal: 340,
+  orderedAt: new Date('2026-08-10T20:00:00'),
+  isActiveOrder: false,
+  reorderItems: [{ menuItemId: 'm1', name: 'Chicken Biryani', quantity: 2 }],
+};
+
+const orderC: AccountOrder = {
+  orderId: 'o_c',
+  restaurantId: 'r6',
+  restaurantName: 'Wok This Way',
+  orderTotal: 400,
+  orderedAt: new Date('2026-08-15T13:00:00'),
+  isActiveOrder: false,
+  reorderItems: [{ menuItemId: 'm2', name: 'Noodles', quantity: 1 }],
+};
 
 const fakeMcp = {
   getAddresses: async () => [{ addressId: 'addr_home', label: 'Home' }],
-  searchRestaurants: async () => [
-    { restaurantId: 'r1', name: 'Bawarchi', cuisine: 'biryani', avgPrice: 350, isOpen: true, etaMinutes: 30, rating: 4.3 },
-  ],
+  getOrderHistory: async () => [orderB, orderA, orderC],
+  searchRestaurants: async ({ query }: { query: string }): Promise<RestaurantResult[]> => {
+    if (query === 'chicken biryani') {
+      // New restaurants matching the dish keyword — not in history.
+      return [makeRestaurant('r2', 'biryani'), makeRestaurant('r7', 'biryani')];
+    }
+    if (query === 'noodles') {
+      return [makeRestaurant('r7', 'chinese')];
+    }
+    if (query === 'popular') {
+      // Includes known restaurants (r1, r6) to prove Discovery excludes them,
+      // plus a wider pool of new ones.
+      return [
+        makeRestaurant('r1', 'biryani'),
+        makeRestaurant('r6', 'chinese'),
+        makeRestaurant('r2', 'biryani'),
+        makeRestaurant('r7', 'chinese'),
+        makeRestaurant('r9', 'italian'),
+        makeRestaurant('r10', 'thai'),
+      ];
+    }
+    // Meal-time default query (varies with the clock) — nothing dish-specific here.
+    return [];
+  },
   buildCart: async () => ({ restaurantId: 'r1', restaurantName: 'Bawarchi', items: [], total: 0 }),
   placeOrder: async () => ({ orderId: 'o1', status: 'placed', etaMinutes: 30 }),
 } as any;
 
-const fakePrefs = {
+const fakePreferences = {
   getProfile: async () => ({
-    cuisineCounts: { biryani: 3 }, avgOrderValue: 350,
-    timeSlotCounts: { dinner: 3 }, recentRestaurantIds: [], rejectedRestaurantIds: [],
+    cuisineCounts: {},
+    avgOrderValue: 0,
+    timeSlotCounts: {},
+    recentRestaurantIds: [],
+    rejectedRestaurantIds: [],
   }),
   recordFeedback: async () => undefined,
 } as any;
 
-import { RankingService } from '../ranking/ranking.service';
-
-function makeRestaurant(id: string, cuisine: string): any {
-  return { restaurantId: id, name: `Restaurant ${id}`, cuisine, avgPrice: 300, isOpen: true, etaMinutes: 25, rating: 4.0 };
+function buildService() {
+  return new SuggestionsService(
+    fakeMcp,
+    fakePreferences,
+    new RankingService(),
+    new AccountProfileService(fakeMcp, fakePreferences),
+    new ReorderRankingService(),
+  );
 }
 
 describe('SuggestionsService', () => {
-  it('resolves an address and returns ranked suggestions', async () => {
-    const svc = new SuggestionsService(fakeMcp, fakePrefs, new RankingService());
+  it('returns reorder picks (with items) and discover picks that exclude known restaurants', async () => {
+    const svc = buildService();
     const out = await svc.getTopSuggestions('dj');
-    expect(out.length).toBeGreaterThan(0);
-    expect(out[0].restaurant.restaurantId).toBe('r1');
+
+    expect(out.reorder.length).toBeGreaterThan(0);
+    expect(out.reorder.some((r) => r.items.length > 0)).toBe(true);
+    // Reorder is built purely from account history — r1 and r6 are the only restaurants.
+    expect(out.reorder.map((r) => r.restaurantId).sort()).toEqual(['r1', 'r6']);
+
+    expect(out.discover.length).toBeLessThanOrEqual(5);
+    const discoverIds = out.discover.map((s) => s.restaurant.restaurantId);
+    // r1 and r6 are in the user's order history — Discovery must not resurface them,
+    // even though the 'popular' fallback search returns them.
+    expect(discoverIds).not.toContain('r1');
+    expect(discoverIds).not.toContain('r6');
   });
 
-  it('widens the net with a popular search when the personalized queries come up short', async () => {
-    const widenMcp = {
-      getAddresses: async () => [{ addressId: 'addr_home', label: 'Home' }],
-      searchRestaurants: async ({ query }: { query: string }) => {
-        if (query === 'popular') {
-          return [
-            makeRestaurant('r1', 'biryani'),
-            makeRestaurant('r2', 'chinese'),
-            makeRestaurant('r3', 'north_indian'),
-            makeRestaurant('r4', 'italian'),
-            makeRestaurant('r5', 'south_indian'),
-            makeRestaurant('r6', 'thai'),
-          ];
-        }
-        // Personalized cuisine query — only 1 match, not enough to reach topN on its own.
-        return [makeRestaurant('r1', 'biryani')];
-      },
-      buildCart: async () => ({ restaurantId: 'r1', restaurantName: 'Bawarchi', items: [], total: 0 }),
-      placeOrder: async () => ({ orderId: 'o1', status: 'placed', etaMinutes: 30 }),
-    } as any;
-
-    const svc = new SuggestionsService(widenMcp, fakePrefs, new RankingService());
+  it('returns empty reorder/discover when there is no resolvable address', async () => {
+    const noAddressMcp = { ...fakeMcp, getAddresses: async () => [] } as any;
+    const svc = new SuggestionsService(
+      noAddressMcp,
+      fakePreferences,
+      new RankingService(),
+      new AccountProfileService(noAddressMcp, fakePreferences),
+      new ReorderRankingService(),
+    );
     const out = await svc.getTopSuggestions('dj');
-    expect(out.length).toBe(5);
+    expect(out).toEqual({ reorder: [], discover: [] });
   });
 });

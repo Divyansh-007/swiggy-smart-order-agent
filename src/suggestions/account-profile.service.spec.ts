@@ -33,11 +33,6 @@ const orderC: AccountOrder = {
 
 const fakeMcp = {
   getOrderHistory: async () => [orderB, orderA, orderC],
-  getRestaurantCuisines: async (orderId: string) => {
-    if (orderId === 'o_a') return ['biryani', 'mughlai'];
-    if (orderId === 'o_c') return ['chinese'];
-    throw new Error(`unexpected orderId enriched: ${orderId}`);
-  },
 } as any;
 
 const fakePreferences = {
@@ -80,14 +75,14 @@ describe('AccountProfileService', () => {
     // orderA/orderB hour=20 -> dinner, orderC hour=13 -> lunch.
     expect(profile.timeSlotCounts).toEqual({ dinner: 2, lunch: 1 });
 
-    // Cuisines enriched from the most-recent order at each restaurant, weighted by count.
-    expect(profile.cuisineCounts).toEqual({ biryani: 2, mughlai: 2, chinese: 1 });
+    // Live get_food_order_details returns no cuisine data, so this stays empty.
+    expect(profile.cuisineCounts).toEqual({});
 
     // Skip feedback passed through unchanged from PreferencesService.
     expect(profile.rejectedRestaurantIds).toEqual(['r9']);
   });
 
-  it('never enriches more than 10 distinct restaurants', async () => {
+  it('handles many distinct restaurants without any enrichment calls', async () => {
     const manyOrders: AccountOrder[] = Array.from({ length: 15 }, (_, i) => ({
       orderId: `o_${i}`,
       restaurantId: `r${i}`,
@@ -98,19 +93,14 @@ describe('AccountProfileService', () => {
       reorderItems: [],
     }));
 
-    let enrichCalls = 0;
     const mcp = {
       getOrderHistory: async () => manyOrders,
-      getRestaurantCuisines: async () => {
-        enrichCalls += 1;
-        return ['some_cuisine'];
-      },
     } as any;
 
     const svc = new AccountProfileService(mcp, fakePreferences);
     const profile = await svc.build('dj', 'addr_home');
 
     expect(profile.restaurants).toHaveLength(15);
-    expect(enrichCalls).toBe(10);
+    expect(profile.cuisineCounts).toEqual({});
   });
 });

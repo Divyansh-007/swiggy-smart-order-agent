@@ -49,6 +49,26 @@ describe('MockSwiggyMcpClient', () => {
     expect(cart.toPay).toBe(630);
   });
 
+  it('getRestaurantMenu returns a synthetic menu with in-stock simple items plus out-of-stock/variant items to filter out', async () => {
+    const menu = await c.getRestaurantMenu('r1', 'addr_home');
+    expect(menu.length).toBeGreaterThan(0);
+
+    const pickable = menu.filter((i) => i.inStock && !i.hasVariants && !i.hasAddons);
+    expect(pickable.length).toBeGreaterThan(0);
+    expect(pickable.every((i) => i.menuItemId && i.name && i.price > 0)).toBe(true);
+
+    expect(menu.some((i) => i.inStock === false)).toBe(true);
+    expect(menu.some((i) => i.hasVariants === true)).toBe(true);
+  });
+
+  it('getRestaurantMenu falls back to a default menu for an unknown restaurantId', async () => {
+    const menu = await c.getRestaurantMenu('unknown-id', 'addr_home');
+    expect(menu.length).toBeGreaterThan(0);
+    expect(menu.some((i) => i.inStock && !i.hasVariants && !i.hasAddons)).toBe(true);
+    expect(menu.some((i) => i.inStock === false)).toBe(true);
+    expect(menu.some((i) => i.hasVariants === true)).toBe(true);
+  });
+
   it('buildCart prefers an explicit restaurantName over the mock lookup', async () => {
     const cart = await c.buildCart({
       restaurantId: 'unknown-id',

@@ -1,6 +1,6 @@
 import { Injectable } from '@nestjs/common';
 import {
-  AccountOrder, BuildCartParams, CartSummary, PlaceOrderResult, RestaurantResult,
+  AccountOrder, BuildCartParams, CartSummary, MenuItem, PlaceOrderResult, RestaurantResult,
   SearchRestaurantsParams, SwiggyAddress, SwiggyMcpClient,
 } from './mcp-client.interface';
 
@@ -26,6 +26,39 @@ const MOCK_CUISINES: Record<string, string[]> = {
   r6: ['south_indian', 'tiffin'],
   r7: ['thai', 'asian'],
   r8: ['tibetan', 'momos'],
+};
+
+// Synthetic per-restaurant menus for turning a discover pick into an orderable item.
+// Each menu carries 2-3 in-stock simple items (hasVariants:false, hasAddons:false),
+// one out-of-stock item, and one hasVariants:true item, so a picker filtering to
+// "in-stock, no variants/addons" has both matches to pick from and things to exclude.
+const DEFAULT_MENU: MenuItem[] = [
+  { menuItemId: 'default-1', name: 'Chef Special Thali', price: 220, inStock: true, isVeg: true, hasVariants: false, hasAddons: false },
+  { menuItemId: 'default-2', name: 'Paneer Butter Masala', price: 240, inStock: true, isVeg: true, hasVariants: false, hasAddons: false },
+  { menuItemId: 'default-3', name: 'Chicken Curry', price: 280, inStock: false, isVeg: false, hasVariants: false, hasAddons: false },
+  { menuItemId: 'default-4', name: 'Build Your Own Bowl', price: 260, inStock: true, isVeg: true, hasVariants: true, hasAddons: true },
+];
+
+const MOCK_MENUS: Record<string, MenuItem[]> = {
+  r1: [
+    { menuItemId: 'r1-biryani-1', name: 'Chicken Biryani', price: 320, inStock: true, isVeg: false, hasVariants: false, hasAddons: false },
+    { menuItemId: 'r1-biryani-2', name: 'Mutton Biryani', price: 420, inStock: true, isVeg: false, hasVariants: false, hasAddons: false },
+    { menuItemId: 'r1-starter-1', name: 'Chicken 65', price: 220, inStock: true, isVeg: false, hasVariants: false, hasAddons: false },
+    { menuItemId: 'r1-biryani-3', name: 'Veg Biryani', price: 280, inStock: false, isVeg: true, hasVariants: false, hasAddons: false },
+    { menuItemId: 'r1-combo-1', name: 'Biryani Combo (choose sides)', price: 450, inStock: true, isVeg: false, hasVariants: true, hasAddons: true },
+  ],
+  r5: [
+    { menuItemId: 'r5-pizza-1', name: 'Margherita Pizza', price: 280, inStock: true, isVeg: true, hasVariants: false, hasAddons: false },
+    { menuItemId: 'r5-pizza-2', name: 'Farmhouse Pizza', price: 340, inStock: true, isVeg: true, hasVariants: false, hasAddons: false },
+    { menuItemId: 'r5-pizza-3', name: 'Pepperoni Pizza', price: 380, inStock: false, isVeg: false, hasVariants: false, hasAddons: false },
+    { menuItemId: 'r5-pizza-custom', name: 'Build Your Own Pizza', price: 300, inStock: true, isVeg: true, hasVariants: true, hasAddons: true },
+  ],
+  r6: [
+    { menuItemId: 'r6-thali-1', name: 'South Indian Thali', price: 180, inStock: true, isVeg: true, hasVariants: false, hasAddons: false },
+    { menuItemId: 'r6-dosa-1', name: 'Masala Dosa', price: 120, inStock: true, isVeg: true, hasVariants: false, hasAddons: false },
+    { menuItemId: 'r6-dosa-2', name: 'Rava Dosa', price: 140, inStock: false, isVeg: true, hasVariants: false, hasAddons: false },
+    { menuItemId: 'r6-thali-2', name: 'Deluxe Thali (choose items)', price: 260, inStock: true, isVeg: true, hasVariants: true, hasAddons: false },
+  ],
 };
 
 const DAY_MS = 24 * 60 * 60 * 1000;
@@ -140,6 +173,14 @@ export class MockSwiggyMcpClient implements SwiggyMcpClient {
       itemTotal,
       toPay: itemTotal + 30,
     };
+  }
+
+  async getRestaurantMenu(restaurantId: string, addressId: string): Promise<MenuItem[]> {
+    await this.latency();
+    // Synthetic menu is address-agnostic in the mock; addressId is accepted to
+    // match the real client's signature (get_restaurant_menu takes an address).
+    void addressId;
+    return MOCK_MENUS[restaurantId] ?? DEFAULT_MENU;
   }
 
   async placeOrder(): Promise<PlaceOrderResult> {

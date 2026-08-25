@@ -1,14 +1,14 @@
 import { Injectable, UnauthorizedException } from '@nestjs/common';
 import { UnauthorizedError } from '@modelcontextprotocol/sdk/client/auth.js';
 import {
-  AccountOrder, BuildCartParams, CartSummary, PlaceOrderResult, RestaurantResult,
+  AccountOrder, BuildCartParams, CartSummary, MenuItem, PlaceOrderResult, RestaurantResult,
   SearchRestaurantsParams, SwiggyAddress, SwiggyMcpClient,
 } from '../mcp-client.interface';
 import { McpSessionFactory } from './mcp-session.factory';
 import { OAuthStateStore } from '../oauth/oauth-state.store';
 import { toAddresses, toRestaurants } from './swiggy-response.adapter';
 import { toAccountOrders, cuisinesFromOrderDetails } from './order-history.adapter';
-import { toCartSummary } from './cart.adapter';
+import { toCartSummary, toMenuItems } from './cart.adapter';
 
 @Injectable()
 export class RealSwiggyMcpClient implements SwiggyMcpClient {
@@ -82,6 +82,10 @@ export class RealSwiggyMcpClient implements SwiggyMcpClient {
       ...(params.restaurantName ? { restaurantName: params.restaurantName } : {}),
     });
     return toCartSummary(cart);
+  }
+
+  async getRestaurantMenu(restaurantId: string, addressId: string): Promise<MenuItem[]> {
+    return toMenuItems(await this.call('get_restaurant_menu', { restaurantId, addressId }));
   }
 
   async placeOrder(): Promise<PlaceOrderResult> {

@@ -31,6 +31,16 @@ export interface BuildCartParams {
   restaurantName?: string;
 }
 
+export interface MenuItem {
+  menuItemId: string;
+  name: string;
+  price: number;
+  inStock: boolean;
+  isVeg?: boolean;
+  hasVariants: boolean;
+  hasAddons: boolean;
+}
+
 export interface CartSummary {
   restaurantId: string;
   restaurantName: string;
@@ -66,6 +76,7 @@ export interface SwiggyMcpClient {
   getAddresses(): Promise<SwiggyAddress[]>;
   searchRestaurants(params: SearchRestaurantsParams): Promise<RestaurantResult[]>;
   buildCart(params: BuildCartParams): Promise<CartSummary>;   // update_food_cart + get_food_cart
+  getRestaurantMenu(restaurantId: string, addressId: string): Promise<MenuItem[]>; // get_restaurant_menu
   placeOrder(): Promise<PlaceOrderResult>;                    // place_food_order (COD); guarded by caller
   getOrderHistory(addressId: string): Promise<AccountOrder[]>;        // get_food_orders (newest-first)
   getRestaurantCuisines(orderId: string): Promise<string[]>;          // get_food_order_details -> restaurant_cuisine[]

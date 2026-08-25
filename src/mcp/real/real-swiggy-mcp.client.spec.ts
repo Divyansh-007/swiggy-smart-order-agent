@@ -169,6 +169,36 @@ describe('RealSwiggyMcpClient', () => {
     });
   });
 
+  it('getRestaurantMenu calls get_restaurant_menu with restaurantId/addressId and maps the menu envelope', async () => {
+    const callTool = jest.fn().mockResolvedValue({
+      structuredContent: {
+        success: true,
+        data: {
+          categories: [
+            {
+              items: [
+                { id: 'm1', name: 'Chole', price: 196, inStock: 1, isVeg: true, hasVariants: false, hasAddons: false },
+                { id: 'm2', name: 'Combo', price: 400, inStock: 0, hasVariants: true },
+              ],
+            },
+          ],
+        },
+      },
+    });
+    const client = new RealSwiggyMcpClient(makeSessions(callTool), makeStore());
+
+    const menu = await client.getRestaurantMenu('r1', 'addr_home');
+
+    expect(callTool).toHaveBeenCalledWith({
+      name: 'get_restaurant_menu',
+      arguments: { restaurantId: 'r1', addressId: 'addr_home' },
+    });
+    expect(menu).toEqual([
+      { menuItemId: 'm1', name: 'Chole', price: 196, inStock: true, isVeg: true, hasVariants: false, hasAddons: false },
+      { menuItemId: 'm2', name: 'Combo', price: 400, inStock: false, isVeg: undefined, hasVariants: true, hasAddons: false },
+    ]);
+  });
+
   it('buildCart passes restaurantName through to both calls when provided', async () => {
     const calls: { name: string; arguments: any }[] = [];
     const callTool = jest.fn().mockImplementation(async ({ name, arguments: args }) => {

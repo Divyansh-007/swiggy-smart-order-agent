@@ -1,5 +1,5 @@
 // Written against DOCUMENTED update_food_cart/get_food_cart schema; reconcile against live payloads (Task 4).
-import { CartSummary } from '../mcp-client.interface';
+import { CartSummary, MenuItem } from '../mcp-client.interface';
 
 /**
  * Maps get_food_cart's payload to a domain CartSummary.
@@ -23,4 +23,25 @@ export function toCartSummary(data: unknown): CartSummary {
     itemTotal: Number(pricing.item_total ?? 0),
     toPay: Number(pricing.to_pay ?? pricing.item_total ?? 0),
   };
+}
+
+/**
+ * Maps get_restaurant_menu's payload to a flat MenuItem[].
+ * Real Swiggy shape (per docs): `data.categories[].items[]` where each item =
+ * `{ id, name, description?, price?, inStock?, isVeg?, isBestseller?, hasVariants?, hasAddons? }`.
+ * `inStock` may come as a number (0/1) — derive a boolean from it.
+ * Handles both the `.data`-nested shape and the inner object passed directly.
+ */
+export function toMenuItems(data: unknown): MenuItem[] {
+  const c = (data as any)?.data ?? data ?? {};
+  const items = (c.categories ?? []).flatMap((cat: any) => cat.items ?? []);
+  return items.map((i: any) => ({
+    menuItemId: i.id,
+    name: i.name,
+    price: Number(i.price ?? 0),
+    inStock: Number(i.inStock ?? 1) > 0,
+    isVeg: i.isVeg,
+    hasVariants: !!i.hasVariants,
+    hasAddons: !!i.hasAddons,
+  }));
 }

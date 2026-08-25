@@ -31,3 +31,14 @@ scratchpad/
 
 # Subagent-driven-development workspace (internal ledger/briefs/reports)
 .superpowers/
+
+# graphify — commit graph.json + GRAPH_REPORT.md; ignore machine-specific + cache/temp
+graphify-out/.graphify_python
+graphify-out/.graphify_root
+graphify-out/.graphify_*.json
+graphify-out/cache/
+graphify-out/*.html
+graphify-out/cost.json
+# stray AST cache that lands wherever graphify scans (e.g. src/graphify-out/)
+**/graphify-out/cache/
+src/graphify-out/

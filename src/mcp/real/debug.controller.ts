@@ -23,13 +23,22 @@ export class McpDebugController {
   }
 
   @Get('raw')
-  async raw(@Query('tool') tool: string, @Query('addressId') addressId?: string, @Query('query') query?: string) {
+  async raw(
+    @Query('tool') tool: string,
+    @Query('addressId') addressId?: string,
+    @Query('query') query?: string,
+    @Query('orderId') orderId?: string,
+  ) {
     this.guard();
     if (!CAPTURE_TOOLS.has(tool)) {
       throw new ForbiddenException('Only read-only capture tools are allowed: get_addresses, search_restaurants, get_food_orders, get_food_order_details');
     }
     const client = await this.sessions.getClient();
-    const args = tool === 'search_restaurants' ? { addressId, query: query ?? 'biryani' } : {};
+    const args =
+      tool === 'search_restaurants' ? { addressId, query: query ?? 'biryani' } :
+      tool === 'get_food_orders' ? { addressId } :
+      tool === 'get_food_order_details' ? { orderId } :
+      {};
     return client.callTool({ name: tool, arguments: args });
   }
 }

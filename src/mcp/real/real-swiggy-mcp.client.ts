@@ -81,7 +81,14 @@ export class RealSwiggyMcpClient implements SwiggyMcpClient {
       addressId: params.addressId,
       ...(params.restaurantName ? { restaurantName: params.restaurantName } : {}),
     });
-    return toCartSummary(cart);
+    const summary = toCartSummary(cart);
+    // Live get_food_cart returns a `restaurant` object with only `deliverySubtitle`
+    // (no id, often no name), so thread the identity from the params we built with.
+    return {
+      ...summary,
+      restaurantId: params.restaurantId,
+      restaurantName: summary.restaurantName || params.restaurantName || '',
+    };
   }
 
   async getRestaurantMenu(restaurantId: string, addressId: string): Promise<MenuItem[]> {

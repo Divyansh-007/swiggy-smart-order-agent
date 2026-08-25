@@ -217,4 +217,37 @@ describe('RealSwiggyMcpClient', () => {
     expect(calls[0].arguments.restaurantName).toBe('Bawarchi');
     expect(calls[1].arguments.restaurantName).toBe('Bawarchi');
   });
+
+  it('threads restaurantId/name from params when the live cart omits restaurant.id/name', async () => {
+    // Mirrors the LIVE get_food_cart shape: restaurant object carries only deliverySubtitle.
+    const callTool = jest.fn().mockImplementation(async ({ name }) => {
+      if (name === 'update_food_cart') return { structuredContent: { success: true, data: {} } };
+      return {
+        structuredContent: {
+          success: true,
+          data: {
+            restaurant: { deliverySubtitle: '35-40 mins to <address>' },
+            items: [{ menu_item_id: 'm1', name: 'Soya Chaap Biryani', quantity: 1, final_price: 244 }],
+            pricing: { item_total: 244, to_pay: 361 },
+          },
+        },
+      };
+    });
+    const client = new RealSwiggyMcpClient(makeSessions(callTool), makeStore());
+
+    const cart = await client.buildCart({
+      restaurantId: '451688',
+      addressId: '2522624',
+      items: [{ menuItemId: 'm1', quantity: 1 }],
+      restaurantName: 'Biryani Blues (Ad)',
+    });
+
+    expect(cart).toEqual({
+      restaurantId: '451688', // threaded from params — cart omitted restaurant.id
+      restaurantName: 'Biryani Blues (Ad)', // threaded from params — cart omitted restaurant.name
+      items: [{ name: 'Soya Chaap Biryani', quantity: 1, price: 244 }],
+      itemTotal: 244,
+      toPay: 361,
+    });
+  });
 });

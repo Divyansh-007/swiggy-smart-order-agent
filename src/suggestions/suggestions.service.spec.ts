@@ -2,7 +2,7 @@ import { SuggestionsService } from './suggestions.service';
 import { AccountProfileService } from './account-profile.service';
 import { RankingService } from '../ranking/ranking.service';
 import { ReorderRankingService } from '../ranking/reorder-ranking.service';
-import { AccountOrder, RestaurantResult } from '../mcp/mcp-client.interface';
+import { AccountOrder, MenuItem, RestaurantResult } from '../mcp/mcp-client.interface';
 
 function makeRestaurant(id: string, cuisine: string): RestaurantResult {
   return { restaurantId: id, name: `Restaurant ${id}`, cuisine, avgPrice: 300, isOpen: true, etaMinutes: 25, rating: 4.0 };
@@ -120,5 +120,93 @@ describe('SuggestionsService', () => {
     );
     const out = await svc.getTopSuggestions('dj');
     expect(out).toEqual({ reorder: [], discover: [] });
+  });
+});
+
+describe('SuggestionsService.surpriseToCart', () => {
+  // Deterministic "picker" — always the first element — so pool/item selection
+  // is reproducible in tests instead of relying on Math.random().
+  const first = <T>(a: T[]): T => a[0];
+
+  function buildCartSpy() {
+    return jest.fn(async (params: any) => ({
+      restaurantId: params.restaurantId,
+      restaurantName: params.restaurantName ?? 'Restaurant',
+      items: params.items.map((i: any) => ({ name: i.menuItemId, quantity: i.quantity, price: 100 })),
+      itemTotal: 100 * params.items.length,
+      toPay: 100 * params.items.length,
+    }));
+  }
+
+  it('reorder pick: adds the reordered item to cart and never places the order', async () => {
+    const buildCart = buildCartSpy();
+    const placeOrder = jest.fn();
+    const mcp = { ...fakeMcp, buildCart, placeOrder } as any;
+    const svc = new SuggestionsService(
+      mcp,
+      fakePreferences,
+      new RankingService(),
+      new AccountProfileService(mcp, fakePreferences),
+      new ReorderRankingService(),
+    );
+
+    const result = await svc.surpriseToCart('dj', undefined, first);
+
+    // r1 (Bawarchi) outranks r6 on frequency/recency — reorder[0] is r1, whose
+    // most-recent order's only reorderItem is m1 "Chicken Biryani".
+    expect(result.picked.list).toBe('reorder');
+    expect(result.picked.restaurantId).toBe('r1');
+    expect(result.picked.item.menuItemId).toBe('m1');
+    expect(buildCart).toHaveBeenCalledWith({
+      restaurantId: 'r1',
+      addressId: 'addr_home',
+      items: [{ menuItemId: 'm1', quantity: 1 }],
+      restaurantName: 'Bawarchi Biryani House',
+    });
+    expect(result.cart).toEqual(await buildCart.mock.results[0].value);
+    expect(placeOrder).not.toHaveBeenCalled();
+  });
+
+  it('discover pick (no order history): picks an in-stock, variant/addon-free menu item and never places the order', async () => {
+    const fakeMenu: MenuItem[] = [
+      { menuItemId: 'x0', name: 'Build Your Own Thali', price: 300, inStock: true, hasVariants: true, hasAddons: false },
+      { menuItemId: 'x1', name: 'Veg Fried Rice', price: 180, inStock: true, hasVariants: false, hasAddons: false },
+      { menuItemId: 'x2', name: 'Paneer Tikka', price: 220, inStock: true, hasVariants: false, hasAddons: false },
+      { menuItemId: 'x3', name: 'Out of Stock Item', price: 150, inStock: false, hasVariants: false, hasAddons: false },
+    ];
+    const buildCart = buildCartSpy();
+    const placeOrder = jest.fn();
+    const getRestaurantMenu = jest.fn(async () => fakeMenu);
+    const mcp = {
+      ...fakeMcp,
+      getOrderHistory: async () => [], // no history -> reorder is empty -> pool is discover-only
+      getRestaurantMenu,
+      buildCart,
+      placeOrder,
+    } as any;
+    const svc = new SuggestionsService(
+      mcp,
+      fakePreferences,
+      new RankingService(),
+      new AccountProfileService(mcp, fakePreferences),
+      new ReorderRankingService(),
+    );
+
+    const result = await svc.surpriseToCart('dj', undefined, first);
+
+    expect(result.picked.list).toBe('discover');
+    expect(getRestaurantMenu).toHaveBeenCalledWith(result.picked.restaurantId, 'addr_home');
+    // Simple candidates are filtered to inStock && !hasVariants && !hasAddons,
+    // in menu order — the deterministic "first" picker selects x1.
+    expect(result.picked.item.menuItemId).toBe('x1');
+    expect(buildCart).toHaveBeenCalledWith(
+      expect.objectContaining({
+        restaurantId: result.picked.restaurantId,
+        addressId: 'addr_home',
+        items: [{ menuItemId: 'x1', quantity: 1 }],
+      }),
+    );
+    expect(result.cart).toEqual(await buildCart.mock.results[0].value);
+    expect(placeOrder).not.toHaveBeenCalled();
   });
 });

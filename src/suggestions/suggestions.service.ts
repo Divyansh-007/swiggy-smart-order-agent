@@ -1,10 +1,12 @@
-import { Inject, Injectable } from '@nestjs/common';
+import { BadRequestException, Inject, Injectable } from '@nestjs/common';
 import { SWIGGY_MCP_CLIENT } from '../mcp/mcp.module';
-import { RestaurantResult, SwiggyMcpClient } from '../mcp/mcp-client.interface';
+import { CartSummary, RestaurantResult, SwiggyMcpClient } from '../mcp/mcp-client.interface';
 import { PreferencesService } from '../preferences/preferences.service';
 import { RankingService, RankedSuggestion } from '../ranking/ranking.service';
 import { ReorderRankingService, ReorderSuggestion } from '../ranking/reorder-ranking.service';
 import { AccountProfileService, AccountProfile } from './account-profile.service';
+
+const pick = <T>(a: T[]): T => a[Math.floor(Math.random() * a.length)];
 
 function currentTimeSlot(date = new Date()): string {
   const h = date.getHours();
@@ -108,6 +110,69 @@ export class SuggestionsService {
     }
 
     return this.ranking.rank([...byId.values()], profile, slot, topN);
+  }
+
+  // Randomly picks one suggestion (reorder or discover), resolves a single
+  // item (qty 1) from it, and adds it to the cart. Never places the order —
+  // ordering stops at the cart (conclude-at-cart).
+  async surpriseToCart(
+    userId: string,
+    addressId?: string,
+    picker?: <T>(a: T[]) => T,
+  ): Promise<{
+    picked: { list: 'reorder' | 'discover'; restaurantId: string; restaurantName: string; item: { menuItemId: string; name: string } };
+    cart: CartSummary;
+  }> {
+    const choose = picker ?? pick;
+    const resolvedAddressId = addressId ?? (await this.mcpClient.getAddresses())[0]?.addressId;
+    if (!resolvedAddressId) throw new BadRequestException('No saved Swiggy address');
+
+    const { reorder, discover } = await this.getTopSuggestions(userId, resolvedAddressId);
+
+    const pool = [
+      ...reorder.map((s) => ({
+        list: 'reorder' as const,
+        restaurantId: s.restaurantId,
+        restaurantName: s.name,
+        reorderItems: s.items,
+      })),
+      ...discover.map((s) => ({
+        list: 'discover' as const,
+        restaurantId: s.restaurant.restaurantId,
+        restaurantName: s.restaurant.name,
+        reorderItems: undefined as ReorderSuggestion['items'] | undefined,
+      })),
+    ];
+    if (pool.length === 0) throw new BadRequestException('No suggestions to pick from');
+
+    const chosen = choose(pool);
+
+    let item: { menuItemId: string; name: string };
+    if (chosen.list === 'reorder' && chosen.reorderItems?.length) {
+      const ri = choose(chosen.reorderItems);
+      item = { menuItemId: ri.menuItemId, name: ri.name };
+    } else {
+      const menu = await this.mcpClient.getRestaurantMenu(chosen.restaurantId, resolvedAddressId);
+      const simple = menu.filter((m) => m.inStock && !m.hasVariants && !m.hasAddons);
+      const candidates = simple.length ? simple : menu.filter((m) => m.inStock);
+      if (candidates.length === 0) {
+        throw new BadRequestException('Picked restaurant has no orderable items — try again');
+      }
+      const mi = choose(candidates);
+      item = { menuItemId: mi.menuItemId, name: mi.name };
+    }
+
+    const cart = await this.mcpClient.buildCart({
+      restaurantId: chosen.restaurantId,
+      addressId: resolvedAddressId,
+      items: [{ menuItemId: item.menuItemId, quantity: 1 }],
+      restaurantName: chosen.restaurantName,
+    });
+
+    return {
+      picked: { list: chosen.list, restaurantId: chosen.restaurantId, restaurantName: chosen.restaurantName, item },
+      cart,
+    };
   }
 
   async acceptSuggestion(userId: string, restaurantId: string, _itemIds: string[]) {

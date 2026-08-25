@@ -40,4 +40,10 @@ export class SuggestionsController {
   async skip(@Body() body: { userId: string; restaurantId: string }) {
     return this.suggestionsService.skipSuggestion(body.userId, body.restaurantId);
   }
+
+  // POST /suggestions/surprise-cart  { userId, addressId? }
+  @Post('surprise-cart')
+  async surpriseCart(@Body() body: { userId: string; addressId?: string }) {
+    return this.suggestionsService.surpriseToCart(body.userId, body.addressId);
+  }
 }

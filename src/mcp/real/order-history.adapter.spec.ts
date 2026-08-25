@@ -3,21 +3,23 @@ import { toAccountOrders, cuisinesFromOrderDetails } from './order-history.adapt
 // Fixtures mirror Swiggy's documented order-history structure with SYNTHETIC
 // values only (real payloads carry PII). Reconcile field names on live capture.
 describe('order-history adapters', () => {
-  it('maps an order: parses ₹ total, date, and reorder items', () => {
+  // Mirrors the LIVE get_food_orders shape captured 2026-08-24: reorder items use
+  // `itemId` (string), and orderedTime is a yearless "Month DD, H:MM AM/PM" string.
+  it('maps a live-shaped order: ₹ total, yearless date, itemId reorder items', () => {
     const data = {
       orders: [
         {
-          orderId: 'ord_1',
-          restaurantId: 'r1',
-          restaurantName: 'Bawarchi Biryani House',
-          orderTotal: '₹340',
-          orderedTime: '2026-08-20T21:00:00.000Z',
+          orderId: '245403687192395',
+          restaurantId: '25178',
+          restaurantName: 'BTW',
+          orderTotal: '₹377',
+          orderedTime: 'August 11, 1:11 PM',
           isActiveOrder: false,
           actions: [
             {
-              type: 'REORDER',
+              type: 'PAST_ORDER_CTA_ENUM_REORDER',
               reorderMeta: {
-                orderItems: [{ menu_item_id: 'm1', name: 'Chicken Biryani', quantity: 1 }],
+                orderItems: [{ itemId: '204856612', name: 'Ghewar Mawa 50 GM', isVeg: '1', quantity: '1' }],
               },
             },
           ],
@@ -26,14 +28,17 @@ describe('order-history adapters', () => {
     };
     const [o] = toAccountOrders(data);
     expect(o).toMatchObject({
-      orderId: 'ord_1',
-      restaurantId: 'r1',
-      orderTotal: 340,
+      orderId: '245403687192395',
+      restaurantId: '25178',
+      orderTotal: 377,
       isActiveOrder: false,
-      reorderItems: [{ menuItemId: 'm1', name: 'Chicken Biryani', quantity: 1 }],
+      reorderItems: [{ menuItemId: '204856612', name: 'Ghewar Mawa 50 GM', quantity: 1 }],
     });
-    expect(o.orderedAt instanceof Date).toBe(true);
-    expect(isNaN(o.orderedAt.getTime())).toBe(false);
+    // yearless "August 11, 1:11 PM" must resolve to the correct month/hour, NOT year 2001
+    expect(o.orderedAt.getMonth()).toBe(7); // August
+    expect(o.orderedAt.getDate()).toBe(11);
+    expect(o.orderedAt.getHours()).toBe(13); // 1:11 PM
+    expect(o.orderedAt.getFullYear()).toBeGreaterThanOrEqual(2025);
   });
 
   it('yields empty reorderItems when the order has no reorder action', () => {

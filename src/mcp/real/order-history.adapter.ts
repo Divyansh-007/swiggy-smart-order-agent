@@ -1,6 +1,9 @@
-// NOTE: written against Swiggy's DOCUMENTED order-history schema
-// (get_food_orders / get_food_order_details). Reconcile against LIVE payloads
-// on the next authenticated OAuth capture — same as swiggy-response.adapter.ts.
+// RECONCILED against LIVE get_food_orders payloads (captured 2026-08-24).
+// Key live-vs-doc differences the capture caught:
+//   - reorder item id field is `itemId` (docs said menu_item_id/item_id).
+//   - orderedTime is "Month DD, H:MM AM/PM" with NO year (JS mis-parses the year).
+//   - get_food_order_details returns EMPTY structuredContent (no restaurant_cuisine live),
+//     so cuisinesFromOrderDetails degrades to [] — Discovery cuisine enrichment is limited.
 import { AccountOrder, ReorderItem } from '../mcp-client.interface';
 
 function snake(s: string): string {
@@ -17,7 +20,31 @@ function parseAmount(v: unknown): number {
   return 0;
 }
 
-function parseDate(v: unknown): Date {
+const MONTHS = ['jan', 'feb', 'mar', 'apr', 'may', 'jun', 'jul', 'aug', 'sep', 'oct', 'nov', 'dec'];
+
+/**
+ * get_food_orders' `orderedTime` is a yearless display string ("August 11, 1:11 PM").
+ * `new Date()` mis-guesses the year (→ 2001), which would wreck recency ranking, so parse
+ * it explicitly and assume the most-recent past occurrence. Full/ISO dates fall back to native.
+ */
+function parseOrderedAt(v: unknown): Date {
+  if (typeof v === 'string') {
+    const m = v.trim().match(/^([A-Za-z]{3,})\s+(\d{1,2}),\s*(\d{1,2}):(\d{2})\s*(AM|PM)?/i);
+    if (m) {
+      const mi = MONTHS.indexOf(m[1].slice(0, 3).toLowerCase());
+      if (mi >= 0) {
+        let hour = Number(m[3]) % 12;
+        if (m[5] && m[5].toUpperCase() === 'PM') hour += 12;
+        const now = new Date();
+        let cand = new Date(now.getFullYear(), mi, Number(m[2]), hour, Number(m[4]));
+        // yearless → if it lands in the future, it must be last year's order
+        if (cand.getTime() > now.getTime() + 24 * 3600 * 1000) {
+          cand = new Date(now.getFullYear() - 1, mi, Number(m[2]), hour, Number(m[4]));
+        }
+        return cand;
+      }
+    }
+  }
   const d = new Date(v as any);
   return isNaN(d.getTime()) ? new Date(0) : d;
 }
@@ -28,7 +55,7 @@ function reorderItemsOf(order: any): ReorderItem[] {
   const items = action?.reorderMeta?.orderItems ?? [];
   return items
     .map((i: any) => ({
-      menuItemId: i.menu_item_id ?? i.item_id ?? '',
+      menuItemId: i.itemId ?? i.menu_item_id ?? i.item_id ?? '',
       name: i.name ?? '',
       quantity: Number(i.quantity ?? 1),
     }))
@@ -42,7 +69,7 @@ export function toAccountOrders(data: unknown): AccountOrder[] {
     restaurantId: o.restaurantId ?? o.restaurant_id,
     restaurantName: o.restaurantName ?? o.restaurant_name ?? '',
     orderTotal: parseAmount(o.orderTotal ?? o.order_total),
-    orderedAt: parseDate(o.orderedTime ?? o.order_time),
+    orderedAt: parseOrderedAt(o.orderedTime ?? o.order_time),
     isActiveOrder: !!o.isActiveOrder,
     reorderItems: reorderItemsOf(o),
   }));

@@ -121,4 +121,70 @@ describe('RealSwiggyMcpClient', () => {
     expect(callTool).toHaveBeenCalledWith({ name: 'get_food_order_details', arguments: { orderId: 'o1' } });
     expect(cuisines).toEqual(['biryani', 'north_indian']);
   });
+
+  it('buildCart calls update_food_cart then get_food_cart with the correct real args, and maps the cart response', async () => {
+    const calls: { name: string; arguments: any }[] = [];
+    const callTool = jest.fn().mockImplementation(async ({ name, arguments: args }) => {
+      calls.push({ name, arguments: args });
+      if (name === 'update_food_cart') {
+        return { structuredContent: { success: true, data: {} } };
+      }
+      return {
+        structuredContent: {
+          success: true,
+          data: {
+            restaurant: { id: 'r1', name: 'Bawarchi' },
+            items: [{ menu_item_id: 'm1', name: 'Chicken Biryani', quantity: 2, final_price: 400 }],
+            pricing: { item_total: 400, to_pay: 445 },
+          },
+        },
+      };
+    });
+    const client = new RealSwiggyMcpClient(makeSessions(callTool), makeStore());
+
+    const cart = await client.buildCart({
+      restaurantId: 'r1',
+      addressId: 'addr_home',
+      items: [{ menuItemId: 'm1', quantity: 2 }],
+    });
+
+    expect(calls[0]).toEqual({
+      name: 'update_food_cart',
+      arguments: {
+        restaurantId: 'r1',
+        addressId: 'addr_home',
+        cartItems: [{ menu_item_id: 'm1', quantity: 2 }],
+      },
+    });
+    expect(calls[1]).toEqual({
+      name: 'get_food_cart',
+      arguments: { addressId: 'addr_home' },
+    });
+    expect(cart).toEqual({
+      restaurantId: 'r1',
+      restaurantName: 'Bawarchi',
+      items: [{ name: 'Chicken Biryani', quantity: 2, price: 400 }],
+      itemTotal: 400,
+      toPay: 445,
+    });
+  });
+
+  it('buildCart passes restaurantName through to both calls when provided', async () => {
+    const calls: { name: string; arguments: any }[] = [];
+    const callTool = jest.fn().mockImplementation(async ({ name, arguments: args }) => {
+      calls.push({ name, arguments: args });
+      return { structuredContent: { success: true, data: {} } };
+    });
+    const client = new RealSwiggyMcpClient(makeSessions(callTool), makeStore());
+
+    await client.buildCart({
+      restaurantId: 'r1',
+      addressId: 'addr_home',
+      items: [{ menuItemId: 'm1', quantity: 1 }],
+      restaurantName: 'Bawarchi',
+    });
+
+    expect(calls[0].arguments.restaurantName).toBe('Bawarchi');
+    expect(calls[1].arguments.restaurantName).toBe('Bawarchi');
+  });
 });

@@ -8,6 +8,7 @@ import { McpSessionFactory } from './mcp-session.factory';
 import { OAuthStateStore } from '../oauth/oauth-state.store';
 import { toAddresses, toRestaurants } from './swiggy-response.adapter';
 import { toAccountOrders, cuisinesFromOrderDetails } from './order-history.adapter';
+import { toCartSummary } from './cart.adapter';
 
 @Injectable()
 export class RealSwiggyMcpClient implements SwiggyMcpClient {
@@ -70,14 +71,17 @@ export class RealSwiggyMcpClient implements SwiggyMcpClient {
   }
 
   async buildCart(params: BuildCartParams): Promise<CartSummary> {
-    await this.call('update_food_cart', { restaurantId: params.restaurantId, items: params.items });
-    const cart = await this.call('get_food_cart', {});
-    return {
+    await this.call('update_food_cart', {
       restaurantId: params.restaurantId,
-      restaurantName: cart?.restaurantName ?? '',
-      items: (cart?.items ?? []).map((i: any) => ({ name: i.name, quantity: i.quantity, price: i.price })),
-      total: Number(cart?.total ?? 0),
-    };
+      addressId: params.addressId,
+      cartItems: params.items.map((i) => ({ menu_item_id: i.menuItemId, quantity: i.quantity })),
+      ...(params.restaurantName ? { restaurantName: params.restaurantName } : {}),
+    });
+    const cart = await this.call('get_food_cart', {
+      addressId: params.addressId,
+      ...(params.restaurantName ? { restaurantName: params.restaurantName } : {}),
+    });
+    return toCartSummary(cart);
   }
 
   async placeOrder(): Promise<PlaceOrderResult> {

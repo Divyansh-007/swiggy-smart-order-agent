@@ -131,11 +131,14 @@ export class MockSwiggyMcpClient implements SwiggyMcpClient {
   async buildCart(params: BuildCartParams): Promise<CartSummary> {
     await this.latency();
     const r = MOCK_RESTAURANTS.find((x) => x.restaurantId === params.restaurantId);
+    const items = params.items.map((i) => ({ name: `item-${i.menuItemId}`, quantity: i.quantity, price: 200 }));
+    const itemTotal = items.reduce((s, i) => s + i.price * i.quantity, 0);
     return {
       restaurantId: params.restaurantId,
-      restaurantName: r?.name ?? 'Unknown',
-      items: params.items.map((i) => ({ name: `item-${i.itemId}`, quantity: i.quantity, price: 200 })),
-      total: params.items.reduce((s, i) => s + 200 * i.quantity, 0),
+      restaurantName: params.restaurantName ?? r?.name ?? 'Unknown',
+      items,
+      itemTotal,
+      toPay: itemTotal + 30,
     };
   }
 

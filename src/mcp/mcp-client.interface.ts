@@ -22,18 +22,21 @@ export interface SearchRestaurantsParams {
 }
 
 // --- ordering (cart journey) ---
-export interface CartItemRef { itemId: string; quantity: number; }
+export interface CartItemInput { menuItemId: string; quantity: number; }
 
 export interface BuildCartParams {
   restaurantId: string;
-  items: CartItemRef[];
+  addressId: string;                 // REQUIRED by update_food_cart/get_food_cart
+  items: CartItemInput[];
+  restaurantName?: string;
 }
 
 export interface CartSummary {
   restaurantId: string;
   restaurantName: string;
   items: { name: string; quantity: number; price: number }[];
-  total: number;        // rupees
+  itemTotal: number;
+  toPay: number;         // pricing.to_pay — the live payable total
 }
 
 export interface PlaceOrderResult {

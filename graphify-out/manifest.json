@@ -1,0 +1,344 @@
+{
+  ".claude/settings.json": {
+    "mtime": 1787642196.1464703,
+    "seen": 1787642884.431131,
+    "ast_hash": "032af4f01de4bc1462342649ea3ce38f",
+    "semantic_hash": ""
+  },
+  "jest.config.js": {
+    "mtime": 1787586383.261251,
+    "seen": 1787642884.431133,
+    "ast_hash": "c68f39005ed60cdc88084e93c7d93280",
+    "semantic_hash": ""
+  },
+  "package.json": {
+    "mtime": 1787586383.2637262,
+    "seen": 1787642884.431135,
+    "ast_hash": "c5d5664d27b7ff7567e7a14eefb0f460",
+    "semantic_hash": ""
+  },
+  "scripts/introspect-sdk-auth.ts": {
+    "mtime": 1787586383.2641592,
+    "seen": 1787642884.431136,
+    "ast_hash": "5880cdb14b557c20b732e76d858de48c",
+    "semantic_hash": ""
+  },
+  "src/app.module.ts": {
+    "mtime": 1787586383.2645502,
+    "seen": 1787642884.431136,
+    "ast_hash": "7d913f81b3d7fb7e1e814cdc55116587",
+    "semantic_hash": ""
+  },
+  "src/main.ts": {
+    "mtime": 1787627519.9291198,
+    "seen": 1787642884.431137,
+    "ast_hash": "5faecec5f12605768a29a92ba3e26178",
+    "semantic_hash": ""
+  },
+  "src/mcp/mcp-client.interface.ts": {
+    "mtime": 1787642658.289155,
+    "seen": 1787642884.431137,
+    "ast_hash": "94648b6be17c90c61d38ea1935d1f7ad",
+    "semantic_hash": ""
+  },
+  "src/mcp/mcp.module.ts": {
+    "mtime": 1787586383.265421,
+    "seen": 1787642884.431138,
+    "ast_hash": "c53b7e03ef2db158c8b97e3f2ee01f4f",
+    "semantic_hash": ""
+  },
+  "src/mcp/mock-swiggy-mcp.client.spec.ts": {
+    "mtime": 1787642805.9570014,
+    "seen": 1787642884.431139,
+    "ast_hash": "d64414913105b693f04cee27abd842e7",
+    "semantic_hash": ""
+  },
+  "src/mcp/mock-swiggy-mcp.client.ts": {
+    "mtime": 1787642797.2837067,
+    "seen": 1787642884.431139,
+    "ast_hash": "d84659a0dfb92af480a659a50c0055b2",
+    "semantic_hash": ""
+  },
+  "src/mcp/oauth/oauth-state.store.spec.ts": {
+    "mtime": 1787586383.2667828,
+    "seen": 1787642884.4311402,
+    "ast_hash": "85855195faabd88449354af0c0316191",
+    "semantic_hash": ""
+  },
+  "src/mcp/oauth/oauth-state.store.ts": {
+    "mtime": 1787586383.2670963,
+    "seen": 1787642884.4311411,
+    "ast_hash": "798d0f7a6beace1145d164e8d26e5dee",
+    "semantic_hash": ""
+  },
+  "src/mcp/oauth/oauth.controller.ts": {
+    "mtime": 1787586383.2675183,
+    "seen": 1787642884.4311411,
+    "ast_hash": "9d866f1738436ddeff7f1697b21807fc",
+    "semantic_hash": ""
+  },
+  "src/mcp/oauth/swiggy-oauth.provider.spec.ts": {
+    "mtime": 1787586383.2678285,
+    "seen": 1787642884.4311419,
+    "ast_hash": "1e009984b5bd64df19552aca1cedcfbc",
+    "semantic_hash": ""
+  },
+  "src/mcp/oauth/swiggy-oauth.provider.ts": {
+    "mtime": 1787586383.268148,
+    "seen": 1787642884.4311419,
+    "ast_hash": "ff61e7f6f599a37d98625b578125e624",
+    "semantic_hash": ""
+  },
+  "src/mcp/real/cart.adapter.spec.ts": {
+    "mtime": 1787642861.6048796,
+    "seen": 1787642884.4311428,
+    "ast_hash": "565e2eb858f989a9f56d79bc7e534f0f",
+    "semantic_hash": ""
+  },
+  "src/mcp/real/cart.adapter.ts": {
+    "mtime": 1787642678.653776,
+    "seen": 1787642884.431144,
+    "ast_hash": "e2e9d7a753b3dcd6ef2c0717371ab32a",
+    "semantic_hash": ""
+  },
+  "src/mcp/real/debug.controller.ts": {
+    "mtime": 1787636241.903717,
+    "seen": 1787642884.431144,
+    "ast_hash": "3480f2d559fe3b8f7c4dec89c304e710",
+    "semantic_hash": ""
+  },
+  "src/mcp/real/mcp-session.factory.ts": {
+    "mtime": 1787586383.2691188,
+    "seen": 1787642884.431145,
+    "ast_hash": "2c26c19e436dc24c08380c6021bd5209",
+    "semantic_hash": ""
+  },
+  "src/mcp/real/order-history.adapter.spec.ts": {
+    "mtime": 1787636241.904189,
+    "seen": 1787642884.431145,
+    "ast_hash": "b47f141dca50593bc821d69d864a9a2c",
+    "semantic_hash": ""
+  },
+  "src/mcp/real/order-history.adapter.ts": {
+    "mtime": 1787636241.9049861,
+    "seen": 1787642884.431146,
+    "ast_hash": "3a7efcb3b80beeadc7aa7d85ad682841",
+    "semantic_hash": ""
+  },
+  "src/mcp/real/real-swiggy-mcp.client.spec.ts": {
+    "mtime": 1787642819.9568307,
+    "seen": 1787642884.431147,
+    "ast_hash": "d34172fd5d8e752afa3027f7881af602",
+    "semantic_hash": ""
+  },
+  "src/mcp/real/real-swiggy-mcp.client.ts": {
+    "mtime": 1787642789.3769255,
+    "seen": 1787642884.431148,
+    "ast_hash": "caec978118242880788ffe258ebb111b",
+    "semantic_hash": ""
+  },
+  "src/mcp/real/swiggy-response.adapter.spec.ts": {
+    "mtime": 1787627519.9297266,
+    "seen": 1787642884.431148,
+    "ast_hash": "e8665fd15a610e719a4067ef4d4649f7",
+    "semantic_hash": ""
+  },
+  "src/mcp/real/swiggy-response.adapter.ts": {
+    "mtime": 1787627519.9301429,
+    "seen": 1787642884.431149,
+    "ast_hash": "85f2f3726a5d680919d565d92298789c",
+    "semantic_hash": ""
+  },
+  "src/preferences/preferences.module.ts": {
+    "mtime": 1787109842.0,
+    "seen": 1787642884.431149,
+    "ast_hash": "5a260471dab3ac9c4ef6382e55fdedbe",
+    "semantic_hash": ""
+  },
+  "src/preferences/preferences.service.ts": {
+    "mtime": 1787056119.0,
+    "seen": 1787642884.4311502,
+    "ast_hash": "9ff129d796865484d0fee567394bb8dc",
+    "semantic_hash": ""
+  },
+  "src/preferences/schemas/feedback.schema.ts": {
+    "mtime": 1787056090.0,
+    "seen": 1787642884.4311512,
+    "ast_hash": "51fabe7579667f368de6a6d29db4063a",
+    "semantic_hash": ""
+  },
+  "src/preferences/schemas/order.schema.ts": {
+    "mtime": 1787056086.0,
+    "seen": 1787642884.4311512,
+    "ast_hash": "ae0393366cceb441bdc481f54796673b",
+    "semantic_hash": ""
+  },
+  "src/ranking/ranking.module.ts": {
+    "mtime": 1787636241.906809,
+    "seen": 1787642884.431152,
+    "ast_hash": "c039a5951153c4bd8949a921c8300119",
+    "semantic_hash": ""
+  },
+  "src/ranking/ranking.service.ts": {
+    "mtime": 1787109858.0,
+    "seen": 1787642884.431152,
+    "ast_hash": "959dd354f405897bf07f3d654466ead8",
+    "semantic_hash": ""
+  },
+  "src/ranking/reorder-ranking.service.spec.ts": {
+    "mtime": 1787636241.9071977,
+    "seen": 1787642884.4311528,
+    "ast_hash": "5bbcb0d58813d3a426adf59fd8e29f63",
+    "semantic_hash": ""
+  },
+  "src/ranking/reorder-ranking.service.ts": {
+    "mtime": 1787636241.9074712,
+    "seen": 1787642884.4311528,
+    "ast_hash": "88fd8126ca6cc56a39091bb1d6e2c676",
+    "semantic_hash": ""
+  },
+  "src/seed.ts": {
+    "mtime": 1787109893.0,
+    "seen": 1787642884.431154,
+    "ast_hash": "9a54b32a6dee0d0ccea506d9433aff0f",
+    "semantic_hash": ""
+  },
+  "src/suggestions/account-profile.service.spec.ts": {
+    "mtime": 1787636241.907829,
+    "seen": 1787642884.431155,
+    "ast_hash": "0276e1913f9bb028edb53f729007fa39",
+    "semantic_hash": ""
+  },
+  "src/suggestions/account-profile.service.ts": {
+    "mtime": 1787636241.9082203,
+    "seen": 1787642884.431155,
+    "ast_hash": "1d0354bc9f6a2c93da0259c575c96ee5",
+    "semantic_hash": ""
+  },
+  "src/suggestions/suggestions.controller.ts": {
+    "mtime": 1787636241.9089088,
+    "seen": 1787642884.431156,
+    "ast_hash": "b3448600dd7767569d3e0611c587ca0d",
+    "semantic_hash": ""
+  },
+  "src/suggestions/suggestions.module.ts": {
+    "mtime": 1787636241.90943,
+    "seen": 1787642884.431156,
+    "ast_hash": "348bcafac87eb164484c4cfe08e0774b",
+    "semantic_hash": ""
+  },
+  "src/suggestions/suggestions.service.spec.ts": {
+    "mtime": 1787636241.910407,
+    "seen": 1787642884.4311569,
+    "ast_hash": "0590d074b75519d172c3f2c5590b085e",
+    "semantic_hash": ""
+  },
+  "src/suggestions/suggestions.service.ts": {
+    "mtime": 1787636241.912033,
+    "seen": 1787642884.431158,
+    "ast_hash": "34c6fb521e872c7a456dbe4cfe89c6c0",
+    "semantic_hash": ""
+  },
+  "tsconfig.json": {
+    "mtime": 1787056077.0,
+    "seen": 1787642884.431158,
+    "ast_hash": "c811d029d36dc956ea8c83e1f6b9e423",
+    "semantic_hash": ""
+  },
+  ".claude/CLAUDE.md": {
+    "mtime": 1787642196.1429322,
+    "seen": 1787642884.431159,
+    "ast_hash": "9b31786b637be3c13978bec4c2330752",
+    "semantic_hash": ""
+  },
+  ".claude/skills/graphify/SKILL.md": {
+    "mtime": 1787642196.1563082,
+    "seen": 1787642884.431159,
+    "ast_hash": "1656a8a8e4a05bbe69f32cd15de81e87",
+    "semantic_hash": ""
+  },
+  ".claude/skills/graphify/references/add-watch.md": {
+    "mtime": 1787642196.159428,
+    "seen": 1787642884.43116,
+    "ast_hash": "d59d027fe449f06aa03905a01184e779",
+    "semantic_hash": ""
+  },
+  ".claude/skills/graphify/references/exports.md": {
+    "mtime": 1787642196.1634202,
+    "seen": 1787642884.4311612,
+    "ast_hash": "9da2a2152e60a22f07f05fed5158f287",
+    "semantic_hash": ""
+  },
+  ".claude/skills/graphify/references/extraction-spec.md": {
+    "mtime": 1787642196.167031,
+    "seen": 1787642884.4311612,
+    "ast_hash": "42fef56a01698118f7fd722acdadea34",
+    "semantic_hash": ""
+  },
+  ".claude/skills/graphify/references/github-and-merge.md": {
+    "mtime": 1787642196.168001,
+    "seen": 1787642884.431162,
+    "ast_hash": "cde13df085e4c492aeb7ba298a996d0d",
+    "semantic_hash": ""
+  },
+  ".claude/skills/graphify/references/hooks.md": {
+    "mtime": 1787642196.1706977,
+    "seen": 1787642884.4311628,
+    "ast_hash": "3f545db6ce646650bb9de588f5512a27",
+    "semantic_hash": ""
+  },
+  ".claude/skills/graphify/references/query.md": {
+    "mtime": 1787642196.175122,
+    "seen": 1787642884.4311628,
+    "ast_hash": "3c46f8ad006874260614ed8657d02307",
+    "semantic_hash": ""
+  },
+  ".claude/skills/graphify/references/transcribe.md": {
+    "mtime": 1787642196.1826115,
+    "seen": 1787642884.4311638,
+    "ast_hash": "67b6a5fa6c0974e18f60db9f8932fbd8",
+    "semantic_hash": ""
+  },
+  ".claude/skills/graphify/references/update.md": {
+    "mtime": 1787642196.1880398,
+    "seen": 1787642884.4311638,
+    "ast_hash": "9378bd03d56baaf78bd738ab3848f142",
+    "semantic_hash": ""
+  },
+  ".github/workflows/ci.yml": {
+    "mtime": 1787642196.1949298,
+    "seen": 1787642884.431165,
+    "ast_hash": "3f247646a5f0a3304745aea91fa2290f",
+    "semantic_hash": ""
+  },
+  "CLAUDE.md": {
+    "mtime": 1787642196.1994717,
+    "seen": 1787642884.431166,
+    "ast_hash": "82efb97a359f5c7290bf2513d14686be",
+    "semantic_hash": ""
+  },
+  "README.md": {
+    "mtime": 1787636241.89808,
+    "seen": 1787642884.431166,
+    "ast_hash": "7cbe72cc9460d54022f231daab903491",
+    "semantic_hash": ""
+  },
+  "docs/superpowers/plans/2026-08-24-history-driven-suggestions.md": {
+    "mtime": 1787636241.8989966,
+    "seen": 1787642884.431167,
+    "ast_hash": "09637c03911bd12eabded25d5d4c211e",
+    "semantic_hash": ""
+  },
+  "docs/superpowers/plans/2026-08-24-real-swiggy-mcp-integration.md": {
+    "mtime": 1787565148.5257502,
+    "seen": 1787642884.431167,
+    "ast_hash": "8b66d53e41099aeaaacbd03f8ede63c0",
+    "semantic_hash": ""
+  },
+  "docs/superpowers/plans/2026-08-25-surprise-to-cart.md": {
+    "mtime": 1787641884.783659,
+    "seen": 1787642884.431168,
+    "ast_hash": "ba9883ce487c199575d049ffcceddcc7",
+    "semantic_hash": ""
+  }
+}

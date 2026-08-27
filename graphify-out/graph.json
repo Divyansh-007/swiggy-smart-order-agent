@@ -300,7 +300,7 @@
       "file_type": "code",
       "norm_label": "appmodule",
       "source_file": "src/app.module.ts",
-      "source_location": "L18"
+      "source_location": "L34"
     },
     {
       "id": "src_suggestions_suggestions_module_suggestionsmodule",
@@ -316,13 +316,78 @@
       "source_location": "L14"
     },
     {
+      "id": "src_mcp_server_tools_handler",
+      "label": "Handler",
+      "_callable": true,
+      "_callable_class": true,
+      "_origin": "ast",
+      "community": 17,
+      "community_name": "tools.ts",
+      "file_type": "code",
+      "norm_label": "handler",
+      "source_file": "src/mcp-server/tools.ts",
+      "source_location": "L41"
+    },
+    {
+      "id": "src_mcp_server_tools_suggestionsservicelike",
+      "label": "SuggestionsServiceLike",
+      "_callable": true,
+      "_callable_class": true,
+      "_origin": "ast",
+      "community": 17,
+      "community_name": "tools.ts",
+      "file_type": "code",
+      "norm_label": "suggestionsservicelike",
+      "source_file": "src/mcp-server/tools.ts",
+      "source_location": "L7"
+    },
+    {
+      "id": "src_mcp_server_tools_tooldeps",
+      "label": "ToolDeps",
+      "_callable": true,
+      "_callable_class": true,
+      "_origin": "ast",
+      "community": 17,
+      "community_name": "tools.ts",
+      "file_type": "code",
+      "norm_label": "tooldeps",
+      "source_file": "src/mcp-server/tools.ts",
+      "source_location": "L14"
+    },
+    {
+      "id": "src_mcp_server_authenticate_authdeps",
+      "label": "AuthDeps",
+      "_callable": true,
+      "_callable_class": true,
+      "_origin": "ast",
+      "community": 29,
+      "community_name": "authenticate.ts",
+      "file_type": "code",
+      "norm_label": "authdeps",
+      "source_file": "src/mcp-server/authenticate.ts",
+      "source_location": "L5"
+    },
+    {
+      "id": "src_mcp_server_authenticate_authresult",
+      "label": "AuthResult",
+      "_callable": true,
+      "_callable_class": true,
+      "_origin": "ast",
+      "community": 29,
+      "community_name": "authenticate.ts",
+      "file_type": "code",
+      "norm_label": "authresult",
+      "source_file": "src/mcp-server/authenticate.ts",
+      "source_location": "L14"
+    },
+    {
       "id": "src_mcp_mcp_module_mcpmodule",
       "label": "McpModule",
       "_callable": true,
       "_callable_class": true,
       "_origin": "ast",
       "community": 3,
-      "community_name": "mcp.module.ts",
+      "community_name": "OAuthStateStore",
       "file_type": "code",
       "norm_label": "mcpmodule",
       "source_file": "src/mcp/mcp.module.ts",
@@ -335,7 +400,7 @@
       "_callable_class": true,
       "_origin": "ast",
       "community": 3,
-      "community_name": "mcp.module.ts",
+      "community_name": "OAuthStateStore",
       "file_type": "code",
       "norm_label": "oauthcontroller",
       "source_file": "src/mcp/oauth/oauth.controller.ts",
@@ -348,11 +413,24 @@
       "_callable_class": true,
       "_origin": "ast",
       "community": 3,
-      "community_name": "mcp.module.ts",
+      "community_name": "OAuthStateStore",
       "file_type": "code",
       "norm_label": "oauthstatestore",
       "source_file": "src/mcp/oauth/oauth-state.store.ts",
-      "source_location": "L5"
+      "source_location": "L18"
+    },
+    {
+      "id": "src_mcp_oauth_oauth_state_store_persistshape",
+      "label": "PersistShape",
+      "_callable": true,
+      "_callable_class": true,
+      "_origin": "ast",
+      "community": 3,
+      "community_name": "OAuthStateStore",
+      "file_type": "code",
+      "norm_label": "persistshape",
+      "source_file": "src/mcp/oauth/oauth-state.store.ts",
+      "source_location": "L12"
     },
     {
       "id": "src_mcp_oauth_swiggy_oauth_provider_swiggyoauthprovider",
@@ -361,7 +439,7 @@
       "_callable_class": true,
       "_origin": "ast",
       "community": 3,
-      "community_name": "mcp.module.ts",
+      "community_name": "OAuthStateStore",
       "file_type": "code",
       "norm_label": "swiggyoauthprovider",
       "source_file": "src/mcp/oauth/swiggy-oauth.provider.ts",
@@ -374,7 +452,7 @@
       "_callable_class": true,
       "_origin": "ast",
       "community": 3,
-      "community_name": "mcp.module.ts",
+      "community_name": "OAuthStateStore",
       "file_type": "code",
       "norm_label": "mcpdebugcontroller",
       "source_file": "src/mcp/real/debug.controller.ts",
@@ -387,7 +465,7 @@
       "_callable_class": true,
       "_origin": "ast",
       "community": 3,
-      "community_name": "mcp.module.ts",
+      "community_name": "OAuthStateStore",
       "file_type": "code",
       "norm_label": "mcpsessionfactory",
       "source_file": "src/mcp/real/mcp-session.factory.ts",
@@ -507,7 +585,7 @@
       "file_type": "code",
       "norm_label": ".getprofile()",
       "source_file": "src/preferences/preferences.service.ts",
-      "source_location": "L35"
+      "source_location": "L45"
     },
     {
       "id": "src_ranking_ranking_service_rankingservice_explain",
@@ -894,6 +972,54 @@
       "source_location": "L181"
     },
     {
+      "id": "src_mcp_real_order_history_adapter_parseamount",
+      "label": "parseAmount()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 1,
+      "community_name": "real-swiggy-mcp.client.ts",
+      "file_type": "code",
+      "norm_label": "parseamount()",
+      "source_file": "src/mcp/real/order-history.adapter.ts",
+      "source_location": "L8"
+    },
+    {
+      "id": "src_mcp_real_order_history_adapter_parseorderedat",
+      "label": "parseOrderedAt()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 1,
+      "community_name": "real-swiggy-mcp.client.ts",
+      "file_type": "code",
+      "norm_label": "parseorderedat()",
+      "source_file": "src/mcp/real/order-history.adapter.ts",
+      "source_location": "L24"
+    },
+    {
+      "id": "src_mcp_real_order_history_adapter_reorderitemsof",
+      "label": "reorderItemsOf()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 1,
+      "community_name": "real-swiggy-mcp.client.ts",
+      "file_type": "code",
+      "norm_label": "reorderitemsof()",
+      "source_file": "src/mcp/real/order-history.adapter.ts",
+      "source_location": "L47"
+    },
+    {
+      "id": "src_mcp_real_order_history_adapter_toaccountorders",
+      "label": "toAccountOrders()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 1,
+      "community_name": "real-swiggy-mcp.client.ts",
+      "file_type": "code",
+      "norm_label": "toaccountorders()",
+      "source_file": "src/mcp/real/order-history.adapter.ts",
+      "source_location": "L59"
+    },
+    {
       "id": "src_mcp_real_real_swiggy_mcp_client_realswiggymcpclient_buildcart",
       "label": ".buildCart()",
       "_callable": true,
@@ -916,18 +1042,6 @@
       "norm_label": ".call()",
       "source_file": "src/mcp/real/real-swiggy-mcp.client.ts",
       "source_location": "L34"
-    },
-    {
-      "id": "src_mcp_real_real_swiggy_mcp_client_realswiggymcpclient_constructor",
-      "label": ".constructor()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 1,
-      "community_name": "real-swiggy-mcp.client.ts",
-      "file_type": "code",
-      "norm_label": ".constructor()",
-      "source_file": "src/mcp/real/real-swiggy-mcp.client.ts",
-      "source_location": "L15"
     },
     {
       "id": "src_mcp_real_real_swiggy_mcp_client_realswiggymcpclient_getaddresses",
@@ -1062,54 +1176,6 @@
       "source_location": "L40"
     },
     {
-      "id": "src_mcp_real_order_history_adapter_parseamount",
-      "label": "parseAmount()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 14,
-      "community_name": "order-history.adapter.ts",
-      "file_type": "code",
-      "norm_label": "parseamount()",
-      "source_file": "src/mcp/real/order-history.adapter.ts",
-      "source_location": "L8"
-    },
-    {
-      "id": "src_mcp_real_order_history_adapter_parseorderedat",
-      "label": "parseOrderedAt()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 14,
-      "community_name": "order-history.adapter.ts",
-      "file_type": "code",
-      "norm_label": "parseorderedat()",
-      "source_file": "src/mcp/real/order-history.adapter.ts",
-      "source_location": "L24"
-    },
-    {
-      "id": "src_mcp_real_order_history_adapter_reorderitemsof",
-      "label": "reorderItemsOf()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 14,
-      "community_name": "order-history.adapter.ts",
-      "file_type": "code",
-      "norm_label": "reorderitemsof()",
-      "source_file": "src/mcp/real/order-history.adapter.ts",
-      "source_location": "L47"
-    },
-    {
-      "id": "src_mcp_real_order_history_adapter_toaccountorders",
-      "label": "toAccountOrders()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 14,
-      "community_name": "order-history.adapter.ts",
-      "file_type": "code",
-      "norm_label": "toaccountorders()",
-      "source_file": "src/mcp/real/order-history.adapter.ts",
-      "source_location": "L59"
-    },
-    {
       "id": "src_main_bootstrap",
       "label": "bootstrap()",
       "_callable": true,
@@ -1122,12 +1188,180 @@
       "source_location": "L5"
     },
     {
+      "id": "src_mcp_server_tools_buildhandlers",
+      "label": "buildHandlers()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 17,
+      "community_name": "tools.ts",
+      "file_type": "code",
+      "norm_label": "buildhandlers()",
+      "source_file": "src/mcp-server/tools.ts",
+      "source_location": "L44"
+    },
+    {
+      "id": "src_mcp_server_tools_errorresult",
+      "label": "errorResult()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 17,
+      "community_name": "tools.ts",
+      "file_type": "code",
+      "norm_label": "errorresult()",
+      "source_file": "src/mcp-server/tools.ts",
+      "source_location": "L24"
+    },
+    {
+      "id": "src_mcp_server_tools_okresult",
+      "label": "okResult()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 17,
+      "community_name": "tools.ts",
+      "file_type": "code",
+      "norm_label": "okresult()",
+      "source_file": "src/mcp-server/tools.ts",
+      "source_location": "L21"
+    },
+    {
+      "id": "src_mcp_server_tools_spec_deps",
+      "label": "deps()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 17,
+      "community_name": "tools.ts",
+      "file_type": "code",
+      "norm_label": "deps()",
+      "source_file": "src/mcp-server/tools.spec.ts",
+      "source_location": "L5"
+    },
+    {
+      "id": "src_mcp_server_tools_spec_parse",
+      "label": "parse()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 17,
+      "community_name": "tools.ts",
+      "file_type": "code",
+      "norm_label": "parse()",
+      "source_file": "src/mcp-server/tools.spec.ts",
+      "source_location": "L20"
+    },
+    {
+      "id": "src_mcp_server_tools_suggestionsservicelike_acceptsuggestion",
+      "label": ".acceptSuggestion()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 17,
+      "community_name": "tools.ts",
+      "file_type": "code",
+      "norm_label": ".acceptsuggestion()",
+      "source_file": "src/mcp-server/tools.ts",
+      "source_location": "L10"
+    },
+    {
+      "id": "src_mcp_server_tools_suggestionsservicelike_gettopsuggestions",
+      "label": ".getTopSuggestions()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 17,
+      "community_name": "tools.ts",
+      "file_type": "code",
+      "norm_label": ".gettopsuggestions()",
+      "source_file": "src/mcp-server/tools.ts",
+      "source_location": "L8"
+    },
+    {
+      "id": "src_mcp_server_tools_suggestionsservicelike_skipsuggestion",
+      "label": ".skipSuggestion()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 17,
+      "community_name": "tools.ts",
+      "file_type": "code",
+      "norm_label": ".skipsuggestion()",
+      "source_file": "src/mcp-server/tools.ts",
+      "source_location": "L11"
+    },
+    {
+      "id": "src_mcp_server_tools_suggestionsservicelike_surprisetocart",
+      "label": ".surpriseToCart()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 17,
+      "community_name": "tools.ts",
+      "file_type": "code",
+      "norm_label": ".surprisetocart()",
+      "source_file": "src/mcp-server/tools.ts",
+      "source_location": "L9"
+    },
+    {
+      "id": "src_mcp_server_tools_withautherrors",
+      "label": "withAuthErrors()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 17,
+      "community_name": "tools.ts",
+      "file_type": "code",
+      "norm_label": "withautherrors()",
+      "source_file": "src/mcp-server/tools.ts",
+      "source_location": "L30"
+    },
+    {
+      "id": "src_mcp_server_authenticate_defaultopenbrowser",
+      "label": "defaultOpenBrowser()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 29,
+      "community_name": "authenticate.ts",
+      "file_type": "code",
+      "norm_label": "defaultopenbrowser()",
+      "source_file": "src/mcp-server/authenticate.ts",
+      "source_location": "L34"
+    },
+    {
+      "id": "src_mcp_server_authenticate_runauthentication",
+      "label": "runAuthentication()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 29,
+      "community_name": "authenticate.ts",
+      "file_type": "code",
+      "norm_label": "runauthentication()",
+      "source_file": "src/mcp-server/authenticate.ts",
+      "source_location": "L52"
+    },
+    {
+      "id": "src_mcp_server_authenticate_spec_basedeps",
+      "label": "baseDeps()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 29,
+      "community_name": "authenticate.ts",
+      "file_type": "code",
+      "norm_label": "basedeps()",
+      "source_file": "src/mcp-server/authenticate.spec.ts",
+      "source_location": "L3"
+    },
+    {
+      "id": "src_mcp_server_authenticate_verifyandcomplete",
+      "label": "verifyAndComplete()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 29,
+      "community_name": "authenticate.ts",
+      "file_type": "code",
+      "norm_label": "verifyandcomplete()",
+      "source_file": "src/mcp-server/authenticate.ts",
+      "source_location": "L21"
+    },
+    {
       "id": "src_mcp_oauth_oauth_controller_oauthcontroller_callback",
       "label": ".callback()",
       "_callable": true,
       "_origin": "ast",
       "community": 3,
-      "community_name": "mcp.module.ts",
+      "community_name": "OAuthStateStore",
       "file_type": "code",
       "norm_label": ".callback()",
       "source_file": "src/mcp/oauth/oauth.controller.ts",
@@ -1139,7 +1373,7 @@
       "_callable": true,
       "_origin": "ast",
       "community": 3,
-      "community_name": "mcp.module.ts",
+      "community_name": "OAuthStateStore",
       "file_type": "code",
       "norm_label": ".constructor()",
       "source_file": "src/mcp/oauth/oauth.controller.ts",
@@ -1151,7 +1385,7 @@
       "_callable": true,
       "_origin": "ast",
       "community": 3,
-      "community_name": "mcp.module.ts",
+      "community_name": "OAuthStateStore",
       "file_type": "code",
       "norm_label": ".login()",
       "source_file": "src/mcp/oauth/oauth.controller.ts",
@@ -1163,11 +1397,23 @@
       "_callable": true,
       "_origin": "ast",
       "community": 3,
-      "community_name": "mcp.module.ts",
+      "community_name": "OAuthStateStore",
       "file_type": "code",
       "norm_label": ".status()",
       "source_file": "src/mcp/oauth/oauth.controller.ts",
       "source_location": "L37"
+    },
+    {
+      "id": "src_mcp_oauth_oauth_state_store_defaultpath",
+      "label": "defaultPath()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 3,
+      "community_name": "OAuthStateStore",
+      "file_type": "code",
+      "norm_label": "defaultpath()",
+      "source_file": "src/mcp/oauth/oauth-state.store.ts",
+      "source_location": "L7"
     },
     {
       "id": "src_mcp_oauth_oauth_state_store_oauthstatestore_clear",
@@ -1175,11 +1421,35 @@
       "_callable": true,
       "_origin": "ast",
       "community": 3,
-      "community_name": "mcp.module.ts",
+      "community_name": "OAuthStateStore",
       "file_type": "code",
       "norm_label": ".clear()",
       "source_file": "src/mcp/oauth/oauth-state.store.ts",
-      "source_location": "L18"
+      "source_location": "L55"
+    },
+    {
+      "id": "src_mcp_oauth_oauth_state_store_oauthstatestore_clientinfo",
+      "label": ".clientInfo()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 3,
+      "community_name": "OAuthStateStore",
+      "file_type": "code",
+      "norm_label": ".clientinfo()",
+      "source_file": "src/mcp/oauth/oauth-state.store.ts",
+      "source_location": "L35"
+    },
+    {
+      "id": "src_mcp_oauth_oauth_state_store_oauthstatestore_constructor",
+      "label": ".constructor()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 3,
+      "community_name": "OAuthStateStore",
+      "file_type": "code",
+      "norm_label": ".constructor()",
+      "source_file": "src/mcp/oauth/oauth-state.store.ts",
+      "source_location": "L29"
     },
     {
       "id": "src_mcp_oauth_oauth_state_store_oauthstatestore_isauthenticated",
@@ -1187,11 +1457,47 @@
       "_callable": true,
       "_origin": "ast",
       "community": 3,
-      "community_name": "mcp.module.ts",
+      "community_name": "OAuthStateStore",
       "file_type": "code",
       "norm_label": ".isauthenticated()",
       "source_file": "src/mcp/oauth/oauth-state.store.ts",
-      "source_location": "L14"
+      "source_location": "L51"
+    },
+    {
+      "id": "src_mcp_oauth_oauth_state_store_oauthstatestore_load",
+      "label": ".load()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 3,
+      "community_name": "OAuthStateStore",
+      "file_type": "code",
+      "norm_label": ".load()",
+      "source_file": "src/mcp/oauth/oauth-state.store.ts",
+      "source_location": "L70"
+    },
+    {
+      "id": "src_mcp_oauth_oauth_state_store_oauthstatestore_save",
+      "label": ".save()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 3,
+      "community_name": "OAuthStateStore",
+      "file_type": "code",
+      "norm_label": ".save()",
+      "source_file": "src/mcp/oauth/oauth-state.store.ts",
+      "source_location": "L81"
+    },
+    {
+      "id": "src_mcp_oauth_oauth_state_store_oauthstatestore_tokens",
+      "label": ".tokens()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 3,
+      "community_name": "OAuthStateStore",
+      "file_type": "code",
+      "norm_label": ".tokens()",
+      "source_file": "src/mcp/oauth/oauth-state.store.ts",
+      "source_location": "L43"
     },
     {
       "id": "src_mcp_oauth_swiggy_oauth_provider_swiggyoauthprovider_clientinformation",
@@ -1199,7 +1505,7 @@
       "_callable": true,
       "_origin": "ast",
       "community": 3,
-      "community_name": "mcp.module.ts",
+      "community_name": "OAuthStateStore",
       "file_type": "code",
       "norm_label": ".clientinformation()",
       "source_file": "src/mcp/oauth/swiggy-oauth.provider.ts",
@@ -1211,7 +1517,7 @@
       "_callable": true,
       "_origin": "ast",
       "community": 3,
-      "community_name": "mcp.module.ts",
+      "community_name": "OAuthStateStore",
       "file_type": "code",
       "norm_label": ".clientmetadata()",
       "source_file": "src/mcp/oauth/swiggy-oauth.provider.ts",
@@ -1223,7 +1529,7 @@
       "_callable": true,
       "_origin": "ast",
       "community": 3,
-      "community_name": "mcp.module.ts",
+      "community_name": "OAuthStateStore",
       "file_type": "code",
       "norm_label": ".codeverifier()",
       "source_file": "src/mcp/oauth/swiggy-oauth.provider.ts",
@@ -1235,7 +1541,7 @@
       "_callable": true,
       "_origin": "ast",
       "community": 3,
-      "community_name": "mcp.module.ts",
+      "community_name": "OAuthStateStore",
       "file_type": "code",
       "norm_label": ".constructor()",
       "source_file": "src/mcp/oauth/swiggy-oauth.provider.ts",
@@ -1247,7 +1553,7 @@
       "_callable": true,
       "_origin": "ast",
       "community": 3,
-      "community_name": "mcp.module.ts",
+      "community_name": "OAuthStateStore",
       "file_type": "code",
       "norm_label": ".invalidatecredentials()",
       "source_file": "src/mcp/oauth/swiggy-oauth.provider.ts",
@@ -1259,7 +1565,7 @@
       "_callable": true,
       "_origin": "ast",
       "community": 3,
-      "community_name": "mcp.module.ts",
+      "community_name": "OAuthStateStore",
       "file_type": "code",
       "norm_label": ".redirecttoauthorization()",
       "source_file": "src/mcp/oauth/swiggy-oauth.provider.ts",
@@ -1271,7 +1577,7 @@
       "_callable": true,
       "_origin": "ast",
       "community": 3,
-      "community_name": "mcp.module.ts",
+      "community_name": "OAuthStateStore",
       "file_type": "code",
       "norm_label": ".redirecturl()",
       "source_file": "src/mcp/oauth/swiggy-oauth.provider.ts",
@@ -1283,7 +1589,7 @@
       "_callable": true,
       "_origin": "ast",
       "community": 3,
-      "community_name": "mcp.module.ts",
+      "community_name": "OAuthStateStore",
       "file_type": "code",
       "norm_label": ".saveclientinformation()",
       "source_file": "src/mcp/oauth/swiggy-oauth.provider.ts",
@@ -1295,7 +1601,7 @@
       "_callable": true,
       "_origin": "ast",
       "community": 3,
-      "community_name": "mcp.module.ts",
+      "community_name": "OAuthStateStore",
       "file_type": "code",
       "norm_label": ".savecodeverifier()",
       "source_file": "src/mcp/oauth/swiggy-oauth.provider.ts",
@@ -1307,7 +1613,7 @@
       "_callable": true,
       "_origin": "ast",
       "community": 3,
-      "community_name": "mcp.module.ts",
+      "community_name": "OAuthStateStore",
       "file_type": "code",
       "norm_label": ".savetokens()",
       "source_file": "src/mcp/oauth/swiggy-oauth.provider.ts",
@@ -1319,7 +1625,7 @@
       "_callable": true,
       "_origin": "ast",
       "community": 3,
-      "community_name": "mcp.module.ts",
+      "community_name": "OAuthStateStore",
       "file_type": "code",
       "norm_label": ".state()",
       "source_file": "src/mcp/oauth/swiggy-oauth.provider.ts",
@@ -1331,7 +1637,7 @@
       "_callable": true,
       "_origin": "ast",
       "community": 3,
-      "community_name": "mcp.module.ts",
+      "community_name": "OAuthStateStore",
       "file_type": "code",
       "norm_label": ".tokens()",
       "source_file": "src/mcp/oauth/swiggy-oauth.provider.ts",
@@ -1343,7 +1649,7 @@
       "_callable": true,
       "_origin": "ast",
       "community": 3,
-      "community_name": "mcp.module.ts",
+      "community_name": "OAuthStateStore",
       "file_type": "code",
       "norm_label": ".constructor()",
       "source_file": "src/mcp/real/debug.controller.ts",
@@ -1355,7 +1661,7 @@
       "_callable": true,
       "_origin": "ast",
       "community": 3,
-      "community_name": "mcp.module.ts",
+      "community_name": "OAuthStateStore",
       "file_type": "code",
       "norm_label": ".guard()",
       "source_file": "src/mcp/real/debug.controller.ts",
@@ -1367,7 +1673,7 @@
       "_callable": true,
       "_origin": "ast",
       "community": 3,
-      "community_name": "mcp.module.ts",
+      "community_name": "OAuthStateStore",
       "file_type": "code",
       "norm_label": ".raw()",
       "source_file": "src/mcp/real/debug.controller.ts",
@@ -1379,7 +1685,7 @@
       "_callable": true,
       "_origin": "ast",
       "community": 3,
-      "community_name": "mcp.module.ts",
+      "community_name": "OAuthStateStore",
       "file_type": "code",
       "norm_label": ".tools()",
       "source_file": "src/mcp/real/debug.controller.ts",
@@ -1391,7 +1697,7 @@
       "_callable": true,
       "_origin": "ast",
       "community": 3,
-      "community_name": "mcp.module.ts",
+      "community_name": "OAuthStateStore",
       "file_type": "code",
       "norm_label": ".beginauth()",
       "source_file": "src/mcp/real/mcp-session.factory.ts",
@@ -1403,7 +1709,7 @@
       "_callable": true,
       "_origin": "ast",
       "community": 3,
-      "community_name": "mcp.module.ts",
+      "community_name": "OAuthStateStore",
       "file_type": "code",
       "norm_label": ".completeauth()",
       "source_file": "src/mcp/real/mcp-session.factory.ts",
@@ -1415,7 +1721,7 @@
       "_callable": true,
       "_origin": "ast",
       "community": 3,
-      "community_name": "mcp.module.ts",
+      "community_name": "OAuthStateStore",
       "file_type": "code",
       "norm_label": ".constructor()",
       "source_file": "src/mcp/real/mcp-session.factory.ts",
@@ -1427,7 +1733,7 @@
       "_callable": true,
       "_origin": "ast",
       "community": 3,
-      "community_name": "mcp.module.ts",
+      "community_name": "OAuthStateStore",
       "file_type": "code",
       "norm_label": ".discardsession()",
       "source_file": "src/mcp/real/mcp-session.factory.ts",
@@ -1439,7 +1745,7 @@
       "_callable": true,
       "_origin": "ast",
       "community": 3,
-      "community_name": "mcp.module.ts",
+      "community_name": "OAuthStateStore",
       "file_type": "code",
       "norm_label": ".ensureclient()",
       "source_file": "src/mcp/real/mcp-session.factory.ts",
@@ -1451,7 +1757,7 @@
       "_callable": true,
       "_origin": "ast",
       "community": 3,
-      "community_name": "mcp.module.ts",
+      "community_name": "OAuthStateStore",
       "file_type": "code",
       "norm_label": ".getclient()",
       "source_file": "src/mcp/real/mcp-session.factory.ts",
@@ -1463,7 +1769,7 @@
       "_callable": true,
       "_origin": "ast",
       "community": 3,
-      "community_name": "mcp.module.ts",
+      "community_name": "OAuthStateStore",
       "file_type": "code",
       "norm_label": ".newtransport()",
       "source_file": "src/mcp/real/mcp-session.factory.ts",
@@ -1475,11 +1781,47 @@
       "_callable": true,
       "_origin": "ast",
       "community": 3,
-      "community_name": "mcp.module.ts",
+      "community_name": "OAuthStateStore",
       "file_type": "code",
       "norm_label": ".serverurl()",
       "source_file": "src/mcp/real/mcp-session.factory.ts",
       "source_location": "L72"
+    },
+    {
+      "id": "src_mcp_real_real_swiggy_mcp_client_realswiggymcpclient_constructor",
+      "label": ".constructor()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 3,
+      "community_name": "OAuthStateStore",
+      "file_type": "code",
+      "norm_label": ".constructor()",
+      "source_file": "src/mcp/real/real-swiggy-mcp.client.ts",
+      "source_location": "L15"
+    },
+    {
+      "id": "src_mcp_server_main_bootstrap",
+      "label": "bootstrap()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 3,
+      "community_name": "OAuthStateStore",
+      "file_type": "code",
+      "norm_label": "bootstrap()",
+      "source_file": "src/mcp-server/main.ts",
+      "source_location": "L14"
+    },
+    {
+      "id": "src_mcp_server_tools_registertools",
+      "label": "registerTools()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 3,
+      "community_name": "OAuthStateStore",
+      "file_type": "code",
+      "norm_label": "registertools()",
+      "source_file": "src/mcp-server/tools.ts",
+      "source_location": "L60"
     },
     {
       "id": "src_preferences_preferences_service_preferencesservice_constructor",
@@ -1504,6 +1846,18 @@
       "norm_label": ".recordorder()",
       "source_file": "src/preferences/preferences.service.ts",
       "source_location": "L22"
+    },
+    {
+      "id": "src_preferences_preferences_service_spec_throwingmodel",
+      "label": "throwingModel()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 4,
+      "community_name": "preferences.service.ts",
+      "file_type": "code",
+      "norm_label": "throwingmodel()",
+      "source_file": "src/preferences/preferences.service.spec.ts",
+      "source_location": "L3"
     },
     {
       "id": "src_seed_daysago",
@@ -1647,7 +2001,7 @@
       "file_type": "code",
       "norm_label": ".skipsuggestion()",
       "source_file": "src/suggestions/suggestions.service.ts",
-      "source_location": "L183"
+      "source_location": "L182"
     },
     {
       "id": "src_suggestions_suggestions_service_suggestionsservice_surprisetocart",
@@ -1660,17 +2014,6 @@
       "norm_label": ".surprisetocart()",
       "source_file": "src/suggestions/suggestions.service.ts",
       "source_location": "L118"
-    },
-    {
-      "id": "src_mcp_mcp_module_swiggy_mcp_client",
-      "label": "SWIGGY_MCP_CLIENT",
-      "_origin": "ast",
-      "community": 0,
-      "community_name": "suggestions.service.ts",
-      "file_type": "code",
-      "norm_label": "swiggy_mcp_client",
-      "source_file": "src/mcp/mcp.module.ts",
-      "source_location": "L11"
     },
     {
       "id": "src_ranking_ranking_module",
@@ -1803,72 +2146,6 @@
       "norm_label": "account-profile.service.ts",
       "source_file": "src/suggestions/account-profile.service.ts",
       "source_location": "L1"
-    },
-    {
-      "id": "src_suggestions_account_profile_service_spec",
-      "label": "account-profile.service.spec.ts",
-      "_origin": "ast",
-      "community": 0,
-      "community_name": "suggestions.service.ts",
-      "file_type": "code",
-      "norm_label": "account-profile.service.spec.ts",
-      "source_file": "src/suggestions/account-profile.service.spec.ts",
-      "source_location": "L1"
-    },
-    {
-      "id": "src_suggestions_account_profile_service_spec_fakemcp",
-      "label": "fakeMcp",
-      "_origin": "ast",
-      "community": 0,
-      "community_name": "suggestions.service.ts",
-      "file_type": "code",
-      "norm_label": "fakemcp",
-      "source_file": "src/suggestions/account-profile.service.spec.ts",
-      "source_location": "L34"
-    },
-    {
-      "id": "src_suggestions_account_profile_service_spec_fakepreferences",
-      "label": "fakePreferences",
-      "_origin": "ast",
-      "community": 0,
-      "community_name": "suggestions.service.ts",
-      "file_type": "code",
-      "norm_label": "fakepreferences",
-      "source_file": "src/suggestions/account-profile.service.spec.ts",
-      "source_location": "L38"
-    },
-    {
-      "id": "src_suggestions_account_profile_service_spec_ordera",
-      "label": "orderA",
-      "_origin": "ast",
-      "community": 0,
-      "community_name": "suggestions.service.ts",
-      "file_type": "code",
-      "norm_label": "ordera",
-      "source_file": "src/suggestions/account-profile.service.spec.ts",
-      "source_location": "L4"
-    },
-    {
-      "id": "src_suggestions_account_profile_service_spec_orderb",
-      "label": "orderB",
-      "_origin": "ast",
-      "community": 0,
-      "community_name": "suggestions.service.ts",
-      "file_type": "code",
-      "norm_label": "orderb",
-      "source_file": "src/suggestions/account-profile.service.spec.ts",
-      "source_location": "L14"
-    },
-    {
-      "id": "src_suggestions_account_profile_service_spec_orderc",
-      "label": "orderC",
-      "_origin": "ast",
-      "community": 0,
-      "community_name": "suggestions.service.ts",
-      "file_type": "code",
-      "norm_label": "orderc",
-      "source_file": "src/suggestions/account-profile.service.spec.ts",
-      "source_location": "L24"
     },
     {
       "id": "src_suggestions_account_profile_service_ts_injectable",
@@ -2099,6 +2376,39 @@
       "file_type": "code",
       "norm_label": "cart.adapter.spec.ts",
       "source_file": "src/mcp/real/cart.adapter.spec.ts",
+      "source_location": "L1"
+    },
+    {
+      "id": "src_mcp_real_order_history_adapter",
+      "label": "order-history.adapter.ts",
+      "_origin": "ast",
+      "community": 1,
+      "community_name": "real-swiggy-mcp.client.ts",
+      "file_type": "code",
+      "norm_label": "order-history.adapter.ts",
+      "source_file": "src/mcp/real/order-history.adapter.ts",
+      "source_location": "L1"
+    },
+    {
+      "id": "src_mcp_real_order_history_adapter_months",
+      "label": "MONTHS",
+      "_origin": "ast",
+      "community": 1,
+      "community_name": "real-swiggy-mcp.client.ts",
+      "file_type": "code",
+      "norm_label": "months",
+      "source_file": "src/mcp/real/order-history.adapter.ts",
+      "source_location": "L17"
+    },
+    {
+      "id": "src_mcp_real_order_history_adapter_spec",
+      "label": "order-history.adapter.spec.ts",
+      "_origin": "ast",
+      "community": 1,
+      "community_name": "real-swiggy-mcp.client.ts",
+      "file_type": "code",
+      "norm_label": "order-history.adapter.spec.ts",
+      "source_file": "src/mcp/real/order-history.adapter.spec.ts",
       "source_location": "L1"
     },
     {
@@ -2345,7 +2655,7 @@
       "node_kind": "heading",
       "norm_label": "architecture note",
       "source_file": "README.md",
-      "source_location": "L145"
+      "source_location": "L178"
     },
     {
       "id": "readme_conclude_at_cart_shipped",
@@ -2357,7 +2667,7 @@
       "node_kind": "heading",
       "norm_label": "conclude at cart (shipped)",
       "source_file": "README.md",
-      "source_location": "L137"
+      "source_location": "L170"
     },
     {
       "id": "readme_configuration_env",
@@ -2369,7 +2679,7 @@
       "node_kind": "heading",
       "norm_label": "configuration (`.env`)",
       "source_file": "README.md",
-      "source_location": "L106"
+      "source_location": "L139"
     },
     {
       "id": "readme_endpoints",
@@ -2405,7 +2715,7 @@
       "node_kind": "heading",
       "norm_label": "known simplifications (good next steps)",
       "source_file": "README.md",
-      "source_location": "L117"
+      "source_location": "L150"
     },
     {
       "id": "readme_mock_mode_default_no_swiggy_account_needed",
@@ -2464,6 +2774,18 @@
       "file_type": "document",
       "node_kind": "heading",
       "norm_label": "two notions of \"user\" (important)",
+      "source_file": "README.md",
+      "source_location": "L124"
+    },
+    {
+      "id": "readme_use_it_as_an_mcp_server",
+      "label": "Use it as an MCP server",
+      "_origin": "ast",
+      "community": 11,
+      "community_name": "Smart Order Agent",
+      "file_type": "document",
+      "node_kind": "heading",
+      "norm_label": "use it as an mcp server",
       "source_file": "README.md",
       "source_location": "L91"
     },
@@ -2696,37 +3018,208 @@
       "source_location": "L79"
     },
     {
-      "id": "src_mcp_real_order_history_adapter",
-      "label": "order-history.adapter.ts",
+      "id": "docs_superpowers_specs_2026_08_25_mcp_server_reframe_design",
+      "label": "2026-08-25-mcp-server-reframe-design.md",
       "_origin": "ast",
       "community": 14,
-      "community_name": "order-history.adapter.ts",
-      "file_type": "code",
-      "norm_label": "order-history.adapter.ts",
-      "source_file": "src/mcp/real/order-history.adapter.ts",
+      "community_name": "MCP Server Reframe \u2014 Design Spec",
+      "file_type": "document",
+      "node_kind": "page",
+      "norm_label": "2026-08-25-mcp-server-reframe-design.md",
+      "source_file": "docs/superpowers/specs/2026-08-25-mcp-server-reframe-design.md",
       "source_location": "L1"
     },
     {
-      "id": "src_mcp_real_order_history_adapter_months",
-      "label": "MONTHS",
+      "id": "docs_superpowers_specs_2026_08_25_mcp_server_reframe_design_architecture",
+      "label": "Architecture",
       "_origin": "ast",
       "community": 14,
-      "community_name": "order-history.adapter.ts",
-      "file_type": "code",
-      "norm_label": "months",
-      "source_file": "src/mcp/real/order-history.adapter.ts",
-      "source_location": "L17"
+      "community_name": "MCP Server Reframe \u2014 Design Spec",
+      "file_type": "document",
+      "node_kind": "heading",
+      "norm_label": "architecture",
+      "source_file": "docs/superpowers/specs/2026-08-25-mcp-server-reframe-design.md",
+      "source_location": "L50"
     },
     {
-      "id": "src_mcp_real_order_history_adapter_spec",
-      "label": "order-history.adapter.spec.ts",
+      "id": "docs_superpowers_specs_2026_08_25_mcp_server_reframe_design_auth_authenticate_tool_token_persistence",
+      "label": "Auth: `authenticate` tool + token persistence",
       "_origin": "ast",
       "community": 14,
-      "community_name": "order-history.adapter.ts",
-      "file_type": "code",
-      "norm_label": "order-history.adapter.spec.ts",
-      "source_file": "src/mcp/real/order-history.adapter.spec.ts",
+      "community_name": "MCP Server Reframe \u2014 Design Spec",
+      "file_type": "document",
+      "node_kind": "heading",
+      "norm_label": "auth: `authenticate` tool + token persistence",
+      "source_file": "docs/superpowers/specs/2026-08-25-mcp-server-reframe-design.md",
+      "source_location": "L105"
+    },
+    {
+      "id": "docs_superpowers_specs_2026_08_25_mcp_server_reframe_design_context",
+      "label": "Context",
+      "_origin": "ast",
+      "community": 14,
+      "community_name": "MCP Server Reframe \u2014 Design Spec",
+      "file_type": "document",
+      "node_kind": "heading",
+      "norm_label": "context",
+      "source_file": "docs/superpowers/specs/2026-08-25-mcp-server-reframe-design.md",
+      "source_location": "L7"
+    },
+    {
+      "id": "docs_superpowers_specs_2026_08_25_mcp_server_reframe_design_critical_stdio_constraint",
+      "label": "Critical stdio constraint",
+      "_origin": "ast",
+      "community": 14,
+      "community_name": "MCP Server Reframe \u2014 Design Spec",
+      "file_type": "document",
+      "node_kind": "heading",
+      "norm_label": "critical stdio constraint",
+      "source_file": "docs/superpowers/specs/2026-08-25-mcp-server-reframe-design.md",
+      "source_location": "L79"
+    },
+    {
+      "id": "docs_superpowers_specs_2026_08_25_mcp_server_reframe_design_decisions_locked_during_brainstorming",
+      "label": "Decisions locked during brainstorming",
+      "_origin": "ast",
+      "community": 14,
+      "community_name": "MCP Server Reframe \u2014 Design Spec",
+      "file_type": "document",
+      "node_kind": "heading",
+      "norm_label": "decisions locked during brainstorming",
+      "source_file": "docs/superpowers/specs/2026-08-25-mcp-server-reframe-design.md",
+      "source_location": "L20"
+    },
+    {
+      "id": "docs_superpowers_specs_2026_08_25_mcp_server_reframe_design_error_handling",
+      "label": "Error handling",
+      "_origin": "ast",
+      "community": 14,
+      "community_name": "MCP Server Reframe \u2014 Design Spec",
+      "file_type": "document",
+      "node_kind": "heading",
+      "norm_label": "error handling",
+      "source_file": "docs/superpowers/specs/2026-08-25-mcp-server-reframe-design.md",
+      "source_location": "L167"
+    },
+    {
+      "id": "docs_superpowers_specs_2026_08_25_mcp_server_reframe_design_feedback_identity_graceful_mongo_degradation",
+      "label": "Feedback identity + graceful Mongo degradation",
+      "_origin": "ast",
+      "community": 14,
+      "community_name": "MCP Server Reframe \u2014 Design Spec",
+      "file_type": "document",
+      "node_kind": "heading",
+      "norm_label": "feedback identity + graceful mongo degradation",
+      "source_file": "docs/superpowers/specs/2026-08-25-mcp-server-reframe-design.md",
+      "source_location": "L148"
+    },
+    {
+      "id": "docs_superpowers_specs_2026_08_25_mcp_server_reframe_design_goals",
+      "label": "Goals",
+      "_origin": "ast",
+      "community": 14,
+      "community_name": "MCP Server Reframe \u2014 Design Spec",
+      "file_type": "document",
+      "node_kind": "heading",
+      "norm_label": "goals",
+      "source_file": "docs/superpowers/specs/2026-08-25-mcp-server-reframe-design.md",
+      "source_location": "L34"
+    },
+    {
+      "id": "docs_superpowers_specs_2026_08_25_mcp_server_reframe_design_mcp_server_reframe_design_spec",
+      "label": "MCP Server Reframe \u2014 Design Spec",
+      "_origin": "ast",
+      "community": 14,
+      "community_name": "MCP Server Reframe \u2014 Design Spec",
+      "file_type": "document",
+      "node_kind": "heading",
+      "norm_label": "mcp server reframe \u2014 design spec",
+      "source_file": "docs/superpowers/specs/2026-08-25-mcp-server-reframe-design.md",
       "source_location": "L1"
+    },
+    {
+      "id": "docs_superpowers_specs_2026_08_25_mcp_server_reframe_design_new_dependencies_files_scripts",
+      "label": "New dependencies, files, scripts",
+      "_origin": "ast",
+      "community": 14,
+      "community_name": "MCP Server Reframe \u2014 Design Spec",
+      "file_type": "document",
+      "node_kind": "heading",
+      "norm_label": "new dependencies, files, scripts",
+      "source_file": "docs/superpowers/specs/2026-08-25-mcp-server-reframe-design.md",
+      "source_location": "L199"
+    },
+    {
+      "id": "docs_superpowers_specs_2026_08_25_mcp_server_reframe_design_non_goals_remain_follow_ups",
+      "label": "Non-goals (remain follow-ups)",
+      "_origin": "ast",
+      "community": 14,
+      "community_name": "MCP Server Reframe \u2014 Design Spec",
+      "file_type": "document",
+      "node_kind": "heading",
+      "norm_label": "non-goals (remain follow-ups)",
+      "source_file": "docs/superpowers/specs/2026-08-25-mcp-server-reframe-design.md",
+      "source_location": "L43"
+    },
+    {
+      "id": "docs_superpowers_specs_2026_08_25_mcp_server_reframe_design_persistent_oauthstatestore",
+      "label": "Persistent `OAuthStateStore`",
+      "_origin": "ast",
+      "community": 14,
+      "community_name": "MCP Server Reframe \u2014 Design Spec",
+      "file_type": "document",
+      "node_kind": "heading",
+      "norm_label": "persistent `oauthstatestore`",
+      "source_file": "docs/superpowers/specs/2026-08-25-mcp-server-reframe-design.md",
+      "source_location": "L131"
+    },
+    {
+      "id": "docs_superpowers_specs_2026_08_25_mcp_server_reframe_design_rollout",
+      "label": "Rollout",
+      "_origin": "ast",
+      "community": 14,
+      "community_name": "MCP Server Reframe \u2014 Design Spec",
+      "file_type": "document",
+      "node_kind": "heading",
+      "norm_label": "rollout",
+      "source_file": "docs/superpowers/specs/2026-08-25-mcp-server-reframe-design.md",
+      "source_location": "L234"
+    },
+    {
+      "id": "docs_superpowers_specs_2026_08_25_mcp_server_reframe_design_testing",
+      "label": "Testing",
+      "_origin": "ast",
+      "community": 14,
+      "community_name": "MCP Server Reframe \u2014 Design Spec",
+      "file_type": "document",
+      "node_kind": "heading",
+      "norm_label": "testing",
+      "source_file": "docs/superpowers/specs/2026-08-25-mcp-server-reframe-design.md",
+      "source_location": "L179"
+    },
+    {
+      "id": "docs_superpowers_specs_2026_08_25_mcp_server_reframe_design_the_authenticate_tool_new_helper_src_mcp_server_authenticate_ts",
+      "label": "The `authenticate` tool (new helper `src/mcp-server/authenticate.ts`)",
+      "_origin": "ast",
+      "community": 14,
+      "community_name": "MCP Server Reframe \u2014 Design Spec",
+      "file_type": "document",
+      "node_kind": "heading",
+      "norm_label": "the `authenticate` tool (new helper `src/mcp-server/authenticate.ts`)",
+      "source_file": "docs/superpowers/specs/2026-08-25-mcp-server-reframe-design.md",
+      "source_location": "L107"
+    },
+    {
+      "id": "docs_superpowers_specs_2026_08_25_mcp_server_reframe_design_tool_surface",
+      "label": "Tool surface",
+      "_origin": "ast",
+      "community": 14,
+      "community_name": "MCP Server Reframe \u2014 Design Spec",
+      "file_type": "document",
+      "node_kind": "heading",
+      "norm_label": "tool surface",
+      "source_file": "docs/superpowers/specs/2026-08-25-mcp-server-reframe-design.md",
+      "source_location": "L86"
     },
     {
       "id": "src_app_module",
@@ -2752,12 +3245,12 @@
     },
     {
       "id": "src_main",
-      "label": "main.ts",
+      "label": "src/main.ts",
       "_origin": "ast",
       "community": 15,
       "community_name": "app.module.ts",
       "file_type": "code",
-      "norm_label": "main.ts",
+      "norm_label": "src/main.ts",
       "source_file": "src/main.ts",
       "source_location": "L1"
     },
@@ -2843,6 +3336,28 @@
       "norm_label": "step 1 \u2014 traversal",
       "source_file": ".claude/skills/graphify/references/query.md",
       "source_location": "L61"
+    },
+    {
+      "id": "src_mcp_server_tools",
+      "label": "tools.ts",
+      "_origin": "ast",
+      "community": 17,
+      "community_name": "tools.ts",
+      "file_type": "code",
+      "norm_label": "tools.ts",
+      "source_file": "src/mcp-server/tools.ts",
+      "source_location": "L1"
+    },
+    {
+      "id": "src_mcp_server_tools_spec",
+      "label": "tools.spec.ts",
+      "_origin": "ast",
+      "community": 17,
+      "community_name": "tools.ts",
+      "file_type": "code",
+      "norm_label": "tools.spec.ts",
+      "source_file": "src/mcp-server/tools.spec.ts",
+      "source_location": "L1"
     },
     {
       "id": "claude_skills_graphify_references_add_watch",
@@ -2941,28 +3456,6 @@
       "source_location": "L1"
     },
     {
-      "id": "package",
-      "label": "package.json",
-      "_origin": "ast",
-      "community": 2,
-      "community_name": "devDependencies",
-      "file_type": "code",
-      "norm_label": "package.json",
-      "source_file": "package.json",
-      "source_location": "L1"
-    },
-    {
-      "id": "package_description",
-      "label": "description",
-      "_origin": "ast",
-      "community": 2,
-      "community_name": "devDependencies",
-      "file_type": "code",
-      "norm_label": "description",
-      "source_file": "package.json",
-      "source_location": "L4"
-    },
-    {
       "id": "package_devdependencies",
       "label": "devDependencies",
       "_origin": "ast",
@@ -2971,7 +3464,7 @@
       "file_type": "code",
       "norm_label": "devdependencies",
       "source_file": "package.json",
-      "source_location": "L24"
+      "source_location": "L27"
     },
     {
       "id": "package_devdependencies_jest",
@@ -2982,7 +3475,7 @@
       "file_type": "code",
       "norm_label": "jest",
       "source_file": "package.json",
-      "source_location": "L27"
+      "source_location": "L30"
     },
     {
       "id": "package_devdependencies_ts_jest",
@@ -2993,7 +3486,7 @@
       "file_type": "code",
       "norm_label": "ts-jest",
       "source_file": "package.json",
-      "source_location": "L28"
+      "source_location": "L31"
     },
     {
       "id": "package_devdependencies_ts_node",
@@ -3004,7 +3497,7 @@
       "file_type": "code",
       "norm_label": "ts-node",
       "source_file": "package.json",
-      "source_location": "L29"
+      "source_location": "L32"
     },
     {
       "id": "package_devdependencies_ts_node_dev",
@@ -3015,7 +3508,7 @@
       "file_type": "code",
       "norm_label": "ts-node-dev",
       "source_file": "package.json",
-      "source_location": "L30"
+      "source_location": "L33"
     },
     {
       "id": "package_devdependencies_types_jest",
@@ -3026,7 +3519,7 @@
       "file_type": "code",
       "norm_label": "@types/jest",
       "source_file": "package.json",
-      "source_location": "L25"
+      "source_location": "L28"
     },
     {
       "id": "package_devdependencies_types_node",
@@ -3037,7 +3530,7 @@
       "file_type": "code",
       "norm_label": "@types/node",
       "source_file": "package.json",
-      "source_location": "L26"
+      "source_location": "L29"
     },
     {
       "id": "package_devdependencies_typescript",
@@ -3048,106 +3541,7 @@
       "file_type": "code",
       "norm_label": "typescript",
       "source_file": "package.json",
-      "source_location": "L31"
-    },
-    {
-      "id": "package_name",
-      "label": "name",
-      "_origin": "ast",
-      "community": 2,
-      "community_name": "devDependencies",
-      "file_type": "code",
-      "norm_label": "name",
-      "source_file": "package.json",
-      "source_location": "L2"
-    },
-    {
-      "id": "package_scripts",
-      "label": "scripts",
-      "_origin": "ast",
-      "community": 2,
-      "community_name": "devDependencies",
-      "file_type": "code",
-      "norm_label": "scripts",
-      "source_file": "package.json",
-      "source_location": "L5"
-    },
-    {
-      "id": "package_scripts_build",
-      "label": "build",
-      "_origin": "ast",
-      "community": 2,
-      "community_name": "devDependencies",
-      "file_type": "code",
-      "norm_label": "build",
-      "source_file": "package.json",
-      "source_location": "L6"
-    },
-    {
-      "id": "package_scripts_introspect_sdk",
-      "label": "introspect:sdk",
-      "_origin": "ast",
-      "community": 2,
-      "community_name": "devDependencies",
-      "file_type": "code",
-      "norm_label": "introspect:sdk",
-      "source_file": "package.json",
-      "source_location": "L11"
-    },
-    {
-      "id": "package_scripts_seed",
-      "label": "seed",
-      "_origin": "ast",
-      "community": 2,
-      "community_name": "devDependencies",
-      "file_type": "code",
-      "norm_label": "seed",
-      "source_file": "package.json",
-      "source_location": "L9"
-    },
-    {
-      "id": "package_scripts_start",
-      "label": "start",
-      "_origin": "ast",
-      "community": 2,
-      "community_name": "devDependencies",
-      "file_type": "code",
-      "norm_label": "start",
-      "source_file": "package.json",
-      "source_location": "L7"
-    },
-    {
-      "id": "package_scripts_start_dev",
-      "label": "start:dev",
-      "_origin": "ast",
-      "community": 2,
-      "community_name": "devDependencies",
-      "file_type": "code",
-      "norm_label": "start:dev",
-      "source_file": "package.json",
-      "source_location": "L8"
-    },
-    {
-      "id": "package_scripts_test",
-      "label": "test",
-      "_origin": "ast",
-      "community": 2,
-      "community_name": "devDependencies",
-      "file_type": "code",
-      "norm_label": "test",
-      "source_file": "package.json",
-      "source_location": "L10"
-    },
-    {
-      "id": "package_version",
-      "label": "version",
-      "_origin": "ast",
-      "community": 2,
-      "community_name": "devDependencies",
-      "file_type": "code",
-      "norm_label": "version",
-      "source_file": "package.json",
-      "source_location": "L3"
+      "source_location": "L34"
     },
     {
       "id": "jest",
@@ -3158,7 +3552,7 @@
       "file_type": "concept",
       "norm_label": "jest",
       "source_file": "package.json",
-      "source_location": "L27"
+      "source_location": "L30"
     },
     {
       "id": "ts_jest",
@@ -3169,7 +3563,7 @@
       "file_type": "concept",
       "norm_label": "ts-jest",
       "source_file": "package.json",
-      "source_location": "L28"
+      "source_location": "L31"
     },
     {
       "id": "ts_node",
@@ -3180,7 +3574,7 @@
       "file_type": "concept",
       "norm_label": "ts-node",
       "source_file": "package.json",
-      "source_location": "L29"
+      "source_location": "L32"
     },
     {
       "id": "ts_node_dev",
@@ -3191,7 +3585,7 @@
       "file_type": "concept",
       "norm_label": "ts-node-dev",
       "source_file": "package.json",
-      "source_location": "L30"
+      "source_location": "L33"
     },
     {
       "id": "types_jest",
@@ -3202,7 +3596,7 @@
       "file_type": "concept",
       "norm_label": "@types/jest",
       "source_file": "package.json",
-      "source_location": "L25"
+      "source_location": "L28"
     },
     {
       "id": "types_node",
@@ -3213,7 +3607,7 @@
       "file_type": "concept",
       "norm_label": "@types/node",
       "source_file": "package.json",
-      "source_location": "L26"
+      "source_location": "L29"
     },
     {
       "id": "typescript",
@@ -3224,7 +3618,7 @@
       "file_type": "concept",
       "norm_label": "typescript",
       "source_file": "package.json",
-      "source_location": "L31"
+      "source_location": "L34"
     },
     {
       "id": "claude_skills_graphify_references_update",
@@ -3441,11 +3835,164 @@
       "source_location": "L1"
     },
     {
+      "id": "docs_superpowers_plans_2026_08_25_mcp_server_reframe",
+      "label": "2026-08-25-mcp-server-reframe.md",
+      "_origin": "ast",
+      "community": 28,
+      "community_name": "Global Constraints",
+      "file_type": "document",
+      "node_kind": "page",
+      "norm_label": "2026-08-25-mcp-server-reframe.md",
+      "source_file": "docs/superpowers/plans/2026-08-25-mcp-server-reframe.md",
+      "source_location": "L1"
+    },
+    {
+      "id": "docs_superpowers_plans_2026_08_25_mcp_server_reframe_global_constraints",
+      "label": "Global Constraints",
+      "_origin": "ast",
+      "community": 28,
+      "community_name": "Global Constraints",
+      "file_type": "document",
+      "node_kind": "heading",
+      "norm_label": "global constraints",
+      "source_file": "docs/superpowers/plans/2026-08-25-mcp-server-reframe.md",
+      "source_location": "L13"
+    },
+    {
+      "id": "docs_superpowers_plans_2026_08_25_mcp_server_reframe_mcp_server_reframe_implementation_plan",
+      "label": "MCP Server Reframe Implementation Plan",
+      "_origin": "ast",
+      "community": 28,
+      "community_name": "Global Constraints",
+      "file_type": "document",
+      "node_kind": "heading",
+      "norm_label": "mcp server reframe implementation plan",
+      "source_file": "docs/superpowers/plans/2026-08-25-mcp-server-reframe.md",
+      "source_location": "L1"
+    },
+    {
+      "id": "docs_superpowers_plans_2026_08_25_mcp_server_reframe_self_review",
+      "label": "Self-Review",
+      "_origin": "ast",
+      "community": 28,
+      "community_name": "Global Constraints",
+      "file_type": "document",
+      "node_kind": "heading",
+      "norm_label": "self-review",
+      "source_file": "docs/superpowers/plans/2026-08-25-mcp-server-reframe.md",
+      "source_location": "L970"
+    },
+    {
+      "id": "docs_superpowers_plans_2026_08_25_mcp_server_reframe_task_1_persistent_oauthstatestore",
+      "label": "Task 1: Persistent `OAuthStateStore`",
+      "_origin": "ast",
+      "community": 28,
+      "community_name": "Global Constraints",
+      "file_type": "document",
+      "node_kind": "heading",
+      "norm_label": "task 1: persistent `oauthstatestore`",
+      "source_file": "docs/superpowers/plans/2026-08-25-mcp-server-reframe.md",
+      "source_location": "L25"
+    },
+    {
+      "id": "docs_superpowers_plans_2026_08_25_mcp_server_reframe_task_2_graceful_mongodb_degradation",
+      "label": "Task 2: Graceful MongoDB degradation",
+      "_origin": "ast",
+      "community": 28,
+      "community_name": "Global Constraints",
+      "file_type": "document",
+      "node_kind": "heading",
+      "norm_label": "task 2: graceful mongodb degradation",
+      "source_file": "docs/superpowers/plans/2026-08-25-mcp-server-reframe.md",
+      "source_location": "L216"
+    },
+    {
+      "id": "docs_superpowers_plans_2026_08_25_mcp_server_reframe_task_3_authenticate_login_helper",
+      "label": "Task 3: `authenticate` login helper",
+      "_origin": "ast",
+      "community": 28,
+      "community_name": "Global Constraints",
+      "file_type": "document",
+      "node_kind": "heading",
+      "norm_label": "task 3: `authenticate` login helper",
+      "source_file": "docs/superpowers/plans/2026-08-25-mcp-server-reframe.md",
+      "source_location": "L381"
+    },
+    {
+      "id": "docs_superpowers_plans_2026_08_25_mcp_server_reframe_task_4_tool_registration",
+      "label": "Task 4: Tool registration",
+      "_origin": "ast",
+      "community": 28,
+      "community_name": "Global Constraints",
+      "file_type": "document",
+      "node_kind": "heading",
+      "norm_label": "task 4: tool registration",
+      "source_file": "docs/superpowers/plans/2026-08-25-mcp-server-reframe.md",
+      "source_location": "L570"
+    },
+    {
+      "id": "docs_superpowers_plans_2026_08_25_mcp_server_reframe_task_5_stdio_entrypoint_packaging",
+      "label": "Task 5: stdio entrypoint + packaging",
+      "_origin": "ast",
+      "community": 28,
+      "community_name": "Global Constraints",
+      "file_type": "document",
+      "node_kind": "heading",
+      "norm_label": "task 5: stdio entrypoint + packaging",
+      "source_file": "docs/superpowers/plans/2026-08-25-mcp-server-reframe.md",
+      "source_location": "L803"
+    },
+    {
+      "id": "docs_superpowers_plans_2026_08_25_mcp_server_reframe_then_point_your_mcp_client_at_dist_mcp_server_main_js",
+      "label": "then point your MCP client at dist/mcp-server/main.js",
+      "_origin": "ast",
+      "community": 28,
+      "community_name": "Global Constraints",
+      "file_type": "document",
+      "node_kind": "heading",
+      "norm_label": "then point your mcp client at dist/mcp-server/main.js",
+      "source_file": "docs/superpowers/plans/2026-08-25-mcp-server-reframe.md",
+      "source_location": "L926"
+    },
+    {
+      "id": "src_mcp_server_authenticate",
+      "label": "authenticate.ts",
+      "_origin": "ast",
+      "community": 29,
+      "community_name": "authenticate.ts",
+      "file_type": "code",
+      "norm_label": "authenticate.ts",
+      "source_file": "src/mcp-server/authenticate.ts",
+      "source_location": "L1"
+    },
+    {
+      "id": "src_mcp_server_authenticate_spec",
+      "label": "authenticate.spec.ts",
+      "_origin": "ast",
+      "community": 29,
+      "community_name": "authenticate.ts",
+      "file_type": "code",
+      "norm_label": "authenticate.spec.ts",
+      "source_file": "src/mcp-server/authenticate.spec.ts",
+      "source_location": "L1"
+    },
+    {
+      "id": "optional",
+      "label": "Optional",
+      "_origin": "ast",
+      "community": 3,
+      "community_name": "OAuthStateStore",
+      "file_type": "code",
+      "norm_label": "optional",
+      "source_file": "",
+      "source_location": ""
+    },
+    {
       "id": "res",
       "label": "Res",
       "_origin": "ast",
       "community": 3,
-      "community_name": "mcp.module.ts",
+      "community_name": "OAuthStateStore",
       "file_type": "code",
       "norm_label": "res",
       "source_file": "",
@@ -3456,18 +4003,29 @@
       "label": "mcp.module.ts",
       "_origin": "ast",
       "community": 3,
-      "community_name": "mcp.module.ts",
+      "community_name": "OAuthStateStore",
       "file_type": "code",
       "norm_label": "mcp.module.ts",
       "source_file": "src/mcp/mcp.module.ts",
       "source_location": "L1"
     },
     {
+      "id": "src_mcp_mcp_module_swiggy_mcp_client",
+      "label": "SWIGGY_MCP_CLIENT",
+      "_origin": "ast",
+      "community": 3,
+      "community_name": "OAuthStateStore",
+      "file_type": "code",
+      "norm_label": "swiggy_mcp_client",
+      "source_file": "src/mcp/mcp.module.ts",
+      "source_location": "L11"
+    },
+    {
       "id": "src_mcp_mcp_module_ts_module",
       "label": "Module",
       "_origin": "ast",
       "community": 3,
-      "community_name": "mcp.module.ts",
+      "community_name": "OAuthStateStore",
       "file_type": "code",
       "norm_label": "module",
       "source_file": "",
@@ -3478,7 +4036,7 @@
       "label": "oauth.controller.ts",
       "_origin": "ast",
       "community": 3,
-      "community_name": "mcp.module.ts",
+      "community_name": "OAuthStateStore",
       "file_type": "code",
       "norm_label": "oauth.controller.ts",
       "source_file": "src/mcp/oauth/oauth.controller.ts",
@@ -3489,7 +4047,7 @@
       "label": "Controller",
       "_origin": "ast",
       "community": 3,
-      "community_name": "mcp.module.ts",
+      "community_name": "OAuthStateStore",
       "file_type": "code",
       "norm_label": "controller",
       "source_file": "",
@@ -3500,7 +4058,7 @@
       "label": "Get",
       "_origin": "ast",
       "community": 3,
-      "community_name": "mcp.module.ts",
+      "community_name": "OAuthStateStore",
       "file_type": "code",
       "norm_label": "get",
       "source_file": "",
@@ -3511,7 +4069,7 @@
       "label": "Query",
       "_origin": "ast",
       "community": 3,
-      "community_name": "mcp.module.ts",
+      "community_name": "OAuthStateStore",
       "file_type": "code",
       "norm_label": "query",
       "source_file": "",
@@ -3522,7 +4080,7 @@
       "label": "oauth-state.store.ts",
       "_origin": "ast",
       "community": 3,
-      "community_name": "mcp.module.ts",
+      "community_name": "OAuthStateStore",
       "file_type": "code",
       "norm_label": "oauth-state.store.ts",
       "source_file": "src/mcp/oauth/oauth-state.store.ts",
@@ -3533,7 +4091,7 @@
       "label": "oauth-state.store.spec.ts",
       "_origin": "ast",
       "community": 3,
-      "community_name": "mcp.module.ts",
+      "community_name": "OAuthStateStore",
       "file_type": "code",
       "norm_label": "oauth-state.store.spec.ts",
       "source_file": "src/mcp/oauth/oauth-state.store.spec.ts",
@@ -3544,7 +4102,7 @@
       "label": "Injectable",
       "_origin": "ast",
       "community": 3,
-      "community_name": "mcp.module.ts",
+      "community_name": "OAuthStateStore",
       "file_type": "code",
       "norm_label": "injectable",
       "source_file": "",
@@ -3555,7 +4113,7 @@
       "label": "swiggy-oauth.provider.ts",
       "_origin": "ast",
       "community": 3,
-      "community_name": "mcp.module.ts",
+      "community_name": "OAuthStateStore",
       "file_type": "code",
       "norm_label": "swiggy-oauth.provider.ts",
       "source_file": "src/mcp/oauth/swiggy-oauth.provider.ts",
@@ -3566,7 +4124,7 @@
       "label": "swiggy-oauth.provider.spec.ts",
       "_origin": "ast",
       "community": 3,
-      "community_name": "mcp.module.ts",
+      "community_name": "OAuthStateStore",
       "file_type": "code",
       "norm_label": "swiggy-oauth.provider.spec.ts",
       "source_file": "src/mcp/oauth/swiggy-oauth.provider.spec.ts",
@@ -3577,7 +4135,7 @@
       "label": "config",
       "_origin": "ast",
       "community": 3,
-      "community_name": "mcp.module.ts",
+      "community_name": "OAuthStateStore",
       "file_type": "code",
       "norm_label": "config",
       "source_file": "src/mcp/oauth/swiggy-oauth.provider.spec.ts",
@@ -3588,7 +4146,7 @@
       "label": "Injectable",
       "_origin": "ast",
       "community": 3,
-      "community_name": "mcp.module.ts",
+      "community_name": "OAuthStateStore",
       "file_type": "code",
       "norm_label": "injectable",
       "source_file": "",
@@ -3599,7 +4157,7 @@
       "label": "debug.controller.ts",
       "_origin": "ast",
       "community": 3,
-      "community_name": "mcp.module.ts",
+      "community_name": "OAuthStateStore",
       "file_type": "code",
       "norm_label": "debug.controller.ts",
       "source_file": "src/mcp/real/debug.controller.ts",
@@ -3610,7 +4168,7 @@
       "label": "CAPTURE_TOOLS",
       "_origin": "ast",
       "community": 3,
-      "community_name": "mcp.module.ts",
+      "community_name": "OAuthStateStore",
       "file_type": "code",
       "norm_label": "capture_tools",
       "source_file": "src/mcp/real/debug.controller.ts",
@@ -3621,7 +4179,7 @@
       "label": "Controller",
       "_origin": "ast",
       "community": 3,
-      "community_name": "mcp.module.ts",
+      "community_name": "OAuthStateStore",
       "file_type": "code",
       "norm_label": "controller",
       "source_file": "",
@@ -3632,7 +4190,7 @@
       "label": "Get",
       "_origin": "ast",
       "community": 3,
-      "community_name": "mcp.module.ts",
+      "community_name": "OAuthStateStore",
       "file_type": "code",
       "norm_label": "get",
       "source_file": "",
@@ -3643,7 +4201,7 @@
       "label": "Query",
       "_origin": "ast",
       "community": 3,
-      "community_name": "mcp.module.ts",
+      "community_name": "OAuthStateStore",
       "file_type": "code",
       "norm_label": "query",
       "source_file": "",
@@ -3654,7 +4212,7 @@
       "label": "mcp-session.factory.ts",
       "_origin": "ast",
       "community": 3,
-      "community_name": "mcp.module.ts",
+      "community_name": "OAuthStateStore",
       "file_type": "code",
       "norm_label": "mcp-session.factory.ts",
       "source_file": "src/mcp/real/mcp-session.factory.ts",
@@ -3665,11 +4223,88 @@
       "label": "Injectable",
       "_origin": "ast",
       "community": 3,
-      "community_name": "mcp.module.ts",
+      "community_name": "OAuthStateStore",
       "file_type": "code",
       "norm_label": "injectable",
       "source_file": "",
       "source_location": ""
+    },
+    {
+      "id": "src_mcp_server_main",
+      "label": "mcp-server/main.ts",
+      "_origin": "ast",
+      "community": 3,
+      "community_name": "OAuthStateStore",
+      "file_type": "code",
+      "norm_label": "mcp-server/main.ts",
+      "source_file": "src/mcp-server/main.ts",
+      "source_location": "L1"
+    },
+    {
+      "id": "src_suggestions_account_profile_service_spec",
+      "label": "account-profile.service.spec.ts",
+      "_origin": "ast",
+      "community": 30,
+      "community_name": "account-profile.service.spec.ts",
+      "file_type": "code",
+      "norm_label": "account-profile.service.spec.ts",
+      "source_file": "src/suggestions/account-profile.service.spec.ts",
+      "source_location": "L1"
+    },
+    {
+      "id": "src_suggestions_account_profile_service_spec_fakemcp",
+      "label": "fakeMcp",
+      "_origin": "ast",
+      "community": 30,
+      "community_name": "account-profile.service.spec.ts",
+      "file_type": "code",
+      "norm_label": "fakemcp",
+      "source_file": "src/suggestions/account-profile.service.spec.ts",
+      "source_location": "L34"
+    },
+    {
+      "id": "src_suggestions_account_profile_service_spec_fakepreferences",
+      "label": "fakePreferences",
+      "_origin": "ast",
+      "community": 30,
+      "community_name": "account-profile.service.spec.ts",
+      "file_type": "code",
+      "norm_label": "fakepreferences",
+      "source_file": "src/suggestions/account-profile.service.spec.ts",
+      "source_location": "L38"
+    },
+    {
+      "id": "src_suggestions_account_profile_service_spec_ordera",
+      "label": "orderA",
+      "_origin": "ast",
+      "community": 30,
+      "community_name": "account-profile.service.spec.ts",
+      "file_type": "code",
+      "norm_label": "ordera",
+      "source_file": "src/suggestions/account-profile.service.spec.ts",
+      "source_location": "L4"
+    },
+    {
+      "id": "src_suggestions_account_profile_service_spec_orderb",
+      "label": "orderB",
+      "_origin": "ast",
+      "community": 30,
+      "community_name": "account-profile.service.spec.ts",
+      "file_type": "code",
+      "norm_label": "orderb",
+      "source_file": "src/suggestions/account-profile.service.spec.ts",
+      "source_location": "L14"
+    },
+    {
+      "id": "src_suggestions_account_profile_service_spec_orderc",
+      "label": "orderC",
+      "_origin": "ast",
+      "community": 30,
+      "community_name": "account-profile.service.spec.ts",
+      "file_type": "code",
+      "norm_label": "orderc",
+      "source_file": "src/suggestions/account-profile.service.spec.ts",
+      "source_location": "L24"
     },
     {
       "id": "injectmodel",
@@ -3713,6 +4348,17 @@
       "file_type": "code",
       "norm_label": "preferences.service.ts",
       "source_file": "src/preferences/preferences.service.ts",
+      "source_location": "L1"
+    },
+    {
+      "id": "src_preferences_preferences_service_spec",
+      "label": "preferences.service.spec.ts",
+      "_origin": "ast",
+      "community": 4,
+      "community_name": "preferences.service.ts",
+      "file_type": "code",
+      "norm_label": "preferences.service.spec.ts",
+      "source_file": "src/preferences/preferences.service.spec.ts",
       "source_location": "L1"
     },
     {
@@ -4452,6 +5098,17 @@
       "source_location": "L1462"
     },
     {
+      "id": "package",
+      "label": "package.json",
+      "_origin": "ast",
+      "community": 7,
+      "community_name": "dependencies",
+      "file_type": "code",
+      "norm_label": "package.json",
+      "source_file": "package.json",
+      "source_location": "L1"
+    },
+    {
       "id": "package_dependencies",
       "label": "dependencies",
       "_origin": "ast",
@@ -4460,7 +5117,7 @@
       "file_type": "code",
       "norm_label": "dependencies",
       "source_file": "package.json",
-      "source_location": "L13"
+      "source_location": "L15"
     },
     {
       "id": "package_dependencies_modelcontextprotocol_sdk",
@@ -4471,7 +5128,7 @@
       "file_type": "code",
       "norm_label": "@modelcontextprotocol/sdk",
       "source_file": "package.json",
-      "source_location": "L14"
+      "source_location": "L16"
     },
     {
       "id": "package_dependencies_mongoose",
@@ -4482,7 +5139,7 @@
       "file_type": "code",
       "norm_label": "mongoose",
       "source_file": "package.json",
-      "source_location": "L20"
+      "source_location": "L22"
     },
     {
       "id": "package_dependencies_nestjs_common",
@@ -4493,7 +5150,7 @@
       "file_type": "code",
       "norm_label": "@nestjs/common",
       "source_file": "package.json",
-      "source_location": "L15"
+      "source_location": "L17"
     },
     {
       "id": "package_dependencies_nestjs_config",
@@ -4504,7 +5161,7 @@
       "file_type": "code",
       "norm_label": "@nestjs/config",
       "source_file": "package.json",
-      "source_location": "L16"
+      "source_location": "L18"
     },
     {
       "id": "package_dependencies_nestjs_core",
@@ -4515,7 +5172,7 @@
       "file_type": "code",
       "norm_label": "@nestjs/core",
       "source_file": "package.json",
-      "source_location": "L17"
+      "source_location": "L19"
     },
     {
       "id": "package_dependencies_nestjs_mongoose",
@@ -4526,7 +5183,7 @@
       "file_type": "code",
       "norm_label": "@nestjs/mongoose",
       "source_file": "package.json",
-      "source_location": "L18"
+      "source_location": "L20"
     },
     {
       "id": "package_dependencies_nestjs_platform_express",
@@ -4537,7 +5194,7 @@
       "file_type": "code",
       "norm_label": "@nestjs/platform-express",
       "source_file": "package.json",
-      "source_location": "L19"
+      "source_location": "L21"
     },
     {
       "id": "package_dependencies_reflect_metadata",
@@ -4548,7 +5205,7 @@
       "file_type": "code",
       "norm_label": "reflect-metadata",
       "source_file": "package.json",
-      "source_location": "L21"
+      "source_location": "L23"
     },
     {
       "id": "package_dependencies_rxjs",
@@ -4559,7 +5216,150 @@
       "file_type": "code",
       "norm_label": "rxjs",
       "source_file": "package.json",
-      "source_location": "L22"
+      "source_location": "L24"
+    },
+    {
+      "id": "package_dependencies_zod",
+      "label": "zod",
+      "_origin": "ast",
+      "community": 7,
+      "community_name": "dependencies",
+      "file_type": "code",
+      "norm_label": "zod",
+      "source_file": "package.json",
+      "source_location": "L25"
+    },
+    {
+      "id": "package_description",
+      "label": "description",
+      "_origin": "ast",
+      "community": 7,
+      "community_name": "dependencies",
+      "file_type": "code",
+      "norm_label": "description",
+      "source_file": "package.json",
+      "source_location": "L4"
+    },
+    {
+      "id": "package_name",
+      "label": "name",
+      "_origin": "ast",
+      "community": 7,
+      "community_name": "dependencies",
+      "file_type": "code",
+      "norm_label": "name",
+      "source_file": "package.json",
+      "source_location": "L2"
+    },
+    {
+      "id": "package_scripts",
+      "label": "scripts",
+      "_origin": "ast",
+      "community": 7,
+      "community_name": "dependencies",
+      "file_type": "code",
+      "norm_label": "scripts",
+      "source_file": "package.json",
+      "source_location": "L5"
+    },
+    {
+      "id": "package_scripts_build",
+      "label": "build",
+      "_origin": "ast",
+      "community": 7,
+      "community_name": "dependencies",
+      "file_type": "code",
+      "norm_label": "build",
+      "source_file": "package.json",
+      "source_location": "L6"
+    },
+    {
+      "id": "package_scripts_introspect_sdk",
+      "label": "introspect:sdk",
+      "_origin": "ast",
+      "community": 7,
+      "community_name": "dependencies",
+      "file_type": "code",
+      "norm_label": "introspect:sdk",
+      "source_file": "package.json",
+      "source_location": "L11"
+    },
+    {
+      "id": "package_scripts_mcp",
+      "label": "mcp",
+      "_origin": "ast",
+      "community": 7,
+      "community_name": "dependencies",
+      "file_type": "code",
+      "norm_label": "mcp",
+      "source_file": "package.json",
+      "source_location": "L12"
+    },
+    {
+      "id": "package_scripts_mcp_prod",
+      "label": "mcp:prod",
+      "_origin": "ast",
+      "community": 7,
+      "community_name": "dependencies",
+      "file_type": "code",
+      "norm_label": "mcp:prod",
+      "source_file": "package.json",
+      "source_location": "L13"
+    },
+    {
+      "id": "package_scripts_seed",
+      "label": "seed",
+      "_origin": "ast",
+      "community": 7,
+      "community_name": "dependencies",
+      "file_type": "code",
+      "norm_label": "seed",
+      "source_file": "package.json",
+      "source_location": "L9"
+    },
+    {
+      "id": "package_scripts_start",
+      "label": "start",
+      "_origin": "ast",
+      "community": 7,
+      "community_name": "dependencies",
+      "file_type": "code",
+      "norm_label": "start",
+      "source_file": "package.json",
+      "source_location": "L7"
+    },
+    {
+      "id": "package_scripts_start_dev",
+      "label": "start:dev",
+      "_origin": "ast",
+      "community": 7,
+      "community_name": "dependencies",
+      "file_type": "code",
+      "norm_label": "start:dev",
+      "source_file": "package.json",
+      "source_location": "L8"
+    },
+    {
+      "id": "package_scripts_test",
+      "label": "test",
+      "_origin": "ast",
+      "community": 7,
+      "community_name": "dependencies",
+      "file_type": "code",
+      "norm_label": "test",
+      "source_file": "package.json",
+      "source_location": "L10"
+    },
+    {
+      "id": "package_version",
+      "label": "version",
+      "_origin": "ast",
+      "community": 7,
+      "community_name": "dependencies",
+      "file_type": "code",
+      "norm_label": "version",
+      "source_file": "package.json",
+      "source_location": "L3"
     },
     {
       "id": "modelcontextprotocol_sdk",
@@ -4570,7 +5370,7 @@
       "file_type": "concept",
       "norm_label": "@modelcontextprotocol/sdk",
       "source_file": "package.json",
-      "source_location": "L14"
+      "source_location": "L16"
     },
     {
       "id": "mongoose",
@@ -4581,7 +5381,7 @@
       "file_type": "concept",
       "norm_label": "mongoose",
       "source_file": "package.json",
-      "source_location": "L20"
+      "source_location": "L22"
     },
     {
       "id": "nestjs_common",
@@ -4592,7 +5392,7 @@
       "file_type": "concept",
       "norm_label": "@nestjs/common",
       "source_file": "package.json",
-      "source_location": "L15"
+      "source_location": "L17"
     },
     {
       "id": "nestjs_config",
@@ -4603,7 +5403,7 @@
       "file_type": "concept",
       "norm_label": "@nestjs/config",
       "source_file": "package.json",
-      "source_location": "L16"
+      "source_location": "L18"
     },
     {
       "id": "nestjs_core",
@@ -4614,7 +5414,7 @@
       "file_type": "concept",
       "norm_label": "@nestjs/core",
       "source_file": "package.json",
-      "source_location": "L17"
+      "source_location": "L19"
     },
     {
       "id": "nestjs_mongoose",
@@ -4625,7 +5425,7 @@
       "file_type": "concept",
       "norm_label": "@nestjs/mongoose",
       "source_file": "package.json",
-      "source_location": "L18"
+      "source_location": "L20"
     },
     {
       "id": "nestjs_platform_express",
@@ -4636,7 +5436,7 @@
       "file_type": "concept",
       "norm_label": "@nestjs/platform-express",
       "source_file": "package.json",
-      "source_location": "L19"
+      "source_location": "L21"
     },
     {
       "id": "reflect_metadata",
@@ -4647,7 +5447,7 @@
       "file_type": "concept",
       "norm_label": "reflect-metadata",
       "source_file": "package.json",
-      "source_location": "L21"
+      "source_location": "L23"
     },
     {
       "id": "rxjs",
@@ -4658,7 +5458,18 @@
       "file_type": "concept",
       "norm_label": "rxjs",
       "source_file": "package.json",
-      "source_location": "L22"
+      "source_location": "L24"
+    },
+    {
+      "id": "zod",
+      "label": "zod",
+      "_origin": "ast",
+      "community": 7,
+      "community_name": "dependencies",
+      "file_type": "concept",
+      "norm_label": "zod",
+      "source_file": "package.json",
+      "source_location": "L25"
     },
     {
       "id": "tsconfig",
@@ -5010,6 +5821,54 @@
       "weight": 1.0
     },
     {
+      "source": "src_mcp_oauth_oauth_state_store_oauthstatestore_clientinfo",
+      "target": "src_mcp_oauth_oauth_state_store_oauthstatestore_save",
+      "relation": "calls",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "call",
+      "source_file": "src/mcp/oauth/oauth-state.store.ts",
+      "source_location": "L40",
+      "weight": 1.0
+    },
+    {
+      "source": "src_mcp_oauth_oauth_state_store_oauthstatestore_constructor",
+      "target": "src_mcp_oauth_oauth_state_store_defaultpath",
+      "relation": "calls",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "call",
+      "source_file": "src/mcp/oauth/oauth-state.store.ts",
+      "source_location": "L31",
+      "weight": 1.0
+    },
+    {
+      "source": "src_mcp_oauth_oauth_state_store_oauthstatestore_constructor",
+      "target": "src_mcp_oauth_oauth_state_store_oauthstatestore_load",
+      "relation": "calls",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "call",
+      "source_file": "src/mcp/oauth/oauth-state.store.ts",
+      "source_location": "L32",
+      "weight": 1.0
+    },
+    {
+      "source": "src_mcp_oauth_oauth_state_store_oauthstatestore_tokens",
+      "target": "src_mcp_oauth_oauth_state_store_oauthstatestore_save",
+      "relation": "calls",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "call",
+      "source_file": "src/mcp/oauth/oauth-state.store.ts",
+      "source_location": "L48",
+      "weight": 1.0
+    },
+    {
       "source": "src_mcp_real_debug_controller_mcpdebugcontroller_raw",
       "target": "src_mcp_real_debug_controller_mcpdebugcontroller_guard",
       "relation": "calls",
@@ -5346,6 +6205,138 @@
       "weight": 1.0
     },
     {
+      "source": "src_mcp_server_authenticate_runauthentication",
+      "target": "src_mcp_server_authenticate_verifyandcomplete",
+      "relation": "calls",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "call",
+      "source_file": "src/mcp-server/authenticate.ts",
+      "source_location": "L85",
+      "weight": 1.0
+    },
+    {
+      "source": "src_mcp_server_main_bootstrap",
+      "target": "src_mcp_server_tools_registertools",
+      "relation": "calls",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "call",
+      "source_file": "src/mcp-server/main.ts",
+      "source_location": "L30",
+      "weight": 1.0
+    },
+    {
+      "source": "src_mcp_server_main_bootstrap",
+      "target": "src_mcp_server_authenticate_runauthentication",
+      "relation": "calls",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "call",
+      "source_file": "src/mcp-server/main.ts",
+      "source_location": "L34",
+      "weight": 1.0
+    },
+    {
+      "source": "src_mcp_server_tools_buildhandlers",
+      "target": "src_mcp_server_tools_withautherrors",
+      "relation": "calls",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "call",
+      "source_file": "src/mcp-server/tools.ts",
+      "source_location": "L47",
+      "weight": 1.0
+    },
+    {
+      "source": "src_mcp_server_tools_buildhandlers",
+      "target": "src_mcp_server_tools_suggestionsservicelike_gettopsuggestions",
+      "relation": "calls",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "call",
+      "source_file": "src/mcp-server/tools.ts",
+      "source_location": "L49",
+      "weight": 1.0
+    },
+    {
+      "source": "src_mcp_server_tools_buildhandlers",
+      "target": "src_mcp_server_tools_suggestionsservicelike_surprisetocart",
+      "relation": "calls",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "call",
+      "source_file": "src/mcp-server/tools.ts",
+      "source_location": "L51",
+      "weight": 1.0
+    },
+    {
+      "source": "src_mcp_server_tools_buildhandlers",
+      "target": "src_mcp_server_tools_suggestionsservicelike_acceptsuggestion",
+      "relation": "calls",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "call",
+      "source_file": "src/mcp-server/tools.ts",
+      "source_location": "L54",
+      "weight": 1.0
+    },
+    {
+      "source": "src_mcp_server_tools_buildhandlers",
+      "target": "src_mcp_server_tools_suggestionsservicelike_skipsuggestion",
+      "relation": "calls",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "call",
+      "source_file": "src/mcp-server/tools.ts",
+      "source_location": "L56",
+      "weight": 1.0
+    },
+    {
+      "source": "src_mcp_server_tools_registertools",
+      "target": "src_mcp_server_tools_buildhandlers",
+      "relation": "calls",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "call",
+      "source_file": "src/mcp-server/tools.ts",
+      "source_location": "L61",
+      "weight": 1.0
+    },
+    {
+      "source": "src_mcp_server_tools_withautherrors",
+      "target": "src_mcp_server_tools_okresult",
+      "relation": "calls",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "call",
+      "source_file": "src/mcp-server/tools.ts",
+      "source_location": "L32",
+      "weight": 1.0
+    },
+    {
+      "source": "src_mcp_server_tools_withautherrors",
+      "target": "src_mcp_server_tools_errorresult",
+      "relation": "calls",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "call",
+      "source_file": "src/mcp-server/tools.ts",
+      "source_location": "L35",
+      "weight": 1.0
+    },
+    {
       "source": "src_ranking_ranking_service_rankingservice_rank",
       "target": "src_ranking_ranking_service_rankingservice_explain",
       "relation": "calls",
@@ -5594,7 +6585,19 @@
       "confidence_score": 1.0,
       "context": "decorator",
       "source_file": "src/mcp/oauth/oauth-state.store.ts",
-      "source_location": "L4",
+      "source_location": "L17",
+      "weight": 1.0
+    },
+    {
+      "source": "src_mcp_oauth_oauth_state_store_oauthstatestore_constructor",
+      "target": "optional",
+      "relation": "references",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "decorator",
+      "source_file": "src/mcp/oauth/oauth-state.store.ts",
+      "source_location": "L29",
       "weight": 1.0
     },
     {
@@ -6254,7 +7257,7 @@
       "confidence_score": 1.0,
       "context": "import",
       "source_file": "package.json",
-      "source_location": "L14",
+      "source_location": "L16",
       "weight": 1.0
     },
     {
@@ -6266,7 +7269,7 @@
       "confidence_score": 1.0,
       "context": "import",
       "source_file": "package.json",
-      "source_location": "L20",
+      "source_location": "L22",
       "weight": 1.0
     },
     {
@@ -6278,7 +7281,7 @@
       "confidence_score": 1.0,
       "context": "import",
       "source_file": "package.json",
-      "source_location": "L15",
+      "source_location": "L17",
       "weight": 1.0
     },
     {
@@ -6290,7 +7293,7 @@
       "confidence_score": 1.0,
       "context": "import",
       "source_file": "package.json",
-      "source_location": "L16",
+      "source_location": "L18",
       "weight": 1.0
     },
     {
@@ -6302,7 +7305,7 @@
       "confidence_score": 1.0,
       "context": "import",
       "source_file": "package.json",
-      "source_location": "L17",
+      "source_location": "L19",
       "weight": 1.0
     },
     {
@@ -6314,7 +7317,7 @@
       "confidence_score": 1.0,
       "context": "import",
       "source_file": "package.json",
-      "source_location": "L18",
+      "source_location": "L20",
       "weight": 1.0
     },
     {
@@ -6326,7 +7329,7 @@
       "confidence_score": 1.0,
       "context": "import",
       "source_file": "package.json",
-      "source_location": "L19",
+      "source_location": "L21",
       "weight": 1.0
     },
     {
@@ -6338,7 +7341,7 @@
       "confidence_score": 1.0,
       "context": "import",
       "source_file": "package.json",
-      "source_location": "L21",
+      "source_location": "L23",
       "weight": 1.0
     },
     {
@@ -6350,7 +7353,19 @@
       "confidence_score": 1.0,
       "context": "import",
       "source_file": "package.json",
-      "source_location": "L22",
+      "source_location": "L24",
+      "weight": 1.0
+    },
+    {
+      "source": "package_dependencies_zod",
+      "target": "zod",
+      "relation": "imports",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "import",
+      "source_file": "package.json",
+      "source_location": "L25",
       "weight": 1.0
     },
     {
@@ -6362,7 +7377,7 @@
       "confidence_score": 1.0,
       "context": "import",
       "source_file": "package.json",
-      "source_location": "L27",
+      "source_location": "L30",
       "weight": 1.0
     },
     {
@@ -6374,7 +7389,7 @@
       "confidence_score": 1.0,
       "context": "import",
       "source_file": "package.json",
-      "source_location": "L28",
+      "source_location": "L31",
       "weight": 1.0
     },
     {
@@ -6386,7 +7401,7 @@
       "confidence_score": 1.0,
       "context": "import",
       "source_file": "package.json",
-      "source_location": "L29",
+      "source_location": "L32",
       "weight": 1.0
     },
     {
@@ -6398,7 +7413,7 @@
       "confidence_score": 1.0,
       "context": "import",
       "source_file": "package.json",
-      "source_location": "L30",
+      "source_location": "L33",
       "weight": 1.0
     },
     {
@@ -6410,7 +7425,7 @@
       "confidence_score": 1.0,
       "context": "import",
       "source_file": "package.json",
-      "source_location": "L25",
+      "source_location": "L28",
       "weight": 1.0
     },
     {
@@ -6422,7 +7437,7 @@
       "confidence_score": 1.0,
       "context": "import",
       "source_file": "package.json",
-      "source_location": "L26",
+      "source_location": "L29",
       "weight": 1.0
     },
     {
@@ -6434,7 +7449,7 @@
       "confidence_score": 1.0,
       "context": "import",
       "source_file": "package.json",
-      "source_location": "L31",
+      "source_location": "L34",
       "weight": 1.0
     },
     {
@@ -7086,6 +8101,150 @@
       "weight": 1.0
     },
     {
+      "source": "src_mcp_server_authenticate_spec",
+      "target": "src_mcp_server_authenticate_authdeps",
+      "relation": "imports",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "import",
+      "source_file": "src/mcp-server/authenticate.spec.ts",
+      "source_location": "L1",
+      "weight": 1.0
+    },
+    {
+      "source": "src_mcp_server_authenticate_spec",
+      "target": "src_mcp_server_authenticate_runauthentication",
+      "relation": "imports",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "import",
+      "source_file": "src/mcp-server/authenticate.spec.ts",
+      "source_location": "L1",
+      "weight": 1.0
+    },
+    {
+      "source": "src_mcp_server_authenticate_spec",
+      "target": "src_mcp_server_authenticate_verifyandcomplete",
+      "relation": "imports",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "import",
+      "source_file": "src/mcp-server/authenticate.spec.ts",
+      "source_location": "L1",
+      "weight": 1.0
+    },
+    {
+      "source": "src_mcp_server_main",
+      "target": "src_mcp_mcp_module_swiggy_mcp_client",
+      "relation": "imports",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "import",
+      "source_file": "src/mcp-server/main.ts",
+      "source_location": "L10",
+      "weight": 1.0
+    },
+    {
+      "source": "src_mcp_server_main",
+      "target": "src_mcp_server_tools_registertools",
+      "relation": "imports",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "import",
+      "source_file": "src/mcp-server/main.ts",
+      "source_location": "L11",
+      "weight": 1.0
+    },
+    {
+      "source": "src_mcp_server_main",
+      "target": "src_mcp_server_authenticate_runauthentication",
+      "relation": "imports",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "import",
+      "source_file": "src/mcp-server/main.ts",
+      "source_location": "L12",
+      "weight": 1.0
+    },
+    {
+      "source": "src_mcp_server_main",
+      "target": "src_app_module_appmodule",
+      "relation": "imports",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "import",
+      "source_file": "src/mcp-server/main.ts",
+      "source_location": "L6",
+      "weight": 1.0
+    },
+    {
+      "source": "src_mcp_server_main",
+      "target": "src_suggestions_suggestions_service_suggestionsservice",
+      "relation": "imports",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "import",
+      "source_file": "src/mcp-server/main.ts",
+      "source_location": "L7",
+      "weight": 1.0
+    },
+    {
+      "source": "src_mcp_server_main",
+      "target": "src_mcp_real_mcp_session_factory_mcpsessionfactory",
+      "relation": "imports",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "import",
+      "source_file": "src/mcp-server/main.ts",
+      "source_location": "L8",
+      "weight": 1.0
+    },
+    {
+      "source": "src_mcp_server_main",
+      "target": "src_mcp_oauth_oauth_state_store_oauthstatestore",
+      "relation": "imports",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "import",
+      "source_file": "src/mcp-server/main.ts",
+      "source_location": "L9",
+      "weight": 1.0
+    },
+    {
+      "source": "src_mcp_server_tools_spec",
+      "target": "src_mcp_server_tools_buildhandlers",
+      "relation": "imports",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "import",
+      "source_file": "src/mcp-server/tools.spec.ts",
+      "source_location": "L3",
+      "weight": 1.0
+    },
+    {
+      "source": "src_mcp_server_tools_spec",
+      "target": "src_mcp_server_tools_tooldeps",
+      "relation": "imports",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "import",
+      "source_file": "src/mcp-server/tools.spec.ts",
+      "source_location": "L3",
+      "weight": 1.0
+    },
+    {
       "source": "src_preferences_preferences_module",
       "target": "src_preferences_schemas_order_schema_order",
       "relation": "imports",
@@ -7191,6 +8350,18 @@
       "context": "import",
       "source_file": "src/preferences/preferences.service.ts",
       "source_location": "L5",
+      "weight": 1.0
+    },
+    {
+      "source": "src_preferences_preferences_service_spec",
+      "target": "src_preferences_preferences_service_preferencesservice",
+      "relation": "imports",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "import",
+      "source_file": "src/preferences/preferences.service.spec.ts",
+      "source_location": "L1",
       "weight": 1.0
     },
     {
@@ -8130,6 +9301,114 @@
       "weight": 1.0
     },
     {
+      "source": "src_mcp_server_authenticate_spec",
+      "target": "src_mcp_server_authenticate",
+      "relation": "imports_from",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "import",
+      "source_file": "src/mcp-server/authenticate.spec.ts",
+      "source_location": "L1",
+      "weight": 1.0
+    },
+    {
+      "source": "src_mcp_server_main",
+      "target": "src_mcp_mcp_module",
+      "relation": "imports_from",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "import",
+      "source_file": "src/mcp-server/main.ts",
+      "source_location": "L10",
+      "weight": 1.0
+    },
+    {
+      "source": "src_mcp_server_main",
+      "target": "src_mcp_server_tools",
+      "relation": "imports_from",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "import",
+      "source_file": "src/mcp-server/main.ts",
+      "source_location": "L11",
+      "weight": 1.0
+    },
+    {
+      "source": "src_mcp_server_main",
+      "target": "src_mcp_server_authenticate",
+      "relation": "imports_from",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "import",
+      "source_file": "src/mcp-server/main.ts",
+      "source_location": "L12",
+      "weight": 1.0
+    },
+    {
+      "source": "src_mcp_server_main",
+      "target": "src_app_module",
+      "relation": "imports_from",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "import",
+      "source_file": "src/mcp-server/main.ts",
+      "source_location": "L6",
+      "weight": 1.0
+    },
+    {
+      "source": "src_mcp_server_main",
+      "target": "src_suggestions_suggestions_service",
+      "relation": "imports_from",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "import",
+      "source_file": "src/mcp-server/main.ts",
+      "source_location": "L7",
+      "weight": 1.0
+    },
+    {
+      "source": "src_mcp_server_main",
+      "target": "src_mcp_real_mcp_session_factory",
+      "relation": "imports_from",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "import",
+      "source_file": "src/mcp-server/main.ts",
+      "source_location": "L8",
+      "weight": 1.0
+    },
+    {
+      "source": "src_mcp_server_main",
+      "target": "src_mcp_oauth_oauth_state_store",
+      "relation": "imports_from",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "import",
+      "source_file": "src/mcp-server/main.ts",
+      "source_location": "L9",
+      "weight": 1.0
+    },
+    {
+      "source": "src_mcp_server_tools_spec",
+      "target": "src_mcp_server_tools",
+      "relation": "imports_from",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "import",
+      "source_file": "src/mcp-server/tools.spec.ts",
+      "source_location": "L3",
+      "weight": 1.0
+    },
+    {
       "source": "src_preferences_preferences_module",
       "target": "src_preferences_schemas_order_schema",
       "relation": "imports_from",
@@ -8187,6 +9466,18 @@
       "context": "import",
       "source_file": "src/preferences/preferences.service.ts",
       "source_location": "L5",
+      "weight": 1.0
+    },
+    {
+      "source": "src_preferences_preferences_service_spec",
+      "target": "src_preferences_preferences_service",
+      "relation": "imports_from",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "import",
+      "source_file": "src/preferences/preferences.service.spec.ts",
+      "source_location": "L1",
       "weight": 1.0
     },
     {
@@ -9901,6 +11192,105 @@
       "weight": 1.0
     },
     {
+      "source": "docs_superpowers_plans_2026_08_25_mcp_server_reframe",
+      "target": "docs_superpowers_plans_2026_08_25_mcp_server_reframe_mcp_server_reframe_implementation_plan",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "docs/superpowers/plans/2026-08-25-mcp-server-reframe.md",
+      "source_location": "L1",
+      "weight": 1.0
+    },
+    {
+      "source": "docs_superpowers_plans_2026_08_25_mcp_server_reframe",
+      "target": "docs_superpowers_plans_2026_08_25_mcp_server_reframe_then_point_your_mcp_client_at_dist_mcp_server_main_js",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "docs/superpowers/plans/2026-08-25-mcp-server-reframe.md",
+      "source_location": "L926",
+      "weight": 1.0
+    },
+    {
+      "source": "docs_superpowers_plans_2026_08_25_mcp_server_reframe_global_constraints",
+      "target": "docs_superpowers_plans_2026_08_25_mcp_server_reframe_task_2_graceful_mongodb_degradation",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "docs/superpowers/plans/2026-08-25-mcp-server-reframe.md",
+      "source_location": "L216",
+      "weight": 1.0
+    },
+    {
+      "source": "docs_superpowers_plans_2026_08_25_mcp_server_reframe_global_constraints",
+      "target": "docs_superpowers_plans_2026_08_25_mcp_server_reframe_task_1_persistent_oauthstatestore",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "docs/superpowers/plans/2026-08-25-mcp-server-reframe.md",
+      "source_location": "L25",
+      "weight": 1.0
+    },
+    {
+      "source": "docs_superpowers_plans_2026_08_25_mcp_server_reframe_global_constraints",
+      "target": "docs_superpowers_plans_2026_08_25_mcp_server_reframe_task_3_authenticate_login_helper",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "docs/superpowers/plans/2026-08-25-mcp-server-reframe.md",
+      "source_location": "L381",
+      "weight": 1.0
+    },
+    {
+      "source": "docs_superpowers_plans_2026_08_25_mcp_server_reframe_global_constraints",
+      "target": "docs_superpowers_plans_2026_08_25_mcp_server_reframe_task_4_tool_registration",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "docs/superpowers/plans/2026-08-25-mcp-server-reframe.md",
+      "source_location": "L570",
+      "weight": 1.0
+    },
+    {
+      "source": "docs_superpowers_plans_2026_08_25_mcp_server_reframe_global_constraints",
+      "target": "docs_superpowers_plans_2026_08_25_mcp_server_reframe_task_5_stdio_entrypoint_packaging",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "docs/superpowers/plans/2026-08-25-mcp-server-reframe.md",
+      "source_location": "L803",
+      "weight": 1.0
+    },
+    {
+      "source": "docs_superpowers_plans_2026_08_25_mcp_server_reframe_mcp_server_reframe_implementation_plan",
+      "target": "docs_superpowers_plans_2026_08_25_mcp_server_reframe_global_constraints",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "docs/superpowers/plans/2026-08-25-mcp-server-reframe.md",
+      "source_location": "L13",
+      "weight": 1.0
+    },
+    {
+      "source": "docs_superpowers_plans_2026_08_25_mcp_server_reframe_then_point_your_mcp_client_at_dist_mcp_server_main_js",
+      "target": "docs_superpowers_plans_2026_08_25_mcp_server_reframe_self_review",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "docs/superpowers/plans/2026-08-25-mcp-server-reframe.md",
+      "source_location": "L970",
+      "weight": 1.0
+    },
+    {
       "source": "docs_superpowers_plans_2026_08_25_surprise_to_cart",
       "target": "docs_superpowers_plans_2026_08_25_surprise_to_cart_surprise_to_cart_conclude_at_cart_implementation_plan",
       "relation": "contains",
@@ -10000,6 +11390,182 @@
       "weight": 1.0
     },
     {
+      "source": "docs_superpowers_specs_2026_08_25_mcp_server_reframe_design",
+      "target": "docs_superpowers_specs_2026_08_25_mcp_server_reframe_design_mcp_server_reframe_design_spec",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "docs/superpowers/specs/2026-08-25-mcp-server-reframe-design.md",
+      "source_location": "L1",
+      "weight": 1.0
+    },
+    {
+      "source": "docs_superpowers_specs_2026_08_25_mcp_server_reframe_design_architecture",
+      "target": "docs_superpowers_specs_2026_08_25_mcp_server_reframe_design_critical_stdio_constraint",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "docs/superpowers/specs/2026-08-25-mcp-server-reframe-design.md",
+      "source_location": "L79",
+      "weight": 1.0
+    },
+    {
+      "source": "docs_superpowers_specs_2026_08_25_mcp_server_reframe_design_auth_authenticate_tool_token_persistence",
+      "target": "docs_superpowers_specs_2026_08_25_mcp_server_reframe_design_the_authenticate_tool_new_helper_src_mcp_server_authenticate_ts",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "docs/superpowers/specs/2026-08-25-mcp-server-reframe-design.md",
+      "source_location": "L107",
+      "weight": 1.0
+    },
+    {
+      "source": "docs_superpowers_specs_2026_08_25_mcp_server_reframe_design_auth_authenticate_tool_token_persistence",
+      "target": "docs_superpowers_specs_2026_08_25_mcp_server_reframe_design_persistent_oauthstatestore",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "docs/superpowers/specs/2026-08-25-mcp-server-reframe-design.md",
+      "source_location": "L131",
+      "weight": 1.0
+    },
+    {
+      "source": "docs_superpowers_specs_2026_08_25_mcp_server_reframe_design_context",
+      "target": "docs_superpowers_specs_2026_08_25_mcp_server_reframe_design_decisions_locked_during_brainstorming",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "docs/superpowers/specs/2026-08-25-mcp-server-reframe-design.md",
+      "source_location": "L20",
+      "weight": 1.0
+    },
+    {
+      "source": "docs_superpowers_specs_2026_08_25_mcp_server_reframe_design_mcp_server_reframe_design_spec",
+      "target": "docs_superpowers_specs_2026_08_25_mcp_server_reframe_design_auth_authenticate_tool_token_persistence",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "docs/superpowers/specs/2026-08-25-mcp-server-reframe-design.md",
+      "source_location": "L105",
+      "weight": 1.0
+    },
+    {
+      "source": "docs_superpowers_specs_2026_08_25_mcp_server_reframe_design_mcp_server_reframe_design_spec",
+      "target": "docs_superpowers_specs_2026_08_25_mcp_server_reframe_design_feedback_identity_graceful_mongo_degradation",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "docs/superpowers/specs/2026-08-25-mcp-server-reframe-design.md",
+      "source_location": "L148",
+      "weight": 1.0
+    },
+    {
+      "source": "docs_superpowers_specs_2026_08_25_mcp_server_reframe_design_mcp_server_reframe_design_spec",
+      "target": "docs_superpowers_specs_2026_08_25_mcp_server_reframe_design_error_handling",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "docs/superpowers/specs/2026-08-25-mcp-server-reframe-design.md",
+      "source_location": "L167",
+      "weight": 1.0
+    },
+    {
+      "source": "docs_superpowers_specs_2026_08_25_mcp_server_reframe_design_mcp_server_reframe_design_spec",
+      "target": "docs_superpowers_specs_2026_08_25_mcp_server_reframe_design_testing",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "docs/superpowers/specs/2026-08-25-mcp-server-reframe-design.md",
+      "source_location": "L179",
+      "weight": 1.0
+    },
+    {
+      "source": "docs_superpowers_specs_2026_08_25_mcp_server_reframe_design_mcp_server_reframe_design_spec",
+      "target": "docs_superpowers_specs_2026_08_25_mcp_server_reframe_design_new_dependencies_files_scripts",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "docs/superpowers/specs/2026-08-25-mcp-server-reframe-design.md",
+      "source_location": "L199",
+      "weight": 1.0
+    },
+    {
+      "source": "docs_superpowers_specs_2026_08_25_mcp_server_reframe_design_mcp_server_reframe_design_spec",
+      "target": "docs_superpowers_specs_2026_08_25_mcp_server_reframe_design_rollout",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "docs/superpowers/specs/2026-08-25-mcp-server-reframe-design.md",
+      "source_location": "L234",
+      "weight": 1.0
+    },
+    {
+      "source": "docs_superpowers_specs_2026_08_25_mcp_server_reframe_design_mcp_server_reframe_design_spec",
+      "target": "docs_superpowers_specs_2026_08_25_mcp_server_reframe_design_goals",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "docs/superpowers/specs/2026-08-25-mcp-server-reframe-design.md",
+      "source_location": "L34",
+      "weight": 1.0
+    },
+    {
+      "source": "docs_superpowers_specs_2026_08_25_mcp_server_reframe_design_mcp_server_reframe_design_spec",
+      "target": "docs_superpowers_specs_2026_08_25_mcp_server_reframe_design_non_goals_remain_follow_ups",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "docs/superpowers/specs/2026-08-25-mcp-server-reframe-design.md",
+      "source_location": "L43",
+      "weight": 1.0
+    },
+    {
+      "source": "docs_superpowers_specs_2026_08_25_mcp_server_reframe_design_mcp_server_reframe_design_spec",
+      "target": "docs_superpowers_specs_2026_08_25_mcp_server_reframe_design_architecture",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "docs/superpowers/specs/2026-08-25-mcp-server-reframe-design.md",
+      "source_location": "L50",
+      "weight": 1.0
+    },
+    {
+      "source": "docs_superpowers_specs_2026_08_25_mcp_server_reframe_design_mcp_server_reframe_design_spec",
+      "target": "docs_superpowers_specs_2026_08_25_mcp_server_reframe_design_context",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "docs/superpowers/specs/2026-08-25-mcp-server-reframe-design.md",
+      "source_location": "L7",
+      "weight": 1.0
+    },
+    {
+      "source": "docs_superpowers_specs_2026_08_25_mcp_server_reframe_design_mcp_server_reframe_design_spec",
+      "target": "docs_superpowers_specs_2026_08_25_mcp_server_reframe_design_tool_surface",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "docs/superpowers/specs/2026-08-25-mcp-server-reframe-design.md",
+      "source_location": "L86",
+      "weight": 1.0
+    },
+    {
       "source": "package",
       "target": "package_dependencies",
       "relation": "contains",
@@ -10007,7 +11573,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "package.json",
-      "source_location": "L13",
+      "source_location": "L15",
       "weight": 1.0
     },
     {
@@ -10029,7 +11595,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "package.json",
-      "source_location": "L24",
+      "source_location": "L27",
       "weight": 1.0
     },
     {
@@ -10073,7 +11639,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "package.json",
-      "source_location": "L14",
+      "source_location": "L16",
       "weight": 1.0
     },
     {
@@ -10084,7 +11650,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "package.json",
-      "source_location": "L15",
+      "source_location": "L17",
       "weight": 1.0
     },
     {
@@ -10095,7 +11661,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "package.json",
-      "source_location": "L16",
+      "source_location": "L18",
       "weight": 1.0
     },
     {
@@ -10106,7 +11672,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "package.json",
-      "source_location": "L17",
+      "source_location": "L19",
       "weight": 1.0
     },
     {
@@ -10117,7 +11683,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "package.json",
-      "source_location": "L18",
+      "source_location": "L20",
       "weight": 1.0
     },
     {
@@ -10128,7 +11694,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "package.json",
-      "source_location": "L19",
+      "source_location": "L21",
       "weight": 1.0
     },
     {
@@ -10139,7 +11705,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "package.json",
-      "source_location": "L20",
+      "source_location": "L22",
       "weight": 1.0
     },
     {
@@ -10150,7 +11716,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "package.json",
-      "source_location": "L21",
+      "source_location": "L23",
       "weight": 1.0
     },
     {
@@ -10161,12 +11727,12 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "package.json",
-      "source_location": "L22",
+      "source_location": "L24",
       "weight": 1.0
     },
     {
-      "source": "package_devdependencies",
-      "target": "package_devdependencies_types_jest",
+      "source": "package_dependencies",
+      "target": "package_dependencies_zod",
       "relation": "contains",
       "_origin": "ast",
       "confidence": "EXTRACTED",
@@ -10177,29 +11743,7 @@
     },
     {
       "source": "package_devdependencies",
-      "target": "package_devdependencies_types_node",
-      "relation": "contains",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "package.json",
-      "source_location": "L26",
-      "weight": 1.0
-    },
-    {
-      "source": "package_devdependencies",
-      "target": "package_devdependencies_jest",
-      "relation": "contains",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "package.json",
-      "source_location": "L27",
-      "weight": 1.0
-    },
-    {
-      "source": "package_devdependencies",
-      "target": "package_devdependencies_ts_jest",
+      "target": "package_devdependencies_types_jest",
       "relation": "contains",
       "_origin": "ast",
       "confidence": "EXTRACTED",
@@ -10210,7 +11754,7 @@
     },
     {
       "source": "package_devdependencies",
-      "target": "package_devdependencies_ts_node",
+      "target": "package_devdependencies_types_node",
       "relation": "contains",
       "_origin": "ast",
       "confidence": "EXTRACTED",
@@ -10221,7 +11765,7 @@
     },
     {
       "source": "package_devdependencies",
-      "target": "package_devdependencies_ts_node_dev",
+      "target": "package_devdependencies_jest",
       "relation": "contains",
       "_origin": "ast",
       "confidence": "EXTRACTED",
@@ -10232,13 +11776,46 @@
     },
     {
       "source": "package_devdependencies",
-      "target": "package_devdependencies_typescript",
+      "target": "package_devdependencies_ts_jest",
       "relation": "contains",
       "_origin": "ast",
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "package.json",
       "source_location": "L31",
+      "weight": 1.0
+    },
+    {
+      "source": "package_devdependencies",
+      "target": "package_devdependencies_ts_node",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "package.json",
+      "source_location": "L32",
+      "weight": 1.0
+    },
+    {
+      "source": "package_devdependencies",
+      "target": "package_devdependencies_ts_node_dev",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "package.json",
+      "source_location": "L33",
+      "weight": 1.0
+    },
+    {
+      "source": "package_devdependencies",
+      "target": "package_devdependencies_typescript",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "package.json",
+      "source_location": "L34",
       "weight": 1.0
     },
     {
@@ -10261,6 +11838,28 @@
       "confidence_score": 1.0,
       "source_file": "package.json",
       "source_location": "L11",
+      "weight": 1.0
+    },
+    {
+      "source": "package_scripts",
+      "target": "package_scripts_mcp",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "package.json",
+      "source_location": "L12",
+      "weight": 1.0
+    },
+    {
+      "source": "package_scripts",
+      "target": "package_scripts_mcp_prod",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "package.json",
+      "source_location": "L13",
       "weight": 1.0
     },
     {
@@ -10342,28 +11941,6 @@
     },
     {
       "source": "readme_smart_order_agent",
-      "target": "readme_configuration_env",
-      "relation": "contains",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "README.md",
-      "source_location": "L106",
-      "weight": 1.0
-    },
-    {
-      "source": "readme_smart_order_agent",
-      "target": "readme_known_simplifications_good_next_steps",
-      "relation": "contains",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "README.md",
-      "source_location": "L117",
-      "weight": 1.0
-    },
-    {
-      "source": "readme_smart_order_agent",
       "target": "readme_how_it_works",
       "relation": "contains",
       "_origin": "ast",
@@ -10375,13 +11952,46 @@
     },
     {
       "source": "readme_smart_order_agent",
+      "target": "readme_two_notions_of_user_important",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "README.md",
+      "source_location": "L124",
+      "weight": 1.0
+    },
+    {
+      "source": "readme_smart_order_agent",
+      "target": "readme_configuration_env",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "README.md",
+      "source_location": "L139",
+      "weight": 1.0
+    },
+    {
+      "source": "readme_smart_order_agent",
+      "target": "readme_known_simplifications_good_next_steps",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "README.md",
+      "source_location": "L150",
+      "weight": 1.0
+    },
+    {
+      "source": "readme_smart_order_agent",
       "target": "readme_conclude_at_cart_shipped",
       "relation": "contains",
       "_origin": "ast",
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "README.md",
-      "source_location": "L137",
+      "source_location": "L170",
       "weight": 1.0
     },
     {
@@ -10392,7 +12002,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "README.md",
-      "source_location": "L145",
+      "source_location": "L178",
       "weight": 1.0
     },
     {
@@ -10419,7 +12029,7 @@
     },
     {
       "source": "readme_smart_order_agent",
-      "target": "readme_two_notions_of_user_important",
+      "target": "readme_use_it_as_an_mcp_server",
       "relation": "contains",
       "_origin": "ast",
       "confidence": "EXTRACTED",
@@ -10436,7 +12046,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "src/app.module.ts",
-      "source_location": "L18",
+      "source_location": "L34",
       "weight": 1.0
     },
     {
@@ -10661,13 +12271,35 @@
     },
     {
       "source": "src_mcp_oauth_oauth_state_store",
+      "target": "src_mcp_oauth_oauth_state_store_persistshape",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "src/mcp/oauth/oauth-state.store.ts",
+      "source_location": "L12",
+      "weight": 1.0
+    },
+    {
+      "source": "src_mcp_oauth_oauth_state_store",
       "target": "src_mcp_oauth_oauth_state_store_oauthstatestore",
       "relation": "contains",
       "_origin": "ast",
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "src/mcp/oauth/oauth-state.store.ts",
-      "source_location": "L5",
+      "source_location": "L18",
+      "weight": 1.0
+    },
+    {
+      "source": "src_mcp_oauth_oauth_state_store",
+      "target": "src_mcp_oauth_oauth_state_store_defaultpath",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "src/mcp/oauth/oauth-state.store.ts",
+      "source_location": "L7",
       "weight": 1.0
     },
     {
@@ -10880,6 +12512,193 @@
       "weight": 1.0
     },
     {
+      "source": "src_mcp_server_authenticate",
+      "target": "src_mcp_server_authenticate_authresult",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "src/mcp-server/authenticate.ts",
+      "source_location": "L14",
+      "weight": 1.0
+    },
+    {
+      "source": "src_mcp_server_authenticate",
+      "target": "src_mcp_server_authenticate_verifyandcomplete",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "src/mcp-server/authenticate.ts",
+      "source_location": "L21",
+      "weight": 1.0
+    },
+    {
+      "source": "src_mcp_server_authenticate",
+      "target": "src_mcp_server_authenticate_defaultopenbrowser",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "src/mcp-server/authenticate.ts",
+      "source_location": "L34",
+      "weight": 1.0
+    },
+    {
+      "source": "src_mcp_server_authenticate",
+      "target": "src_mcp_server_authenticate_authdeps",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "src/mcp-server/authenticate.ts",
+      "source_location": "L5",
+      "weight": 1.0
+    },
+    {
+      "source": "src_mcp_server_authenticate",
+      "target": "src_mcp_server_authenticate_runauthentication",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "src/mcp-server/authenticate.ts",
+      "source_location": "L52",
+      "weight": 1.0
+    },
+    {
+      "source": "src_mcp_server_authenticate_spec",
+      "target": "src_mcp_server_authenticate_spec_basedeps",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "src/mcp-server/authenticate.spec.ts",
+      "source_location": "L3",
+      "weight": 1.0
+    },
+    {
+      "source": "src_mcp_server_main",
+      "target": "src_mcp_server_main_bootstrap",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "src/mcp-server/main.ts",
+      "source_location": "L14",
+      "weight": 1.0
+    },
+    {
+      "source": "src_mcp_server_tools",
+      "target": "src_mcp_server_tools_tooldeps",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "src/mcp-server/tools.ts",
+      "source_location": "L14",
+      "weight": 1.0
+    },
+    {
+      "source": "src_mcp_server_tools",
+      "target": "src_mcp_server_tools_okresult",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "src/mcp-server/tools.ts",
+      "source_location": "L21",
+      "weight": 1.0
+    },
+    {
+      "source": "src_mcp_server_tools",
+      "target": "src_mcp_server_tools_errorresult",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "src/mcp-server/tools.ts",
+      "source_location": "L24",
+      "weight": 1.0
+    },
+    {
+      "source": "src_mcp_server_tools",
+      "target": "src_mcp_server_tools_withautherrors",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "src/mcp-server/tools.ts",
+      "source_location": "L30",
+      "weight": 1.0
+    },
+    {
+      "source": "src_mcp_server_tools",
+      "target": "src_mcp_server_tools_handler",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "src/mcp-server/tools.ts",
+      "source_location": "L41",
+      "weight": 1.0
+    },
+    {
+      "source": "src_mcp_server_tools",
+      "target": "src_mcp_server_tools_buildhandlers",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "src/mcp-server/tools.ts",
+      "source_location": "L44",
+      "weight": 1.0
+    },
+    {
+      "source": "src_mcp_server_tools",
+      "target": "src_mcp_server_tools_registertools",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "src/mcp-server/tools.ts",
+      "source_location": "L60",
+      "weight": 1.0
+    },
+    {
+      "source": "src_mcp_server_tools",
+      "target": "src_mcp_server_tools_suggestionsservicelike",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "src/mcp-server/tools.ts",
+      "source_location": "L7",
+      "weight": 1.0
+    },
+    {
+      "source": "src_mcp_server_tools_spec",
+      "target": "src_mcp_server_tools_spec_parse",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "src/mcp-server/tools.spec.ts",
+      "source_location": "L20",
+      "weight": 1.0
+    },
+    {
+      "source": "src_mcp_server_tools_spec",
+      "target": "src_mcp_server_tools_spec_deps",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "src/mcp-server/tools.spec.ts",
+      "source_location": "L5",
+      "weight": 1.0
+    },
+    {
       "source": "src_preferences_preferences_module",
       "target": "src_preferences_preferences_module_preferencesmodule",
       "relation": "contains",
@@ -10910,6 +12729,17 @@
       "confidence_score": 1.0,
       "source_file": "src/preferences/preferences.service.ts",
       "source_location": "L7",
+      "weight": 1.0
+    },
+    {
+      "source": "src_preferences_preferences_service_spec",
+      "target": "src_preferences_preferences_service_spec_throwingmodel",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "src/preferences/preferences.service.spec.ts",
+      "source_location": "L3",
       "weight": 1.0
     },
     {
@@ -11750,13 +13580,46 @@
     },
     {
       "source": "src_mcp_oauth_oauth_state_store_oauthstatestore",
+      "target": "src_mcp_oauth_oauth_state_store_oauthstatestore_constructor",
+      "relation": "method",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "src/mcp/oauth/oauth-state.store.ts",
+      "source_location": "L29",
+      "weight": 1.0
+    },
+    {
+      "source": "src_mcp_oauth_oauth_state_store_oauthstatestore",
+      "target": "src_mcp_oauth_oauth_state_store_oauthstatestore_clientinfo",
+      "relation": "method",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "src/mcp/oauth/oauth-state.store.ts",
+      "source_location": "L38",
+      "weight": 1.0
+    },
+    {
+      "source": "src_mcp_oauth_oauth_state_store_oauthstatestore",
+      "target": "src_mcp_oauth_oauth_state_store_oauthstatestore_tokens",
+      "relation": "method",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "src/mcp/oauth/oauth-state.store.ts",
+      "source_location": "L46",
+      "weight": 1.0
+    },
+    {
+      "source": "src_mcp_oauth_oauth_state_store_oauthstatestore",
       "target": "src_mcp_oauth_oauth_state_store_oauthstatestore_isauthenticated",
       "relation": "method",
       "_origin": "ast",
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "src/mcp/oauth/oauth-state.store.ts",
-      "source_location": "L14",
+      "source_location": "L51",
       "weight": 1.0
     },
     {
@@ -11767,7 +13630,29 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "src/mcp/oauth/oauth-state.store.ts",
-      "source_location": "L18",
+      "source_location": "L55",
+      "weight": 1.0
+    },
+    {
+      "source": "src_mcp_oauth_oauth_state_store_oauthstatestore",
+      "target": "src_mcp_oauth_oauth_state_store_oauthstatestore_load",
+      "relation": "method",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "src/mcp/oauth/oauth-state.store.ts",
+      "source_location": "L70",
+      "weight": 1.0
+    },
+    {
+      "source": "src_mcp_oauth_oauth_state_store_oauthstatestore",
+      "target": "src_mcp_oauth_oauth_state_store_oauthstatestore_save",
+      "relation": "method",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "src/mcp/oauth/oauth-state.store.ts",
+      "source_location": "L81",
       "weight": 1.0
     },
     {
@@ -12134,6 +14019,50 @@
       "weight": 1.0
     },
     {
+      "source": "src_mcp_server_tools_suggestionsservicelike",
+      "target": "src_mcp_server_tools_suggestionsservicelike_acceptsuggestion",
+      "relation": "method",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "src/mcp-server/tools.ts",
+      "source_location": "L10",
+      "weight": 1.0
+    },
+    {
+      "source": "src_mcp_server_tools_suggestionsservicelike",
+      "target": "src_mcp_server_tools_suggestionsservicelike_skipsuggestion",
+      "relation": "method",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "src/mcp-server/tools.ts",
+      "source_location": "L11",
+      "weight": 1.0
+    },
+    {
+      "source": "src_mcp_server_tools_suggestionsservicelike",
+      "target": "src_mcp_server_tools_suggestionsservicelike_gettopsuggestions",
+      "relation": "method",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "src/mcp-server/tools.ts",
+      "source_location": "L8",
+      "weight": 1.0
+    },
+    {
+      "source": "src_mcp_server_tools_suggestionsservicelike",
+      "target": "src_mcp_server_tools_suggestionsservicelike_surprisetocart",
+      "relation": "method",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "src/mcp-server/tools.ts",
+      "source_location": "L9",
+      "weight": 1.0
+    },
+    {
       "source": "src_preferences_preferences_service_preferencesservice",
       "target": "src_preferences_preferences_service_preferencesservice_constructor",
       "relation": "method",
@@ -12174,7 +14103,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "src/preferences/preferences.service.ts",
-      "source_location": "L35",
+      "source_location": "L45",
       "weight": 1.0
     },
     {
@@ -12328,7 +14257,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "src/suggestions/suggestions.service.ts",
-      "source_location": "L183",
+      "source_location": "L182",
       "weight": 1.0
     },
     {
@@ -12612,10 +14541,10 @@
       "confidence_score": 0.8,
       "context": "call",
       "source_file": "src/suggestions/suggestions.service.ts",
-      "source_location": "L184",
+      "source_location": "L183",
       "weight": 1.0
     }
   ],
   "hyperedges": [],
-  "built_at_commit": "22357eb4aca08e156f7d70e1e7b0776c9edd1d5f"
+  "built_at_commit": "8719cc1f3d5824f4010f309a8a7e55301d97bbc5"
 }

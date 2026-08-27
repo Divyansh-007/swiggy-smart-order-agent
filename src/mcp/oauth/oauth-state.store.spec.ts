@@ -1,4 +1,7 @@
 import { OAuthStateStore } from './oauth-state.store';
+import { mkdtempSync, existsSync, writeFileSync, rmSync } from 'fs';
+import { join } from 'path';
+import { tmpdir } from 'os';
 
 describe('OAuthStateStore', () => {
   it('round-trips tokens and reports authenticated', () => {
@@ -33,10 +36,6 @@ describe('OAuthStateStore', () => {
     expect(s.state).toBe('csrf-token');
   });
 });
-
-import { mkdtempSync, existsSync, writeFileSync, rmSync } from 'fs';
-import { join } from 'path';
-import { tmpdir } from 'os';
 
 describe('OAuthStateStore persistence', () => {
   let dir: string;

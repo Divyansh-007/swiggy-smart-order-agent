@@ -105,7 +105,7 @@ export async function runAuthentication(deps: AuthDeps): Promise<AuthResult> {
       });
     });
 
-    server.listen(Number(redirect.port) || 3000, () => {
+    server.listen(Number(redirect.port) || 3000, '127.0.0.1', () => {
       process.stderr.write(`[authenticate] open this URL to sign in:\n${loginUrl}\n`);
       open(loginUrl);
     });

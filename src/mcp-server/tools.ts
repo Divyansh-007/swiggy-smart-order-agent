@@ -34,7 +34,7 @@ export async function withAuthErrors(fn: () => Promise<unknown>): Promise<CallTo
     if (e instanceof UnauthorizedException || e instanceof UnauthorizedError) {
       return errorResult(AUTH_HINT);
     }
-    return errorResult((e as Error).message);
+    return errorResult(e instanceof Error ? e.message : String(e));
   }
 }
 

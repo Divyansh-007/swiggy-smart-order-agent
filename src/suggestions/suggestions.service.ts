@@ -176,8 +176,7 @@ export class SuggestionsService {
   }
 
   async acceptSuggestion(userId: string, restaurantId: string, _itemIds: string[]) {
-    await this.preferences.recordFeedback(userId, restaurantId, 'accepted');
-    return { recorded: true };
+    return this.preferences.recordFeedback(userId, restaurantId, 'accepted');
   }
 
   async skipSuggestion(userId: string, restaurantId: string) {

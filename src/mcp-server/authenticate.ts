@@ -35,7 +35,15 @@ function defaultOpenBrowser(url: string): void {
   const cmd =
     process.platform === 'darwin' ? 'open' : process.platform === 'win32' ? 'start' : 'xdg-open';
   try {
-    spawn(cmd, [url], { detached: true, stdio: 'ignore', shell: process.platform === 'win32' }).unref();
+    const child = spawn(cmd, [url], {
+      detached: true,
+      stdio: 'ignore',
+      shell: process.platform === 'win32',
+    });
+    child.on('error', () => {
+      /* user can click the printed URL instead */
+    });
+    child.unref();
   } catch {
     /* user can click the printed URL instead */
   }
@@ -66,7 +74,7 @@ export async function runAuthentication(deps: AuthDeps): Promise<AuthResult> {
     };
 
     const server = createServer(async (req: IncomingMessage, res: ServerResponse) => {
-      const reqUrl = new URL(req.url ?? '/', `http://localhost:${redirect.port || 80}`);
+      const reqUrl = new URL(req.url ?? '/', `http://localhost:${Number(redirect.port) || 3000}`);
       if (reqUrl.pathname !== redirect.pathname) {
         res.statusCode = 404;
         return res.end('Not found');
@@ -88,6 +96,14 @@ export async function runAuthentication(deps: AuthDeps): Promise<AuthResult> {
       () => finish({ authenticated: false, message: 'Login timed out — call `authenticate` again.', loginUrl }),
       timeoutMs,
     );
+
+    server.on('error', (e) => {
+      finish({
+        authenticated: false,
+        message: `Could not start login listener: ${(e as Error).message}`,
+        loginUrl,
+      });
+    });
 
     server.listen(Number(redirect.port) || 3000, () => {
       process.stderr.write(`[authenticate] open this URL to sign in:\n${loginUrl}\n`);

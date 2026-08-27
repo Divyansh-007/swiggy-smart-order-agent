@@ -1,4 +1,5 @@
 import { UnauthorizedException } from '@nestjs/common';
+import { UnauthorizedError } from '@modelcontextprotocol/sdk/client/auth.js';
 import { buildHandlers, ToolDeps } from './tools';
 
 function deps(over: Partial<ToolDeps> = {}): ToolDeps {
@@ -46,9 +47,20 @@ describe('tool handlers', () => {
         getTopSuggestions: jest.fn().mockRejectedValue(new UnauthorizedException('nope')),
       } as any,
     });
-    const res: any = await buildHandlers(d).get_suggestions({});
+    const res = await buildHandlers(d).get_suggestions({});
     expect(res.isError).toBe(true);
-    expect(res.content[0].text).toMatch(/authenticate/i);
+    expect((res.content[0] as any).text).toMatch(/authenticate/i);
+  });
+
+  it('maps SDK UnauthorizedError to the auth-error result', async () => {
+    const d = deps({
+      suggestions: {
+        getTopSuggestions: jest.fn().mockRejectedValue(new UnauthorizedError('nope')),
+      } as any,
+    });
+    const res = await buildHandlers(d).get_suggestions({});
+    expect(res.isError).toBe(true);
+    expect((res.content[0] as any).text).toMatch(/authenticate/i);
   });
 
   it('list_addresses returns the address array', async () => {

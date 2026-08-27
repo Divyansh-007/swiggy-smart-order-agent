@@ -1,7 +1,16 @@
 {
   "name": "smart-order-agent",
   "version": "0.1.0",
-  "description": "Agent that ranks Swiggy Food options against your order history so you get a top-5 shortlist instead of scrolling for an hour.",
+  "description": "Local MCP server that ranks your real Swiggy order history into reorder + discover shortlists — callable from Claude and any MCP client (REST API also included).",
+  "keywords": [
+    "mcp",
+    "model-context-protocol",
+    "swiggy",
+    "claude",
+    "agent",
+    "recommender",
+    "food-ordering"
+  ],
   "scripts": {
     "build": "tsc -p tsconfig.json",
     "start": "node dist/main.js",

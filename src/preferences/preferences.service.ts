@@ -23,8 +23,18 @@ export class PreferencesService {
     return this.orderModel.create(order);
   }
 
-  async recordFeedback(userId: string, restaurantId: string, action: 'accepted' | 'skipped') {
-    return this.feedbackModel.create({ userId, restaurantId, action, suggestedAt: new Date() });
+  async recordFeedback(
+    userId: string,
+    restaurantId: string,
+    action: 'accepted' | 'skipped',
+  ): Promise<{ recorded: boolean; note?: string }> {
+    try {
+      await this.feedbackModel.create({ userId, restaurantId, action, suggestedAt: new Date() });
+      return { recorded: true };
+    } catch (e) {
+      process.stderr.write(`[preferences] feedback not persisted: ${(e as Error).message}\n`);
+      return { recorded: false, note: 'feedback not persisted (store offline)' };
+    }
   }
 
   /**
@@ -33,30 +43,41 @@ export class PreferencesService {
    * the actual scoring. This just gives it clean inputs.
    */
   async getProfile(userId: string): Promise<PreferenceProfile> {
-    const orders = await this.orderModel.find({ userId }).sort({ orderedAt: -1 }).limit(200).exec();
-
-    const cuisineCounts: Record<string, number> = {};
-    const timeSlotCounts: Record<string, number> = {};
-    let totalValue = 0;
-
-    for (const o of orders) {
-      cuisineCounts[o.cuisine] = (cuisineCounts[o.cuisine] || 0) + 1;
-      timeSlotCounts[o.timeSlot] = (timeSlotCounts[o.timeSlot] || 0) + 1;
-      totalValue += o.orderValue;
-    }
-
-    const recentFeedback = await this.feedbackModel
-      .find({ userId, action: 'skipped' })
-      .sort({ createdAt: -1 })
-      .limit(20)
-      .exec();
-
-    return {
-      cuisineCounts,
-      avgOrderValue: orders.length ? Math.round(totalValue / orders.length) : 0,
-      timeSlotCounts,
-      recentRestaurantIds: orders.slice(0, 10).map((o) => o.restaurantId),
-      rejectedRestaurantIds: recentFeedback.map((f) => f.restaurantId),
+    const empty: PreferenceProfile = {
+      cuisineCounts: {},
+      avgOrderValue: 0,
+      timeSlotCounts: {},
+      recentRestaurantIds: [],
+      rejectedRestaurantIds: [],
     };
+    try {
+      const orders = await this.orderModel.find({ userId }).sort({ orderedAt: -1 }).limit(200).exec();
+
+      const cuisineCounts: Record<string, number> = {};
+      const timeSlotCounts: Record<string, number> = {};
+      let totalValue = 0;
+      for (const o of orders) {
+        cuisineCounts[o.cuisine] = (cuisineCounts[o.cuisine] || 0) + 1;
+        timeSlotCounts[o.timeSlot] = (timeSlotCounts[o.timeSlot] || 0) + 1;
+        totalValue += o.orderValue;
+      }
+
+      const recentFeedback = await this.feedbackModel
+        .find({ userId, action: 'skipped' })
+        .sort({ createdAt: -1 })
+        .limit(20)
+        .exec();
+
+      return {
+        cuisineCounts,
+        avgOrderValue: orders.length ? Math.round(totalValue / orders.length) : 0,
+        timeSlotCounts,
+        recentRestaurantIds: orders.slice(0, 10).map((o) => o.restaurantId),
+        rejectedRestaurantIds: recentFeedback.map((f) => f.restaurantId),
+      };
+    } catch (e) {
+      process.stderr.write(`[preferences] profile read failed, degrading: ${(e as Error).message}\n`);
+      return empty;
+    }
   }
 }

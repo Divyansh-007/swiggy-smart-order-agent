@@ -88,6 +88,39 @@ token in Swiggy v1.0); re-run `/oauth/login` when a call returns 401.
 - `POST /suggestions/skip` — `{ userId, restaurantId }`. Records negative feedback.
 - `GET /oauth/login|callback|status` — the OAuth browser bridge.
 
+## Use it as an MCP server
+
+The same engine runs as a local **stdio MCP server**, so Claude (or any MCP
+client) can call it as tools: `authenticate`, `get_suggestions`,
+`surprise_cart`, `list_addresses`, `accept_suggestion`, `skip_suggestion`.
+
+```bash
+npm run build
+# then point your MCP client at dist/mcp-server/main.js
+```
+
+Claude Desktop (`claude_desktop_config.json`):
+
+```json
+{
+  "mcpServers": {
+    "smart-order-agent": {
+      "command": "node",
+      "args": ["/abs/path/to/smart-order-agent/dist/mcp-server/main.js"],
+      "env": { "USE_MOCK_MCP": "false" }
+    }
+  }
+}
+```
+
+- **Mock mode** (`USE_MOCK_MCP=true`, the default): the full tool surface works
+  offline — no Swiggy account, no MongoDB.
+- **Real mode** (`USE_MOCK_MCP=false`): call `authenticate` once (browser phone +
+  OTP); the token is cached at `~/.smart-order-agent/oauth.json` and reused across
+  restarts for ~5 days. `surprise_cart` **stops at the cart** — no order is placed.
+- Feedback (`accept`/`skip`) uses MongoDB when available and degrades to a
+  no-op notice when it isn't; suggestions work either way.
+
 ## Two notions of "user" (important)
 
 There are two identities in this app, still **partly decoupled**:

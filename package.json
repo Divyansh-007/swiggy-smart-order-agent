@@ -8,7 +8,9 @@
     "start:dev": "ts-node-dev --respawn --transpile-only src/main.ts",
     "seed": "ts-node src/seed.ts",
     "test": "jest",
-    "introspect:sdk": "ts-node scripts/introspect-sdk-auth.ts"
+    "introspect:sdk": "ts-node scripts/introspect-sdk-auth.ts",
+    "mcp": "ts-node src/mcp-server/main.ts",
+    "mcp:prod": "node dist/mcp-server/main.js"
   },
   "dependencies": {
     "@modelcontextprotocol/sdk": "^1.30.0",
@@ -19,7 +21,8 @@
     "@nestjs/platform-express": "^10.4.0",
     "mongoose": "^8.5.0",
     "reflect-metadata": "^0.2.2",
-    "rxjs": "^7.8.1"
+    "rxjs": "^7.8.1",
+    "zod": "^4.4.3"
   },
   "devDependencies": {
     "@types/jest": "^30.0.0",

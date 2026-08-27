@@ -14,6 +14,12 @@ import { SuggestionsModule } from './suggestions/suggestions.module';
         // don't buffer commands forever; PreferencesService degrades gracefully.
         serverSelectionTimeoutMS: 2000,
         bufferCommands: false,
+        // Without this, @nestjs/mongoose awaits the initial connection (with its
+        // own retry loop — 9 attempts * ~5s by default) before the DI container
+        // resolves, so app bootstrap hangs then hard-fails when Mongo is absent.
+        // lazyConnection returns the (still-connecting) connection immediately;
+        // the 'error' listener below is what makes the later failure non-fatal.
+        lazyConnection: true,
         connectionFactory: (connection: any) => {
           connection.on('error', (err: Error) =>
             process.stderr.write(`[mongo] connection error (feedback disabled): ${err.message}\n`),

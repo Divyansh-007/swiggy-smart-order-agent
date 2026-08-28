@@ -109,6 +109,45 @@ describe('SuggestionsService', () => {
     expect(discoverIds).not.toContain('r6');
   });
 
+  it('discover surfaces open new places even when dish/meal searches return closed ones', async () => {
+    // Regression: closed candidates from the dish/meal queries used to fill `byId`
+    // past topN, suppressing the 'popular' top-up; RankingService then dropped them
+    // all on its isOpen filter, leaving discover empty. Only orderable (open)
+    // candidates should count toward the top-up decision.
+    const closed = (id: string, c: string): RestaurantResult => ({ ...makeRestaurant(id, c), isOpen: false });
+    const mcp = {
+      ...fakeMcp,
+      searchRestaurants: async ({ query }: { query: string }): Promise<RestaurantResult[]> => {
+        // Dish keyword 'chicken biryani' -> 5 CLOSED new places (enough to fill byId to topN).
+        if (query === 'chicken biryani') {
+          return ['c1', 'c2', 'c3', 'c4', 'c5'].map((id) => closed(id, 'biryani'));
+        }
+        if (query === 'noodles') return [closed('c6', 'chinese')];
+        if (query === 'popular') {
+          // The broad fallback DOES have open new places to offer.
+          return [makeRestaurant('o1', 'biryani'), makeRestaurant('o2', 'thai'), makeRestaurant('o3', 'italian')];
+        }
+        return []; // meal-default query
+      },
+    } as any;
+    const svc = new SuggestionsService(
+      mcp,
+      fakePreferences,
+      new RankingService(),
+      new AccountProfileService(mcp, fakePreferences),
+      new ReorderRankingService(),
+    );
+
+    const out = await svc.getTopSuggestions('dj');
+
+    // The 'popular' top-up must have fired, so discover is not empty...
+    expect(out.discover.length).toBeGreaterThan(0);
+    // ...and every discovered place is open (orderable — surprise_cart depends on this)...
+    expect(out.discover.every((s) => s.restaurant.isOpen)).toBe(true);
+    // ...and none of the closed dish-keyword places leak through.
+    expect(out.discover.map((s) => s.restaurant.restaurantId)).not.toContain('c1');
+  });
+
   it('returns empty reorder/discover when there is no resolvable address', async () => {
     const noAddressMcp = { ...fakeMcp, getAddresses: async () => [] } as any;
     const svc = new SuggestionsService(

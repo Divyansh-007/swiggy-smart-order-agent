@@ -94,6 +94,13 @@ export class SuggestionsService {
     const merge = (results: RestaurantResult[]) => {
       for (const r of results) {
         if (known.has(r.restaurantId)) continue;
+        // Only orderable (open) restaurants count as candidates. Closed places are
+        // dropped here rather than by RankingService downstream, so they can't fill
+        // `byId` past topN and silently suppress the 'popular' top-up below — that
+        // mismatch left discover empty at off-peak hours when the dish/meal queries
+        // returned enough closed places (reorder, which has no isOpen filter, still
+        // showed). surprise_cart also depends on discover picks being open.
+        if (!r.isOpen) continue;
         byId.set(r.restaurantId, r);
       }
     };
@@ -102,9 +109,9 @@ export class SuggestionsService {
       merge(await this.mcpClient.searchRestaurants({ addressId, query }));
     }
 
-    // Dish/meal queries can come up short (small mock fixtures, narrow real-world
-    // matches) — top up the candidate pool with a broad 'popular' search, still
-    // excluding restaurants the user already knows.
+    // Dish/meal queries can come up short (narrow matches, or everything closed at
+    // this hour) — top up the open-candidate pool with a broad 'popular' search,
+    // still excluding restaurants the user already knows.
     if (byId.size < topN) {
       merge(await this.mcpClient.searchRestaurants({ addressId, query: 'popular' }));
     }

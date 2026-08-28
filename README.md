@@ -12,6 +12,9 @@ interchangeable behind one interface (`src/mcp/mcp-client.interface.ts`); flip
 `USE_MOCK_MCP` to switch. (A REST API over the same engine is also available —
 [see below](#also-available-a-rest-api).)
 
+> **See it in action:** [docs/DEMO.md](docs/DEMO.md) — a ~90-second walkthrough
+> (offline mock, then live Swiggy → a real cart that stops before payment).
+
 ## How it works
 
 The `get_suggestions` tool returns two ranked top-5 lists — **`reorder`** and
